@@ -18,12 +18,19 @@
             <TextBox x:Name="firstname_tbx" Margin="0,15,0,0"></TextBox>
             <TextBox x:Name="name_tbx" Margin="0,15,0,0"></TextBox>
             <StackPanel Orientation="Horizontal">
-                <ComboBox x:Name="department_cbx" Margin="0,15,0,0" Width="100">
+                <ComboBox x:Name="department_cbx" Margin="0,15,0,0" Width="150">
                     <ComboBoxItem>Informationstechnologie</ComboBoxItem>
                     <ComboBoxItem>Wirtschaftsingeneure</ComboBoxItem>
                     <ComboBoxItem>Maschinenbau</ComboBoxItem>
                     <ComboBoxItem>Elektrotechnik</ComboBoxItem>
                     <ComboBoxItem>Mechatronik</ComboBoxItem>
+                </ComboBox>
+                <ComboBox x:Name="class_cbx" Margin="15,15,0,0" Width="71.737">
+                    <ComboBoxItem>1</ComboBoxItem>
+                    <ComboBoxItem>2</ComboBoxItem>
+                    <ComboBoxItem>3</ComboBoxItem>
+                    <ComboBoxItem>4</ComboBoxItem>
+                    <ComboBoxItem>5</ComboBoxItem>
                 </ComboBox>
             </StackPanel>
         </StackPanel>
