@@ -14,7 +14,8 @@
         </StackPanel>
         <StackPanel HorizontalAlignment="Center">
             <Label FontWeight="Bold" FontSize="40">Registrieren</Label>
-            <TextBox x:Name="email_tbx" Margin="0,30,0,0" TextChanged="email_tbx_TextChanged"></TextBox>
+            <TextBox x:Name="email_tbx" Margin="0,30,0,0"></TextBox>
+            <TextBox x:Name="firstname_tbx" Margin="0,15,0,0"></TextBox>
         </StackPanel>
     </StackPanel>
 </Page>
