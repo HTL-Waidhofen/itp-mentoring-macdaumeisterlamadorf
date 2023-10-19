@@ -33,6 +33,7 @@
                     <ComboBoxItem>5</ComboBoxItem>
                 </ComboBox>
             </StackPanel>
+            <TextBox x:Name="pwd_tbx" Margin="0,15,0,0"></TextBox>
         </StackPanel>
     </StackPanel>
 </Page>
