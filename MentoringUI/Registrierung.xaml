@@ -35,6 +35,7 @@
             </StackPanel>
             <TextBox x:Name="pwd_tbx" Margin="0,15,0,0"></TextBox>
             <TextBox x:Name="confirmpwd_tbx" Margin="0,15,0,0"></TextBox>
+            <Button x:Name="register_btn" Margin="0,15,0,0" Height="17.96"></Button>
         </StackPanel>
     </StackPanel>
 </Page>
