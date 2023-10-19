@@ -8,8 +8,8 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Registrierung">
 
-    <StackPanel>
-        <StackPanel>
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
             <Image x:Name="Logo_img" Source="/HTL-Logo.jpg" Height="100"></Image>
         </StackPanel>
     
