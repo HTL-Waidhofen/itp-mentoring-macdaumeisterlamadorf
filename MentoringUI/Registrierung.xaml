@@ -12,6 +12,8 @@
         <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
             <Image x:Name="Logo_img" Source="/HTL-Logo.jpg" Height="100"></Image>
         </StackPanel>
-    
+        <StackPanel HorizontalAlignment="Center">
+            <Label FontWeight="Bold" FontSize="40">Registrieren</Label>
+        </StackPanel>
     </StackPanel>
 </Page>
