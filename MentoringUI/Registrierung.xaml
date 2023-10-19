@@ -17,6 +17,15 @@
             <TextBox x:Name="email_tbx" Margin="0,30,0,0"></TextBox>
             <TextBox x:Name="firstname_tbx" Margin="0,15,0,0"></TextBox>
             <TextBox x:Name="name_tbx" Margin="0,15,0,0"></TextBox>
+            <StackPanel Orientation="Horizontal">
+                <ComboBox x:Name="department_cbx" Margin="0,15,0,0" Width="100">
+                    <ComboBoxItem>Informationstechnologie</ComboBoxItem>
+                    <ComboBoxItem>Wirtschaftsingeneure</ComboBoxItem>
+                    <ComboBoxItem>Maschinenbau</ComboBoxItem>
+                    <ComboBoxItem>Elektrotechnik</ComboBoxItem>
+                    <ComboBoxItem>Mechatronik</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
         </StackPanel>
     </StackPanel>
 </Page>
