@@ -9,6 +9,8 @@
       Title="Login">
 
     <StackPanel Orientation="Vertical">
-        
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
+            
+        </StackPanel>
     </StackPanel>
 </Page>
