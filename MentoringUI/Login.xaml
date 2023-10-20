@@ -12,5 +12,8 @@
         <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
             <Image x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100"/>
         </StackPanel>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+            
+        </StackPanel>
     </StackPanel>
 </Page>
