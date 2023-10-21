@@ -31,6 +31,8 @@
             <GroupBox Margin="5,30,5,0" Header="Mentoren auswahl">
                 <StackPanel>
                     <TextBox></TextBox>
+
+                    <ListBox Margin="0,5,0,0" Height="110"></ListBox>
                 </StackPanel>
             </GroupBox>
         </StackPanel>
