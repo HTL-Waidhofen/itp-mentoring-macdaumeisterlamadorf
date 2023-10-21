@@ -28,8 +28,10 @@
             </GroupBox>
         </StackPanel>
         <StackPanel Orientation="Vertical">
-            <GroupBox Margin="5,30,5,0">
-                
+            <GroupBox Margin="5,30,5,0" Header="Mentoren auswahl">
+                <StackPanel>
+                    <TextBox></TextBox>
+                </StackPanel>
             </GroupBox>
         </StackPanel>
 
