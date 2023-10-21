@@ -14,10 +14,10 @@
                 <Button Width="160" Margin="20,40,0,0" Height="20">Bereits Beantragte Mentoren</Button>
             </StackPanel>
             <StackPanel >
-                <Label FontWeight="Bold" FontSize="40" Margin="120 20 0 0" Width="200" Name="settings_lb">Schüler</Label>
+                <Label FontWeight="Bold" FontSize="40" Margin="150 20 0 0" Width="150" x:Name="Stutent_lb">Schüler</Label>
             </StackPanel>
             <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
-                <Image x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100" Margin="155 0 0 0"/>
+                <Image x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100" Margin="175 0 0 0"/>
             </StackPanel>
         </StackPanel>
 
