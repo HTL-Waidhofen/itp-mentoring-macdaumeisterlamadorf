@@ -36,7 +36,9 @@
                 </StackPanel>
             </GroupBox>
         </StackPanel>
-
-
+        <StackPanel Margin="5,5,0,5">
+            <Image HorizontalAlignment="Left" Source="/Setting.png" Height="25"></Image>
+        </StackPanel>
+        
     </StackPanel>
 </Page>
