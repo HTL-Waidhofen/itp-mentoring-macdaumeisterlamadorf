@@ -22,7 +22,9 @@
         </StackPanel>
         <StackPanel Orientation="Vertical">
             <GroupBox Header="Alle Kurse" Margin="5,10,5,0">
-                
+                <StackPanel>
+                    <ListBox Height="100"></ListBox>
+                </StackPanel>
             </GroupBox>
         </StackPanel>
 
