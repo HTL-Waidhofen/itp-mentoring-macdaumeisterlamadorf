@@ -13,6 +13,9 @@
             <StackPanel>
                 <Button Width="160" Margin="20,40,0,0" Height="20">Bereits Beantragte Mentoren</Button>
             </StackPanel>
+            <StackPanel >
+                <Label FontWeight="Bold" FontSize="40" Margin="120 20 0 0" Width="200" Name="settings_lb">Schüler</Label>
+            </StackPanel>
         </StackPanel>
 
 
