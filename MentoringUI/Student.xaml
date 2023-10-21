@@ -16,6 +16,9 @@
             <StackPanel >
                 <Label FontWeight="Bold" FontSize="40" Margin="120 20 0 0" Width="200" Name="settings_lb">Schüler</Label>
             </StackPanel>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
+                <Image x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100" Margin="155 0 0 0"/>
+            </StackPanel>
         </StackPanel>
 
 
