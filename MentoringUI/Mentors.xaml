@@ -9,7 +9,7 @@
       Title="Mentors">
     <StackPanel>
         <Button Content="Anzeige Hinzufügen" HorizontalAlignment="Left" Margin="30,20"/>
-        <Label Content="Mentoren" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top"/>
+        <Label Content="Mentoren" HorizontalAlignment="Center" Margin="0,5,0,50" VerticalAlignment="Top"/>
         <TextBox TextWrapping="Wrap" Text="Suche:" Width="600"/>
         <TextBox TextWrapping="Wrap" Text="TextBox" Width="600" Height="250" Margin="0,10"/>
     </StackPanel>
