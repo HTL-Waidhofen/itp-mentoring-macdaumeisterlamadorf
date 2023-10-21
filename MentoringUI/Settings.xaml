@@ -19,7 +19,8 @@
                 <Image x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100" Margin="155 0 0 0"/>
             </StackPanel>
         </StackPanel>
-        <GroupBox Height="350" RenderTransformOrigin="0.5,0.5">
+        <Label Height="20"></Label>
+        <GroupBox Height="330" RenderTransformOrigin="0.5,0.5">
             
         </GroupBox>
     </StackPanel>
