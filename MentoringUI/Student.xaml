@@ -27,6 +27,11 @@
                 </StackPanel>
             </GroupBox>
         </StackPanel>
+        <StackPanel Orientation="Vertical">
+            <GroupBox Margin="5,30,5,0">
+                
+            </GroupBox>
+        </StackPanel>
 
 
     </StackPanel>
