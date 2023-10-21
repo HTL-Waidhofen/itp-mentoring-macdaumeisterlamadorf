@@ -9,10 +9,11 @@
       Title="Settings">
     <StackPanel Orientation="Horizontal">
         <StackPanel >
-            <Label FontWeight="Bold" FontSize="40" Margin="300 0 0 0" Width="200">Settings</Label>
+            <Label FontWeight="Bold" FontSize="40" Margin="300 0 0 0" Width="200" Name="settings_lb">Settings</Label>
         </StackPanel>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
             <Image x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100" Margin="155 0 0 0"/>
         </StackPanel>
     </StackPanel>
+        
 </Page>
