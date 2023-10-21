@@ -7,8 +7,12 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Settings">
-
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
-            <Image x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100"/>
+    <StackPanel Orientation="Horizontal">
+        <StackPanel >
+            <Label FontWeight="Bold" FontSize="40" Margin="300 0 0 0" Width="200">Settings</Label>
         </StackPanel>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
+            <Image x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100" Margin="155 0 0 0"/>
+        </StackPanel>
+    </StackPanel>
 </Page>
