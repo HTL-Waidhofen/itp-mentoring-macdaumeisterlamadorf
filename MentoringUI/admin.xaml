@@ -15,6 +15,7 @@
             <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
                 <Image x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100" Margin="155 0 0 0"/>
             </StackPanel>
-            </StackPanel>
-            </StackPanel>
+        </StackPanel>
+        <Button Width="100" Background="Transparent">Nutzerverwaltung</Button>
+    </StackPanel>
 </Page>
