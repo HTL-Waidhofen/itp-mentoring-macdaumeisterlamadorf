@@ -17,5 +17,9 @@
                 <Image x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100" Margin="80 0 0 0"/>
             </StackPanel>
         </StackPanel>
+        <StackPanel Margin="0,20,0,0">
+            <StackPanel Orientation="Horizontal">
+            </StackPanel>
+        </StackPanel>
     </StackPanel>
 </Page>
