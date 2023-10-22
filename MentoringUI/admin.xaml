@@ -16,6 +16,7 @@
                 <Image x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100" Margin="155 0 0 0"/>
             </StackPanel>
         </StackPanel>
-        <Button Width="100" Background="Transparent">Nutzerverwaltung</Button>
+        <Button Width="100" Background="Transparent" BorderBrush="Transparent">Nutzerverwaltung</Button>
+        <Button Width="100" Background="Transparent" BorderBrush="Transparent">Kursverwaltung</Button>
     </StackPanel>
 </Page>
