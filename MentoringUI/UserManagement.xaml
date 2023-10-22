@@ -13,6 +13,9 @@
             <StackPanel >
                 <Label FontWeight="Bold" FontSize="40" Margin="225 0 0 0" Width="350" Name="settings_lb">Nutzerverwaltung</Label>
             </StackPanel>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
+                <Image x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100" Margin="80 0 0 0"/>
+            </StackPanel>
         </StackPanel>
     </StackPanel>
 </Page>
