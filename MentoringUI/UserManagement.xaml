@@ -10,7 +10,9 @@
 
     <StackPanel>
         <StackPanel Orientation="Horizontal">
-            
+            <StackPanel >
+                <Label FontWeight="Bold" FontSize="40" Margin="225 0 0 0" Width="350" Name="settings_lb">Nutzerverwaltung</Label>
+            </StackPanel>
         </StackPanel>
     </StackPanel>
 </Page>
