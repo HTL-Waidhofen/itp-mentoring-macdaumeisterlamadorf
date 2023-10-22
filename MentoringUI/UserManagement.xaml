@@ -23,6 +23,7 @@
                 <Button BorderThickness="2" HorizontalAlignment="Left" Margin="10,0,0,0" Width="60">Mentoren</Button>
                 <Label Margin="225,0,0,0" Width="70">Mentoren</Label>
                 <Button BorderThickness="2" HorizontalAlignment="Left" Margin="225,0,0,0" Width="60">Löschen</Button>
+                <Button BorderThickness="2" HorizontalAlignment="Left" Margin="10,0,0,0" Width="60">Editieren</Button>
             </StackPanel>
         </StackPanel>
     </StackPanel>
