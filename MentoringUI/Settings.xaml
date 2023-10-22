@@ -31,7 +31,9 @@
                     <ComboBoxItem Content="Hell"/>
                     <ComboBoxItem Content="Blau"/>
                 </ComboBox>
-                <Button Height="20" Margin="0 -420 0 0"  Content="Bentragen auf Mentor">
+                <Button Height="20" Margin="0 -420 0 0"  Content="Beantragen auf Mentor">
+                </Button>
+                <Button Height="20" Margin="0 -340 0 0"  Content="Auf Mentorenseite wechseln">
                 </Button>
             </StackPanel>
         </GroupBox>
