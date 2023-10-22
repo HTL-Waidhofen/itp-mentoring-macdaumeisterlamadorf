@@ -10,13 +10,14 @@
     <StackPanel>
         <StackPanel Orientation="Horizontal">
             <StackPanel >
-                <Label FontWeight="Bold" FontSize="40" Margin="300 0 0 0" Width="200" Name="settings_lb">Admin</Label>
+                <Label FontWeight="Bold" FontSize="40" Margin="330 0 0 0" Width="150" Name="settings_lb" FontFamily="Cambria">Admin</Label>
             </StackPanel>
             <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
-                <Image x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100" Margin="155 0 0 0"/>
+                <Image x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100" Margin="175 0 0 0"/>
             </StackPanel>
         </StackPanel>
-        <Button Width="100" Background="Transparent" BorderBrush="Transparent">Nutzerverwaltung</Button>
-        <Button Width="100" Background="Transparent" BorderBrush="Transparent">Kursverwaltung</Button>
+        <Label Height="50"></Label>
+        <Button Width="100" Background="Transparent" BorderBrush="Transparent" FontFamily="Cambria">Nutzerverwaltung</Button>
+        <Button Width="100" Background="Transparent" BorderBrush="Transparent" FontFamily="Cambria">Kursverwaltung</Button>
     </StackPanel>
 </Page>
