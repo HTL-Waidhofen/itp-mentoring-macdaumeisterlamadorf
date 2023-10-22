@@ -25,6 +25,9 @@
                 <Button BorderThickness="2" HorizontalAlignment="Left" Margin="225,0,0,0" Width="60">Löschen</Button>
                 <Button BorderThickness="2" HorizontalAlignment="Left" Margin="10,0,0,0" Width="60">Editieren</Button>
             </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <ListBox x:Name="Mentoren_lbx" BorderThickness="2" Width="780" Height="290"></ListBox>
+            </StackPanel>
         </StackPanel>
     </StackPanel>
 </Page>
