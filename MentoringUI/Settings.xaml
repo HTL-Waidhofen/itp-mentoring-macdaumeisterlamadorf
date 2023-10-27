@@ -7,28 +7,33 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Settings">
-    <DockPanel>
-                <Image Source="/return_button_black.png" Width="50"></Image>
-                <Label FontWeight="Bold" FontSize="40" Margin="250 0 0 0" Width="200" Name="settings_lb" FontFamily="Cambria">Settings</Label>
-                <Image x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100" Margin="155 0 0 0"/>
-        <Label Height="20"></Label>
-        <GroupBox Height="330" RenderTransformOrigin="0.5,0.5" Header="Settings" FontFamily="Cambria">
-            <Grid>
-                
-            <ComboBox Height="20" Margin="0 0 0 280" IsReadOnly="True" IsEditable="True" Text="Sprache">
+    <DockPanel LastChildFill="True">
+        <Grid DockPanel.Dock="Top" Height="100">
+                <Image Source="/return_button_black.png" Width="50" HorizontalAlignment="Left"></Image>
+                <Label FontWeight="Bold" FontSize="40"  Width="200" Name="settings_lb" FontFamily="Cambria" HorizontalAlignment="Center">Settings</Label>
+                <Image x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100" HorizontalAlignment="Right"/>
+        </Grid>
+        <GroupBox DockPanel.Dock="Top" Height="330" Header="Settings" FontFamily="Cambria">
+            <DockPanel LastChildFill="False">
+                <Label Height="10" DockPanel.Dock="Top"></Label>
+            <ComboBox Height="20" IsReadOnly="True" IsEditable="True" Text="Sprache" DockPanel.Dock="Top">
                 <ComboBoxItem>Englisch</ComboBoxItem>
                 <ComboBoxItem>Deutsch</ComboBoxItem>
             </ComboBox>
-                <ComboBox Height="20" IsReadOnly="True" Margin="0 -500 0 0" IsEditable="True" Text="Anzeige">
+                <Label Height="20" DockPanel.Dock="Top"></Label>
+                <ComboBox Height="20" IsReadOnly="True" IsEditable="True" Text="Anzeige" DockPanel.Dock="Top">
                     <ComboBoxItem Content="Dunkel"/>
                     <ComboBoxItem Content="Hell"/>
                     <ComboBoxItem Content="Blau"/>
                 </ComboBox>
-                <Button Height="20" Margin="0 -420 0 0"  Content="Beantragen auf Mentor">
+                <Label Height="20" DockPanel.Dock="Top"></Label>
+                <DockPanel DockPanel.Dock="Top" LastChildFill="False">
+                <Button Height="20" Content="Beantragen auf Mentor" DockPanel.Dock="Left">
                 </Button>
-                <Button Height="20" Margin="0 -340 0 0"  Content="Auf Mentorenseite wechseln">
+                <Button Height="20" Content="Auf Mentorenseite wechseln" DockPanel.Dock="Left">
                 </Button>
-            </Grid>
+                </DockPanel>
+            </DockPanel>
         </GroupBox>
     </DockPanel>
 </Page>
