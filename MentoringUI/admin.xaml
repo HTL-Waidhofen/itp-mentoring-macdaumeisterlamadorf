@@ -8,10 +8,12 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="admin">
     <DockPanel>
-    <Label FontWeight="Bold" FontSize="40" Margin="330 0 0 0" Width="150" Name="settings_lb" FontFamily="Cambria">Admin</Label>
-                <Image x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100" Margin="175 0 0 0"/>
-        <Label Height="50"></Label>
-        <Button Width="100" Background="Transparent" BorderBrush="Transparent" FontFamily="Cambria">Nutzerverwaltung</Button>
-        <Button Width="100" Background="Transparent" BorderBrush="Transparent" FontFamily="Cambria">Kursverwaltung</Button>
+        <Grid DockPanel.Dock="Top">
+            <Label FontWeight="Bold" FontSize="40" Width="150" Name="settings_lb" FontFamily="Cambria">Admin</Label>
+            <Image x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100" HorizontalAlignment="Right"/>
+        </Grid>
+        <Label DockPanel.Dock="Top" Height="80"></Label>
+        <Button DockPanel.Dock="Top" Width="100" Background="Transparent" BorderBrush="Transparent" FontFamily="Cambria">Nutzerverwaltung</Button>
+        <Button DockPanel.Dock="Top" Width="100" Background="Transparent" BorderBrush="Transparent" FontFamily="Cambria">Kursverwaltung</Button>
     </DockPanel>
 </Page>
