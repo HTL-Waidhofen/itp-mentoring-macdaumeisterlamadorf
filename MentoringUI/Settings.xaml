@@ -7,21 +7,14 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Settings">
-    <StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <StackPanel>
+    <DockPanel>
                 <Image Source="/return_button_black.png" Width="50"></Image>
-            </StackPanel>
-            <StackPanel >
                 <Label FontWeight="Bold" FontSize="40" Margin="250 0 0 0" Width="200" Name="settings_lb" FontFamily="Cambria">Settings</Label>
-            </StackPanel>
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
                 <Image x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100" Margin="155 0 0 0"/>
-            </StackPanel>
-        </StackPanel>
         <Label Height="20"></Label>
         <GroupBox Height="330" RenderTransformOrigin="0.5,0.5" Header="Settings" FontFamily="Cambria">
-            <StackPanel>
+            <Grid>
+                
             <ComboBox Height="20" Margin="0 0 0 280" IsReadOnly="True" IsEditable="True" Text="Sprache">
                 <ComboBoxItem>Englisch</ComboBoxItem>
                 <ComboBoxItem>Deutsch</ComboBoxItem>
@@ -35,8 +28,7 @@
                 </Button>
                 <Button Height="20" Margin="0 -340 0 0"  Content="Auf Mentorenseite wechseln">
                 </Button>
-            </StackPanel>
+            </Grid>
         </GroupBox>
-    </StackPanel>
-
+    </DockPanel>
 </Page>
