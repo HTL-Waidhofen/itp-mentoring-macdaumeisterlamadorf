@@ -15,5 +15,6 @@
         <Label DockPanel.Dock="Top" Height="80"></Label>
         <Button DockPanel.Dock="Top" Width="100" Background="Transparent" BorderBrush="Transparent" FontFamily="Cambria">Nutzerverwaltung</Button>
         <Button DockPanel.Dock="Top" Width="100" Background="Transparent" BorderBrush="Transparent" FontFamily="Cambria">Kursverwaltung</Button>
+        <Image Source="/setting.png" Height="50" DockPanel.Dock="Bottom" HorizontalAlignment="Left"></Image>
     </DockPanel>
 </Page>
