@@ -36,7 +36,7 @@
                 </DockPanel>
                 <DockPanel DockPanel.Dock="Top" LastChildFill="False">
                     <Label DockPanel.Dock="Top" Height="20"></Label>
-            <Button Content="Ausloggen" Height="20" DockPanel.Dock="Left"></Button>
+                    <Button Content="Ausloggen" Height="20" DockPanel.Dock="Left" Background="#e84445" Foreground="White"></Button>
                 </DockPanel> 
             </DockPanel>
         </GroupBox>
