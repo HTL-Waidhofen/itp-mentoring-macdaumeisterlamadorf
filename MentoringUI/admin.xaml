@@ -12,9 +12,8 @@
             <Label FontWeight="Bold" FontSize="40" Width="150" Name="settings_lb" FontFamily="Cambria">Admin</Label>
             <Image x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100" HorizontalAlignment="Right"/>
         </Grid>
-        <Label DockPanel.Dock="Top" Height="80"></Label>
-        <Button DockPanel.Dock="Top" Width="100" Background="Transparent" BorderBrush="Transparent" FontFamily="Cambria">Nutzerverwaltung</Button>
-        <Button DockPanel.Dock="Top" Width="100" Background="Transparent" BorderBrush="Transparent" FontFamily="Cambria">Kursverwaltung</Button>
+        <Button DockPanel.Dock="Top" Width="150" Height="25" Background="Transparent" BorderBrush="Transparent" FontFamily="Cambria" FontSize="17" VerticalAlignment="Center">Nutzerverwaltung</Button>
+        <Button DockPanel.Dock="Top" Width="150" Height="25" Background="Transparent" BorderBrush="Transparent" FontFamily="Cambria" FontSize="17">Kursverwaltung</Button>
         <Button DockPanel.Dock="Bottom" Height="50" Width="50" HorizontalAlignment="Left" Background="Transparent" BorderBrush="Transparent">
             <Image Source="/setting.png"></Image>
         </Button>
