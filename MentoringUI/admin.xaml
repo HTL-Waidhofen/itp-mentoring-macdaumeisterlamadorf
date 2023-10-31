@@ -10,7 +10,7 @@
     <DockPanel LastChildFill="False">
         <Grid DockPanel.Dock="Top">
             <Label FontWeight="Bold" FontSize="40" Width="150"  FontFamily="Cambria" Name="admin_lbl">Admin</Label>
-            <Image x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100" HorizontalAlignment="Right"/>
+            <Image Source="/HTL-Logo.png" Height="100" HorizontalAlignment="Right" Name="HTL_Logo_img"/>
         </Grid>
         <Button DockPanel.Dock="Top" Width="150" Height="25" Background="Transparent" BorderBrush="Transparent" FontFamily="Cambria" FontSize="17" VerticalAlignment="Center">Nutzerverwaltung</Button>
         <Button DockPanel.Dock="Top" Width="150" Height="25" Background="Transparent" BorderBrush="Transparent" FontFamily="Cambria" FontSize="17">Kursverwaltung</Button>
