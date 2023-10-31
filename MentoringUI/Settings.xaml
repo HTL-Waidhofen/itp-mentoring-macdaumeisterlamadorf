@@ -11,7 +11,7 @@
     <DockPanel LastChildFill="True">
         <Grid DockPanel.Dock="Top" Height="100">
                 <Image Source="/return_button_black.png" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0 10 0 0" Name="return_btn"></Image>
-                <Label FontWeight="Bold" FontSize="40"  Width="200" Name="settings_lb" FontFamily="Cambria" HorizontalAlignment="Center">Settings</Label>
+                <Label FontWeight="Bold" FontSize="40"  Width="200" Name="settings_lbl" FontFamily="Cambria" HorizontalAlignment="Center">Settings</Label>
                 <Image x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100" HorizontalAlignment="Right"/>
         </Grid>
         <GroupBox DockPanel.Dock="Top" Height="330" Header="Settings" FontFamily="Cambria">
