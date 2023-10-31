@@ -14,8 +14,8 @@
         </Grid>
         <Button DockPanel.Dock="Top" Width="150" Height="25" Background="Transparent" BorderBrush="Transparent" FontFamily="Cambria" FontSize="17" Name="user_management_btn">Nutzerverwaltung</Button>
         <Button DockPanel.Dock="Top" Width="150" Height="25" Background="Transparent" BorderBrush="Transparent" FontFamily="Cambria" FontSize="17" Name="course_management_btn">Kursverwaltung</Button>
-        <Button DockPanel.Dock="Bottom" Height="50" Width="50" HorizontalAlignment="Left" Background="Transparent" BorderBrush="Transparent">
-            <Image Source="/setting.png"></Image>
+        <Button DockPanel.Dock="Bottom" Height="50" Width="50" HorizontalAlignment="Left" Background="Transparent" BorderBrush="Transparent" Name="setting_btn">
+            <Image Source="/setting.png" Name="setting_img"></Image>
         </Button>
     </DockPanel>
 </Page>
