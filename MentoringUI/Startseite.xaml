@@ -1,0 +1,19 @@
+﻿<Page x:Class="MentoringUI.Startseite"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MentoringUI"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Startseite">
+
+    <DockPanel LastChildFill="False">
+        <Grid DockPanel.Dock="Top">
+            <Label FontWeight="Bold" FontSize="40" Width="200" FontFamily="Century Gothic">Mentoren</Label>
+            <Border BorderBrush="#FF000000" BorderThickness="3" CornerRadius="10">
+                <Button x:Name="loginBtn" FontSize="16" Width="60" Height="40" HorizontalAlignment="Right" Margin="0 0 40 0" Background="">Login</Button>
+            </Border>
+        </Grid>
+    </DockPanel>
+</Page>
