@@ -31,7 +31,8 @@ namespace MentoringUI
             Brush? light = (Brush)new BrushConverter().ConvertFromString("#FFFFFF");
             switch(appearance_cbx.SelectedIndex)
             {
-
+                case 0:
+                    break;  
             }
         }
     }
