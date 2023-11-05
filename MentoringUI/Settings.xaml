@@ -22,7 +22,7 @@
                 <ComboBoxItem>Deutsch</ComboBoxItem>
             </ComboBox>
                 <Label Height="20" DockPanel.Dock="Top"></Label>
-                <ComboBox Height="20" IsReadOnly="True" IsEditable="True" Text="Anzeige" DockPanel.Dock="Top">
+                <ComboBox Height="20" IsReadOnly="True" IsEditable="True" Text="Anzeige" DockPanel.Dock="Top" Name="appearance_cbx" SelectionChanged="appearance_cbx_SelectionChanged">
                     <ComboBoxItem Content="Dunkel"/>
                     <ComboBoxItem Content="Hell"/>
                     <ComboBoxItem Content="Blau"/>

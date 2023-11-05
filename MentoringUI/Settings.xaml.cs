@@ -24,5 +24,10 @@ namespace MentoringUI
         {
             InitializeComponent();
         }
+
+        private void appearance_cbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
