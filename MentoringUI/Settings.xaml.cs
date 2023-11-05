@@ -32,7 +32,9 @@ namespace MentoringUI
             switch(appearance_cbx.SelectedIndex)
             {
                 case 0:
-                    break;  
+                    break;
+                case 1:
+                    break;
             }
         }
     }
