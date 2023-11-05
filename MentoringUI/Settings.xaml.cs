@@ -29,6 +29,10 @@ namespace MentoringUI
         {
             Brush? dark = (Brush)new BrushConverter().ConvertFromString("#35363A");
             Brush? light = (Brush)new BrushConverter().ConvertFromString("#FFFFFF");
+            switch(appearance_cbx.SelectedIndex)
+            {
+
+            }
         }
     }
 }
