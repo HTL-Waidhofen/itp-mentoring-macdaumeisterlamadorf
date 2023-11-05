@@ -32,6 +32,7 @@ namespace MentoringUI
             switch(appearance_cbx.SelectedIndex)
             {
                 case 0:
+                    ((MainWindow)Application.Current.MainWindow).Background = dark;
                     break;
                 case 1:
                     break;
