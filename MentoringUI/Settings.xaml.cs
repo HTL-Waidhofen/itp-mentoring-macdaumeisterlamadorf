@@ -35,6 +35,7 @@ namespace MentoringUI
                     ((MainWindow)Application.Current.MainWindow).Background = dark;
                     break;
                 case 1:
+                    ((MainWindow)Application.Current.MainWindow).Background = light;
                     break;
                 case 2:
                     break;
