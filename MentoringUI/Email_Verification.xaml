@@ -8,12 +8,12 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Page1">
     
-    <StackPanel>
-        <Label Content="Email Bestätigen" HorizontalAlignment="Center" Margin="0,70,0,0" />
-        <Label Content="Sie müssen Ihre Email verifizieren" HorizontalAlignment="Center" Margin="0,3,0,0"/>
-        <Label Content="Geben Sie den 8-stelligen Code an, welchen Sie per E-Mail erhalten haben" HorizontalAlignment="Center" Margin="0,3,0,0" />
-        <TextBox TextWrapping="Wrap" Text="Zahlen Eingeben" Width="120" Margin="0,25,0,0"/>
+    <DockPanel LastChildFill="False">
+        <Label Content="Email Bestätigen" HorizontalAlignment="Center"  />
+        <Label Content="Sie müssen Ihre Email verifizieren" HorizontalAlignment="Center" />
+        <Label Content="Geben Sie den 8-stelligen Code an, welchen Sie per E-Mail erhalten haben" HorizontalAlignment="Center"  />
+        <TextBox TextWrapping="Wrap" Text="Zahlen Eingeben" Width="120" />
         <Button Content="Bestätigen" Width="120" Margin="0,20,0,0"/>
 
-    </StackPanel>
+    </DockPanel>
 </Page>

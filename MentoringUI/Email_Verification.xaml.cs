@@ -18,9 +18,9 @@ namespace MentoringUI
     /// <summary>
     /// Interaktionslogik für Page1.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class Email_Verification : Page
     {
-        public Page1()
+        public Email_Verification()
         {
             InitializeComponent();
         }
