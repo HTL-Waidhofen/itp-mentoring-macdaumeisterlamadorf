@@ -10,9 +10,10 @@
     
     <DockPanel LastChildFill="False">
         <TextBlock Text="Email Bestätigen" DockPanel.Dock="Top" Width="200" Height="25" TextAlignment="Center"/>
-        <TextBlock Text="Sie müssen Ihre Email verifizieren"/>
-        <TextBlock Text="Geben Sie den 8-stelligen Code an, welchen Sie per E-Mail erhalten haben"/>
-        <TextBox TextWrapping="Wrap" Text="Zahlen Eingeben" Width="120" />
-        <Button Content="Bestätigen" Width="120"/>
+        <TextBlock Text="Sie müssen Ihre Email verifizieren" DockPanel.Dock="Top" Width="200" Height="25"/>
+        <TextBlock Text="Geben Sie den 8-stelligen Code an, welchen Sie per E-Mail erhalten haben" DockPanel.Dock="Top" Width="200" Height="25" />
+        <TextBox TextWrapping="Wrap" Text="Zahlen Eingeben" DockPanel.Dock="Top" Width="200" Height="25"/>
+
+        <Button Content="Bestätigen" DockPanel.Dock="Top" Width="200" Height="25"/>
     </DockPanel>
 </Page>
