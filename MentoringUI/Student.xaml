@@ -19,18 +19,18 @@
         <DockPanel DockPanel.Dock="Top">
             <GroupBox Header="Alle Kurse" Margin="5,10,5,0">
                 <DockPanel>
-                    <ListBox Height="90"></ListBox>
+                    <ListBox Height="105"></ListBox>
                 </DockPanel>
             </GroupBox>
         </DockPanel>
         <DockPanel DockPanel.Dock="Top">
-            <GroupBox Margin="5,30,5,0" Header="Mentoren auswahl">
+            <GroupBox Margin="5,10,5,0" Header="Mentoren auswahl">
                 <DockPanel>
                     <DockPanel DockPanel.Dock="Top">
                         <TextBox></TextBox>
                     </DockPanel>
                     <DockPanel>
-                        <ListBox Margin="0,5,0,0" Height="90"></ListBox>
+                        <ListBox Margin="0,5,0,0" Height="105"></ListBox>
                     </DockPanel>
                 </DockPanel>
             </GroupBox>
