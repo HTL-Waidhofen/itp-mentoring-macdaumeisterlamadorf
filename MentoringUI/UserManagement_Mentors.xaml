@@ -19,6 +19,7 @@
             <Grid>
                 <DockPanel>
                     <Button x:Name="student_btn" DockPanel.Dock="Left" BorderThickness="2" HorizontalAlignment="Left" Margin="10,0,0,0" Width="60">Schüler</Button>
+                    <Button x:Name="mentor_btn" DockPanel.Dock="Left" BorderThickness="2" HorizontalAlignment="Left" Margin="10,0,0,0" Width="60">Mentoren</Button>
                     
                 </DockPanel>
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Mentoren</TextBlock>
