@@ -9,6 +9,8 @@
       Title="Student">
 
     <DockPanel LastChildFill="False">
-        
+        <DockPanel DockPanel.Dock="Top" LastChildFill="False">
+            
+        </DockPanel>
     </DockPanel>
 </Page>
