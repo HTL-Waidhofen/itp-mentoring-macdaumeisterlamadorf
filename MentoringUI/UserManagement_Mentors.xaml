@@ -18,6 +18,7 @@
         <DockPanel DockPanel.Dock="Top" Margin="0,20,0,0">
             <Grid>
                 
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Mentoren</TextBlock>
             </Grid>
         </DockPanel>
     </DockPanel>
