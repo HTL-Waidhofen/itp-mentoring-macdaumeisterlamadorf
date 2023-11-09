@@ -19,7 +19,7 @@
         <DockPanel DockPanel.Dock="Top">
             <GroupBox Header="Alle Kurse" Margin="5,10,5,0">
                 <DockPanel>
-                    <ListBox Height="105"></ListBox>
+                    <ListBox x:Name="allCourses_lbx" Height="105"></ListBox>
                 </DockPanel>
             </GroupBox>
         </DockPanel>
@@ -27,10 +27,10 @@
             <GroupBox Margin="5,10,5,0" Header="Mentoren auswahl">
                 <DockPanel>
                     <DockPanel DockPanel.Dock="Top">
-                        <TextBox></TextBox>
+                        <TextBox x:Name="mentorFilter" ></TextBox>
                     </DockPanel>
                     <DockPanel>
-                        <ListBox Margin="0,5,0,0" Height="105"></ListBox>
+                        <ListBox x:Name="mentorSelection_lbx" Margin="0,5,0,0" Height="105"></ListBox>
                     </DockPanel>
                 </DockPanel>
             </GroupBox>
