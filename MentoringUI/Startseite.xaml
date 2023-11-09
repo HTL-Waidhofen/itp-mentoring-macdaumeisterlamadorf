@@ -17,8 +17,8 @@
         <DockPanel LastChildFill="False" Margin="80 0 0 0">
             <Grid DockPanel.Dock="Bottom">
             </Grid>
-            
-            
+
+            <Image Width="640" Height="320" Name="imageControl" Stretch="Uniform"/>
         </DockPanel>
     </DockPanel>
 
