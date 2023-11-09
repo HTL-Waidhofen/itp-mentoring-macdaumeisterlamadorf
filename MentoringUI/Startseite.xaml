@@ -15,6 +15,9 @@
         </Grid>
         
         <DockPanel LastChildFill="False" Margin="80 0 0 0">
+            <Grid DockPanel.Dock="Bottom">
+            </Grid>
+            
             
         </DockPanel>
     </DockPanel>
