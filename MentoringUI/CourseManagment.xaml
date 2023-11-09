@@ -8,12 +8,12 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="CourseManagment">
 
-    <StackPanel>
+    <DockPanel>
         <Label Content="Kursverwaltung" HorizontalAlignment="Center" Margin=" 0,40,0,20"/>
         <StackPanel Orientation="Horizontal">
             <Button Content="remove" Width="90" Margin=" 150,0,5,0"/>
             <Button Content="edit" Width="90"  Margin=" 0,0,0,0"/>
         </StackPanel>
         <TextBox TextWrapping="Wrap" Text="" Width="500" Height="300"/>
-    </StackPanel>
+    </DockPanel>
 </Page>
