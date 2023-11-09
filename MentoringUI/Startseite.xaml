@@ -10,7 +10,7 @@
 
     <DockPanel LastChildFill="False">
         <Grid DockPanel.Dock="Top">
-            
+            <Label FontWeight="Bold" FontSize="40" Width="200" FontFamily="Century Gothic">Mentoren</Label>
         </Grid>   
     </DockPanel>
 </Page>
