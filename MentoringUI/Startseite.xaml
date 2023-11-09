@@ -16,6 +16,9 @@
         
         <DockPanel LastChildFill="False" Margin="80 0 0 0">
             <Grid DockPanel.Dock="Bottom">
+                <Button Width="50" Height="20" BorderThickness="0" Margin="-70,-220,660,220" Background="Transparent" BorderBrush="Transparent">
+                    <Image Source="/arrow_left.png"/>
+                </Button>
             </Grid>
 
             <Image Width="640" Height="320" Name="imageControl" Stretch="Uniform"/>
