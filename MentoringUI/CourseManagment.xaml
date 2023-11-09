@@ -12,7 +12,7 @@
 
         <Grid DockPanel.Dock="Top" Height="100">
 
-            <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="40"  Width="400" Name="settings_lb"  HorizontalAlignment="Center">Kursverwaltung</TextBlock>
+            <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="40"  Width="400" Name="settings_lb"  HorizontalAlignment="Center" VerticalAlignment="Center" >Kursverwaltung </TextBlock>
             <Image x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100" HorizontalAlignment="Right"/>
         </Grid>
         
