@@ -8,37 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Student">
 
-    <StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <StackPanel>
-                <Button Width="160" Margin="20,40,0,0" Height="20">Bereits Beantragte Mentoren</Button>
-            </StackPanel>
-            <StackPanel >
-                <Label FontWeight="Bold" FontSize="40" Height="60" Margin="150 20 0 0" Width="150" x:Name="Stutent_lb">Schüler</Label>
-            </StackPanel>
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
-                <Image x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100" Margin="175 0 0 0"/>
-            </StackPanel>
-        </StackPanel>
-        <StackPanel Orientation="Vertical">
-            <GroupBox Header="Alle Kurse" Margin="5,10,5,0">
-                <StackPanel>
-                    <ListBox Height="100"></ListBox>
-                </StackPanel>
-            </GroupBox>
-        </StackPanel>
-        <StackPanel Orientation="Vertical">
-            <GroupBox Margin="5,30,5,0" Header="Mentoren auswahl">
-                <StackPanel>
-                    <TextBox></TextBox>
-
-                    <ListBox Margin="0,5,0,0" Height="110"></ListBox>
-                </StackPanel>
-            </GroupBox>
-        </StackPanel>
-        <StackPanel Margin="5,5,0,5">
-            <Image HorizontalAlignment="Left" Source="/Setting.png" Height="25"></Image>
-        </StackPanel>
+    <DockPanel LastChildFill="False">
         
-    </StackPanel>
+    </DockPanel>
 </Page>
