@@ -30,8 +30,14 @@ namespace MentoringUI
                 email_tbx.Text = null;
             email_tbx.Foreground = Brushes.Black;
         }
-
-        
+        private void email_txb_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(email_tbx.Text))
+            {
+                email_tbx.Text = "Enter Email here";
+                email_tbx.Foreground = Brushes.Gray;
+            }
+        }
 
     }
 }
