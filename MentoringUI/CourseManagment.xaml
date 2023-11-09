@@ -16,10 +16,10 @@
             <Image x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100" HorizontalAlignment="Right"/>
         </Grid>
         
-        <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" >
             <Button Content="remove" Width="90" Margin=" 150,0,5,0"/>
             <Button Content="edit" Width="90"  Margin=" 0,0,0,0"/>
         </StackPanel>
-        <TextBox TextWrapping="Wrap" Text="" Width="500" Height="300"/>
+        <TextBox DockPanel.Dock="Top" TextWrapping="Wrap" Text="" Width="500" Height="300"/>
     </DockPanel>
 </Page>
