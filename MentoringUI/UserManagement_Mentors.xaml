@@ -20,6 +20,7 @@
                 <DockPanel>
                     <Button x:Name="student_btn" DockPanel.Dock="Left" BorderThickness="2" HorizontalAlignment="Left" Margin="10,0,0,0" Width="60">Schüler</Button>
                     <Button x:Name="mentor_btn" DockPanel.Dock="Left" BorderThickness="2" HorizontalAlignment="Left" Margin="10,0,0,0" Width="60">Mentoren</Button>
+                    <Button x:Name="delete_btn" DockPanel.Dock="Right" BorderThickness="2" HorizontalAlignment="Right" Margin="0,0,10,0" Width="60">Editieren</Button>
                     
                 </DockPanel>
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Mentoren</TextBlock>
