@@ -35,5 +35,10 @@
                 </DockPanel>
             </GroupBox>
         </DockPanel>
+        <DockPanel  DockPanel.Dock="Bottom">
+            <Button Height="50" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left">
+                <Image  Source="/Setting.png"></Image>
+            </Button>
+        </DockPanel>
     </DockPanel>
 </Page>
