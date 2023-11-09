@@ -9,7 +9,7 @@
       Title="admin">
     <DockPanel LastChildFill="False">
         <Grid DockPanel.Dock="Top">
-            <Label FontWeight="Bold" FontSize="40" Width="150"  FontFamily="Cambria" Name="admin_lbl">Admin</Label>
+            <TextBlock FontWeight="Bold" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center"  FontFamily="Cambria" Name="admin_lbl">Admin</TextBlock>
             <Image Source="/HTL-Logo.png" Height="100" HorizontalAlignment="Right" Name="HTL_Logo_img"/>
         </Grid>
         <Button DockPanel.Dock="Top" Width="150" Height="25" Background="Transparent" BorderBrush="Transparent" FontFamily="Cambria" FontSize="17" Name="user_management_btn">Nutzerverwaltung</Button>
