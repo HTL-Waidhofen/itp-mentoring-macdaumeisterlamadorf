@@ -10,7 +10,10 @@
 
     <DockPanel LastChildFill="False">
         <DockPanel DockPanel.Dock="Top">
-            
+            <Grid>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" FontSize="40" x:Name="usermanagementHeade_tbl">Nutzerverwaltung</TextBlock>
+                
+            </Grid>
         </DockPanel>
         
     </DockPanel>
