@@ -16,5 +16,10 @@
                 <Image x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100" HorizontalAlignment="Right"/>
             </Grid>
         </DockPanel>
+        <DockPanel DockPanel.Dock="Top">
+            <GroupBox Header="Alle Kurse" Margin="5,10,5,0">
+                
+            </GroupBox>
+        </DockPanel>
     </DockPanel>
 </Page>
