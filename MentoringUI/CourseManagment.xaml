@@ -12,14 +12,14 @@
 
         <Grid DockPanel.Dock="Top" Height="100">
 
-            <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="40"  Width="400" Name="settings_lb"  HorizontalAlignment="Center" VerticalAlignment="Center" >Kursverwaltung </TextBlock>
+            <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="40"  Width="400" Name="settings_lb"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Cambria" >Kursverwaltung </TextBlock>
             <Image x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100" HorizontalAlignment="Right"/>
         </Grid>
         
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" >
-            <Button Content="remove" Width="90" Margin=" 150,0,5,0"/>
-            <Button Content="edit" Width="90"  Margin=" 0,0,0,0"/>
+            <Button Content="remove" Width="90" Margin=" 150,0,5,0" FontFamily="Cambria"/>
+            <Button Content="edit" Width="90"  Margin=" 0,0,0,0" FontFamily="Cambria"/>
         </StackPanel>
-        <TextBox DockPanel.Dock="Top" TextWrapping="Wrap" Text="" Width="500" Height="300"/>
+        <TextBox DockPanel.Dock="Top" TextWrapping="Wrap" Text="" Width="500" Height="300" FontFamily="Cambria"/>
     </DockPanel>
 </Page>
