@@ -26,5 +26,8 @@
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Mentoren</TextBlock>
             </Grid>
         </DockPanel>
+        <DockPanel DockPanel.Dock="Top">
+            <ListBox x:Name="courseEdit_lbx" Margin="10,0,10,0" BorderThickness="2" Height="255"></ListBox>
+        </DockPanel>
     </DockPanel>
 </Page>
