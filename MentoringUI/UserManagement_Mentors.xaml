@@ -12,7 +12,7 @@
         <DockPanel DockPanel.Dock="Top">
             <Grid>
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" FontSize="40" x:Name="usermanagementHeade_tbl">Nutzerverwaltung</TextBlock>
-                
+                <Image HorizontalAlignment="Right" x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100"/>
             </Grid>
         </DockPanel>
         
