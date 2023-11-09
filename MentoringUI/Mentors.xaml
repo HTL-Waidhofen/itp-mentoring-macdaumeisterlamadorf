@@ -18,6 +18,6 @@
         </Grid>
         <Label DockPanel.Dock="Top" Height="15"/>
         <TextBox DockPanel.Dock="Top" TextWrapping="Wrap" Text="Suche:" Width="600"/>
-        <TextBox DockPanel.Dock="Top" TextWrapping="Wrap" Text="TextBox" Width="600" Height="250" Margin="0,10"/>
+        <TextBox DockPanel.Dock="Top" TextWrapping="Wrap" Text="TextBox" Width="600" Height="270" Margin="0,10"/>
     </DockPanel>
 </Page>
