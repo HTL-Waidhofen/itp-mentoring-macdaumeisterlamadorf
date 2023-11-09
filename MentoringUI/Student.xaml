@@ -25,7 +25,12 @@
         </DockPanel>
         <DockPanel DockPanel.Dock="Top">
             <GroupBox Margin="5,30,5,0" Header="Mentoren auswahl">
-                
+                <DockPanel>
+                    <DockPanel DockPanel.Dock="Top">
+                        <TextBox></TextBox>
+                    </DockPanel>
+                    
+                </DockPanel>
             </GroupBox>
         </DockPanel>
     </DockPanel>
