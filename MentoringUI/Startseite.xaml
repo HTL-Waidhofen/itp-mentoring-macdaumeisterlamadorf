@@ -16,8 +16,12 @@
         
         <DockPanel LastChildFill="False" Margin="80 0 0 0">
             <Grid DockPanel.Dock="Bottom">
-                <Button Width="50" Height="20" BorderThickness="0" Margin="-70,-220,660,220" Background="Transparent" BorderBrush="Transparent">
+                <Button Width="50" Height="20" BorderThickness="0" Margin="-70 -220 660 220" Background="Transparent" BorderBrush="Transparent">
                     <Image Source="/arrow_left.png"/>
+                </Button>
+
+                <Button Width="40" Height="20" Margin="670 -220 -70 220" Background="Transparent" BorderBrush="Transparent">
+                    <Image Source="/arrow_right.png"/>
                 </Button>
             </Grid>
 
