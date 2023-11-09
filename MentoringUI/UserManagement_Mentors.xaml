@@ -15,6 +15,10 @@
                 <Image HorizontalAlignment="Right" x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100"/>
             </Grid>
         </DockPanel>
-        
+        <DockPanel DockPanel.Dock="Top" Margin="0,20,0,0">
+            <Grid>
+                
+            </Grid>
+        </DockPanel>
     </DockPanel>
 </Page>
