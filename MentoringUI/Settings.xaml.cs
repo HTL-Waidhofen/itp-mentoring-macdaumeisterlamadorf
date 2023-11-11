@@ -27,8 +27,8 @@ namespace MentoringUI
 
         private void appearance_cbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Brush? dark = (Brush)new BrushConverter().ConvertFromString("#35363A");
-            Brush? light = (Brush)new BrushConverter().ConvertFromString("#FFFFFF");
+            Brush? dark = (Brush?)new BrushConverter().ConvertFromString("#35363A");
+            Brush? light = (Brush?)new BrushConverter().ConvertFromString("#FFFFFF");
             switch(appearance_cbx.SelectedIndex)
             {
                 case 0:
@@ -38,6 +38,7 @@ namespace MentoringUI
                     ((MainWindow)Application.Current.MainWindow).Background = light;
                     break;
                 case 2:
+                    ((MainWindow)Application.Current.MainWindow).Background = Brushes.DarkBlue;
                     break;
             }
         }
