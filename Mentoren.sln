@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MentoringUI", "MentoringUI\MentoringUI.csproj", "{3990BA60-B30B-403F-8B90-897F2D7892C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MentoringUI", "MentoringUI\MentoringUI.csproj", "{3990BA60-B30B-403F-8B90-897F2D7892C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLiteDataAccess", "SQLiteDataAccess\SQLiteDataAccess.csproj", "{21C54ED6-A85D-4B2C-9687-6E3467D88B96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SQLiteDataAccess", "SQLiteDataAccess\SQLiteDataAccess.csproj", "{21C54ED6-A85D-4B2C-9687-6E3467D88B96}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
