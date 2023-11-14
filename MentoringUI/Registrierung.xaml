@@ -8,34 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Registrierung">
 
-    <StackPanel Orientation="Vertical">
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
-            <Image x:Name="Logo_img" Source="/HTL-Logo.png" Height="100"></Image>
-        </StackPanel>
-        <StackPanel HorizontalAlignment="Center">
-            <Label FontWeight="Bold" FontSize="40">Registrieren</Label>
-            <TextBox x:Name="email_tbx" Margin="0,30,0,0" GotFocus="email_txb_GotFocus" LostFocus="email_txb_LostFocus"></TextBox>
-            <TextBox x:Name="firstname_tbx" Margin="0,15,0,0"></TextBox>
-            <TextBox x:Name="name_tbx" Margin="0,15,0,0"></TextBox>
-            <StackPanel Orientation="Horizontal">
-                <ComboBox x:Name="department_cbx" Margin="0,15,0,0" Width="150">
-                    <ComboBoxItem>Informationstechnologie</ComboBoxItem>
-                    <ComboBoxItem>Wirtschaftsingeneure</ComboBoxItem>
-                    <ComboBoxItem>Maschinenbau</ComboBoxItem>
-                    <ComboBoxItem>Elektrotechnik</ComboBoxItem>
-                    <ComboBoxItem>Mechatronik</ComboBoxItem>
-                </ComboBox>
-                <ComboBox x:Name="class_cbx" Margin="15,15,0,0" Width="71.737">
-                    <ComboBoxItem>1</ComboBoxItem>
-                    <ComboBoxItem>2</ComboBoxItem>
-                    <ComboBoxItem>3</ComboBoxItem>
-                    <ComboBoxItem>4</ComboBoxItem>
-                    <ComboBoxItem>5</ComboBoxItem>
-                </ComboBox>
-            </StackPanel>
-            <TextBox x:Name="pwd_tbx" Margin="0,15,0,0"></TextBox>
-            <TextBox x:Name="confirmpwd_tbx" Margin="0,15,0,0"></TextBox>
-            <Button x:Name="register_btn" Margin="0,15,0,0" Height="17.96"></Button>
-        </StackPanel>
-    </StackPanel>
+    <DockPanel LastChildFill="False">
+        
+    </DockPanel>
 </Page>
