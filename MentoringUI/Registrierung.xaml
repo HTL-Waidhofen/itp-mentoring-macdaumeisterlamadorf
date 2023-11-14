@@ -9,6 +9,9 @@
       Title="Registrierung">
 
     <DockPanel LastChildFill="False">
-        
+        <Grid DockPanel.Dock="Top">
+            <Label FontWeight="Bold" FontSize="40" HorizontalAlignment="Center">Registrieren</Label>
+            
+        </Grid>
     </DockPanel>
 </Page>
