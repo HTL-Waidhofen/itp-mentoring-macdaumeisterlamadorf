@@ -35,6 +35,7 @@
                     </ComboBox>
                 </DockPanel>
             </Grid>
+            <TextBox x:Name="pwd_tbx" DockPanel.Dock="Top" Margin="0,10,0,0"/>
         </DockPanel>
     </DockPanel>
 </Page>
