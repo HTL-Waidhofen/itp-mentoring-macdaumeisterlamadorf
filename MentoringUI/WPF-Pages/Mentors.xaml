@@ -11,7 +11,7 @@
        
         <Grid DockPanel.Dock="Top" Height="100">
             <TextBlock FontWeight="Bold" FontSize="40"  Width="200" Name="settings_lb"  HorizontalAlignment="Center">Mentoren</TextBlock>
-            <Image x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100" HorizontalAlignment="Right"/>
+            <Image x:Name="htl_logo"  Source="/Images/HTL-Logo.png" Height="100" HorizontalAlignment="Right"/>
         </Grid>
         <Grid DockPanel.Dock="Top">
             <Button Content="Anzeige Hinzufügen" HorizontalAlignment="Left" Height="20" Width="130"/>

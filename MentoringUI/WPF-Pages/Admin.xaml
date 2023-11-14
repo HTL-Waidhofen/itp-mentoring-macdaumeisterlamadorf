@@ -1,4 +1,4 @@
-﻿<Page x:Class="MentoringUI.admin"
+﻿<Page x:Class="MentoringUI.Admin"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -10,12 +10,12 @@
     <DockPanel LastChildFill="False">
         <Grid DockPanel.Dock="Top">
             <TextBlock FontWeight="Bold" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center"  FontFamily="Cambria" Name="admin_lbl">Admin</TextBlock>
-            <Image Source="/HTL-Logo.png" Height="100" HorizontalAlignment="Right" Name="HTL_Logo_img"/>
+            <Image Source="/Images/Images/HTL-Logo.png" Height="100" HorizontalAlignment="Right" Name="HTL_Logo_img"/>
         </Grid>
         <Button DockPanel.Dock="Top" Width="150" Height="25" Background="Transparent" BorderBrush="Transparent" FontFamily="Cambria" FontSize="17" Name="user_management_btn">Nutzerverwaltung</Button>
         <Button DockPanel.Dock="Top" Width="150" Height="25" Background="Transparent" BorderBrush="Transparent" FontFamily="Cambria" FontSize="17" Name="course_management_btn">Kursverwaltung</Button>
         <Button DockPanel.Dock="Bottom" Height="50" Width="50" HorizontalAlignment="Left" Background="Transparent" BorderBrush="Transparent" Name="setting_btn">
-            <Image Source="/setting.png" Name="setting_img"></Image>
+            <Image Source="/Images/setting.png" Name="setting_img"></Image>
         </Button>
     </DockPanel>
 </Page>

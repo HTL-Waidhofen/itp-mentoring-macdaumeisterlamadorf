@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace MentoringUI
 {
     /// <summary>
-    /// Interaktionslogik für admin.xaml
+    /// Interaktionslogik für UserManagement.xaml
     /// </summary>
-    public partial class admin : Page
+    public partial class UserManagement_Mentors : Page
     {
-        public admin()
+        public UserManagement_Mentors()
         {
             InitializeComponent();
         }

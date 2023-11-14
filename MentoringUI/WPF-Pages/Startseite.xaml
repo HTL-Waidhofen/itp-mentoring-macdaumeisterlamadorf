@@ -17,11 +17,11 @@
         <DockPanel LastChildFill="False" Margin="80 0 0 0">
             <Grid DockPanel.Dock="Bottom">
                 <Button x:Name="leftBtn" Width="50" Height="20" BorderThickness="0" Margin="-70 -220 660 220" Background="Transparent" BorderBrush="Transparent">
-                    <Image Source="/arrow_left.png"/>
+                    <Image Source="/Images/arrow_left.png"/>
                 </Button>
 
                 <Button x:Name="rightBtn" Width="40" Height="20" Margin="670 -220 -70 220" Background="Transparent" BorderBrush="Transparent">
-                    <Image Source="/arrow_right.png"/>
+                    <Image Source="/Images/arrow_right.png"/>
                 </Button>
             </Grid>
 

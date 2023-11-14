@@ -12,10 +12,10 @@
     <DockPanel LastChildFill="True">
         <Grid DockPanel.Dock="Top" Height="100">
             <Button Width="40" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 0 0 0" BorderBrush="Transparent" Background="Transparent">
-                <Image Source="/return_button_black.png"></Image>
+                <Image Source="/Images/return_button_black.png"></Image>
             </Button>
                 <TextBlock FontWeight="Bold" FontSize="40"  VerticalAlignment="Center" Name="settings_lb" FontFamily="Cambria" HorizontalAlignment="Center">Settings</TextBlock>
-                <Image x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100" HorizontalAlignment="Right"/>
+                <Image x:Name="htl_logo"  Source="/Images/HTL-Logo.png" Height="100" HorizontalAlignment="Right"/>
         </Grid>
         <GroupBox DockPanel.Dock="Top" Height="330" Header="Settings">
             <DockPanel LastChildFill="False">

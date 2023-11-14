@@ -12,7 +12,7 @@
         <DockPanel DockPanel.Dock="Top">
             <Grid>
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" FontSize="40" x:Name="usermanagementHeade_tbl">Nutzerverwaltung</TextBlock>
-                <Image HorizontalAlignment="Right" x:Name="htl_logo"  Source="/HTL-Logo.png" Height="100"/>
+                <Image HorizontalAlignment="Right" x:Name="htl_logo"  Source="/Images/HTL-Logo.png" Height="100"/>
             </Grid>
         </DockPanel>
         <DockPanel DockPanel.Dock="Top" Margin="0,20,0,0">
@@ -31,8 +31,9 @@
         </DockPanel>
         <DockPanel  DockPanel.Dock="Bottom">
             <Button x:Name="settings_btn" Height="50" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left">
-                <Image  Source="/setting.png"></Image>
+                <Image  Source="/Images/setting.png"></Image>
             </Button>
         </DockPanel>
     </DockPanel>
+        
 </Page>
