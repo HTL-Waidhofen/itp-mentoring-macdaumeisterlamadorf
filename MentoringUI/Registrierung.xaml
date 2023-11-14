@@ -37,6 +37,7 @@
             </Grid>
             <TextBox x:Name="pwd_tbx" DockPanel.Dock="Top" Margin="0,10,0,0"/>
             <TextBox x:Name="confirmpwd_tbx" DockPanel.Dock="Top" Margin="0,10,0,0"/>
+            <Button x:Name="register_btn" DockPanel.Dock="Top" Margin="0,10,0,0">Registrieren</Button>
         </DockPanel>
     </DockPanel>
 </Page>
