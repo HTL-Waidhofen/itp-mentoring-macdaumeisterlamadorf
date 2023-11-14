@@ -17,6 +17,18 @@
             <TextBox x:Name="email_tbx" DockPanel.Dock="Top"/>
             <TextBox x:Name="firstname_tbx" DockPanel.Dock="Top" Margin="0,10,0,0"/>
             <TextBox x:Name="name_tbx" DockPanel.Dock="Top" Margin="0,10,0,0"/>
+            <Grid DockPanel.Dock="Top">
+                <DockPanel>
+                    <ComboBox x:Name="department_cbx" Width="150" Margin="0,10,0,0">
+                        <ComboBoxItem>Informationstechnologie</ComboBoxItem>
+                        <ComboBoxItem>Wirtschaftsingeneure</ComboBoxItem>
+                        <ComboBoxItem>Maschinenbau</ComboBoxItem>
+                        <ComboBoxItem>Elektrotechnik</ComboBoxItem>
+                        <ComboBoxItem>Mechatronik</ComboBoxItem>
+                    </ComboBox>
+                    
+                </DockPanel>
+            </Grid>
         </DockPanel>
     </DockPanel>
 </Page>
