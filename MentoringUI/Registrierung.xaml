@@ -11,7 +11,7 @@
     <DockPanel LastChildFill="False">
         <Grid DockPanel.Dock="Top">
             <Label FontWeight="Bold" FontSize="40" HorizontalAlignment="Center">Registrieren</Label>
-            
+            <Image x:Name="Logo_img" Source="HTL-Logo.png" Height="100" HorizontalAlignment="Right" ></Image>
         </Grid>
     </DockPanel>
 </Page>
