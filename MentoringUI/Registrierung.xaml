@@ -26,7 +26,13 @@
                         <ComboBoxItem>Elektrotechnik</ComboBoxItem>
                         <ComboBoxItem>Mechatronik</ComboBoxItem>
                     </ComboBox>
-                    
+                    <ComboBox x:Name="class_cbx" Margin="5,10,0,0">
+                        <ComboBoxItem>1</ComboBoxItem>
+                        <ComboBoxItem>2</ComboBoxItem>
+                        <ComboBoxItem>3</ComboBoxItem>
+                        <ComboBoxItem>4</ComboBoxItem>
+                        <ComboBoxItem>5</ComboBoxItem>
+                    </ComboBox>
                 </DockPanel>
             </Grid>
         </DockPanel>
