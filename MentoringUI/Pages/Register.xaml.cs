@@ -18,9 +18,9 @@ namespace MentoringUI
     /// <summary>
     /// Interaktionslogik für Registrierung.xaml
     /// </summary>
-    public partial class Registrierung : Page
+    public partial class Register : Page
     {
-        public Registrierung()
+        public Register()
         {
             InitializeComponent();
         }

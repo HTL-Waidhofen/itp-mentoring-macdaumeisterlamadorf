@@ -18,9 +18,9 @@ namespace MentoringUI
     /// <summary>
     /// Interaktionslogik für Startseite.xaml
     /// </summary>
-    public partial class Startseite : Page
+    public partial class Startpage : Page
     {
-        public Startseite()
+        public Startpage()
         {
             InitializeComponent();
         }      
