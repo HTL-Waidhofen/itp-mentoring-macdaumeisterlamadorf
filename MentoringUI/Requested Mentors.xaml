@@ -8,10 +8,10 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Requested_Mentors">
 
-    <DockPanel>
+    <DockPanel LastChildFill="False">
         <Grid DockPanel.Dock="Top">
             <Label FontWeight="Bold" FontSize="20" HorizontalAlignment="Center">Registrieren</Label>
-            
+            <Image x:Name="Logo_img" Source="HTL-Logo.png" Height="100" HorizontalAlignment="Right" ></Image>
         </Grid>
     </DockPanel>
 </Page>
