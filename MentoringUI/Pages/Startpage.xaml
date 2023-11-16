@@ -1,0 +1,32 @@
+﻿<Page x:Class="MentoringUI.Startpage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MentoringUI"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Startseite">
+
+    <DockPanel LastChildFill="False">
+        <Grid DockPanel.Dock="Top">
+            <Label FontWeight="Bold" FontSize="40" Width="200" FontFamily="Century Gothic">Mentoren</Label>
+            <Button x:Name="loginBtn" FontSize="16" Width="60" Height="40" HorizontalAlignment="Right" Margin="0 0 40 0" Background="Transparent">Login</Button>
+        </Grid>
+        
+        <DockPanel LastChildFill="False" Margin="80 0 0 0">
+            <Grid DockPanel.Dock="Bottom">
+                <Button x:Name="leftBtn" Width="50" Height="20" BorderThickness="0" Margin="-70 -220 660 220" Background="Transparent" BorderBrush="Transparent">
+                    <Image Source="/Images/arrow_left.png"/>
+                </Button>
+
+                <Button x:Name="rightBtn" Width="40" Height="20" Margin="670 -220 -70 220" Background="Transparent" BorderBrush="Transparent">
+                    <Image Source="/Images/arrow_right.png"/>
+                </Button>
+            </Grid>
+
+            <Image Width="640" Height="320" Name="imageControl" Stretch="Uniform"/>
+        </DockPanel>
+    </DockPanel>
+
+</Page>

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,15 +16,13 @@ using System.Windows.Shapes;
 namespace MentoringUI
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaktionslogik für Mentors.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Mentors : Page
     {
-        public MainWindow()
+        public Mentors()
         {
             InitializeComponent();
-
-            MainFrame.Content = new Startseite();
         }
     }
 }
