@@ -1,0 +1,27 @@
+﻿<Page x:Class="MentoringUI.Requested_Mentors"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MentoringUI"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Requested_Mentors">
+
+    <DockPanel LastChildFill="False">
+        <Grid DockPanel.Dock="Top">
+            <Label FontWeight="Bold" FontSize="20" HorizontalAlignment="Center">Beantragte Mentoren</Label>
+            <Image x:Name="Logo_img" Source="HTL-Logo.png" Height="100" HorizontalAlignment="Right" ></Image>
+        </Grid>
+        <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="20,20,0,0">
+            <ComboBox x:Name="filter_cbx" IsEditable="True" IsReadOnly="True" Text="Filter">
+                <ComboBoxItem>Uhrzeit</ComboBoxItem>
+                <ComboBoxItem>Abteilung</ComboBoxItem>
+                <ComboBoxItem>Klasse</ComboBoxItem>
+            </ComboBox>
+        </DockPanel>
+        <ListBox x:Name="mentors_lbx" Margin="20,20,0,0" Width="600">
+
+        </ListBox>
+    </DockPanel>
+</Page>
