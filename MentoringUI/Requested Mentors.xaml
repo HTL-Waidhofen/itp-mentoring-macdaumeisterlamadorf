@@ -20,6 +20,8 @@
                 <ComboBoxItem>Klasse</ComboBoxItem>
             </ComboBox>
         </DockPanel>
-        
+        <ListBox x:Name="mentors_lbx" Margin="20,20,0,0" Width="600">
+
+        </ListBox>
     </DockPanel>
 </Page>
