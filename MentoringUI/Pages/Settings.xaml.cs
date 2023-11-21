@@ -20,9 +20,11 @@ namespace MentoringUI
     /// </summary>
     public partial class Settings : Page
     {
-        public Settings()
+        int Index;
+        public Settings(int index)
         {
             InitializeComponent();
+            int Index = index;
         }
 
         private void appearance_cbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
