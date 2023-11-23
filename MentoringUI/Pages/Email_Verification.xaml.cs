@@ -48,7 +48,10 @@ namespace MentoringUI
                 smtpClient.Send(mailMessage);
                 Console.WriteLine("Email sent successfully!");
             }
-
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error sending email: {ex.Message}");
+            }
 
         }
     }
