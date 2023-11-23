@@ -27,7 +27,8 @@ namespace MentoringUI
 
         private void setting_btn_Click(object sender, RoutedEventArgs e)
         {
-
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow.Content = new Settings(5);
         }
 
         private void course_management_btn_Click(object sender, RoutedEventArgs e)
