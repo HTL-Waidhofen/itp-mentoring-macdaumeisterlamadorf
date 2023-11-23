@@ -26,7 +26,7 @@ namespace MentoringUI
         {
             InitializeComponent();
             // Set up your SMTP client
-            SmtpClient smtpClient = new SmtpClient("smtp-mail.outlook.com")
+            SmtpClient smtpClient = new SmtpClient("smtp-relay.gmail.com")
             {
                 Port = 587, // Update the port according to your SMTP server configuration
                 Credentials = new NetworkCredential("sener.mail", "pw"),
