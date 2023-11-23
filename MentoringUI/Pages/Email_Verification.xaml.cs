@@ -28,15 +28,15 @@ namespace MentoringUI
             SmtpClient smtpClient = new SmtpClient("smtp-relay.gmail.com")
             {
                 Port = 587,
-                Credentials = new NetworkCredential("sener.mail", "pw"),
+                Credentials = new NetworkCredential("sender.mail", "pw"),
                 EnableSsl = true, 
             };
 
             MailMessage mailMessage = new MailMessage
             {
                 From = new MailAddress("mentoring.mail.at"),
-                Subject = "Code Bestätigung",
-                Body = "1234",
+                Subject = "Code zur Authentifizierung ihres Kontos",
+                Body = "Sehr geehrte/r [Empfängername],\r\n\r\n Um die Sicherheit Ihres Kontos weiter zu stärken, haben wir die Zwei-Faktor-Authentifizierung (2FA) aktiviert. Bitte verwenden Sie den folgenden Code, um sich anzumelden:\r\n\r\nIhr 2FA-Code: [Code]\r\n\r\nBitte geben Sie diesen Code innerhalb der nächsten 10 Minuten ein, um Ihre Identität zu bestätigen und auf Ihr Konto zuzugreifen. Sollten Sie Schwierigkeiten haben oder diese Anmeldung nicht initiieren, kontaktieren Sie bitte umgehend unseren Kundenservice.\r\n\r\nWir schätzen Ihr Vertrauen und stehen Ihnen für eventuelle Fragen gerne zur Verfügung. Vielen Dank für Ihr Verständnis und Ihre Mitarbeit.\r\n\r\nMit freundlichen Grüßen,\r\n\r\n[Ihr Unternehmen/Organisation]\r\n[Kontaktinformationen]",
                 IsBodyHtml = false,
             };
 
