@@ -46,15 +46,41 @@ namespace MentoringUI
         {
 
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void return_btn_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            switch(Index)
+            {
+                case 0:
+                    mainWindow.Content = new Startpage();
+                    break;
+                case 1:
+                    mainWindow.Content = new Login();
+                    break;
+                case 2:
+                    mainWindow.Content = new Login();
+                    break;
+                case 3:
+                    mainWindow.Content = new Student();
+                    break;
+                case 4:
+                    mainWindow.Content = new Mentors();
+                    break;
+                case 5:
+                    mainWindow.Content = new Admin();
+                    break;
+                case 6:
+                    mainWindow.Content = new CourseManagment();
+                    break;
+                case 7:
+                    mainWindow.Content = new UserManagement_Students();
+                    break;
+                case 8:
+                    mainWindow.Content = new UserManagement_Mentors();
+                    break;
 
+
+            }
         }
     }
 }
