@@ -24,6 +24,14 @@ namespace MentoringUI
         {
             InitializeComponent();
         }
+        private void email_txb_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(email_txb.Text))
+            {
+                email_txb.Text = "Enter Email here";
+                email_txb.Foreground = Brushes.Gray;
+            }
+        }
         private void email_txb_GotFocus(object sender, RoutedEventArgs e)
         {
             if (email_txb.Foreground == Brushes.Gray)
@@ -31,12 +39,12 @@ namespace MentoringUI
             email_txb.Foreground = Brushes.Black;
         }
 
-        private void email_txb_LostFocus(object sender, RoutedEventArgs e)
+        private void pwd_txb_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(email_txb.Text))
+            if (string.IsNullOrEmpty(pwd_txb.Text))
             {
-                email_txb.Text = "Enter Email here";
-                email_txb.Foreground = Brushes.Gray;
+                pwd_txb.Text = "Enter Password here";
+                pwd_txb.Foreground = Brushes.Gray;
             }
         }
         private void pwd_txb_GotFocus(object sender, RoutedEventArgs e)
@@ -46,13 +54,6 @@ namespace MentoringUI
             pwd_txb.Foreground = Brushes.Black;
         }
 
-        private void pwd_txb_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrEmpty(email_txb.Text))
-            {
-                pwd_txb.Text = "Enter Password here";
-                pwd_txb.Foreground = Brushes.Gray;
-            }
-        }
+        
     }
 }
