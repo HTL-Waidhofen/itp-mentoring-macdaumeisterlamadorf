@@ -40,6 +40,14 @@ namespace MentoringUI
                 Body = "1234",
                 IsBodyHtml = false,
             };
+            // Add recipient(s)
+            mailMessage.To.Add("emanuel.lamerana@gmail.com");
+            try
+            {
+                // Send the email
+                smtpClient.Send(mailMessage);
+                Console.WriteLine("Email sent successfully!");
+            }
 
 
         }
