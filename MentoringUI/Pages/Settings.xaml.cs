@@ -39,5 +39,10 @@ namespace MentoringUI
                     break;
             }
         }
+
+        private void language_cbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

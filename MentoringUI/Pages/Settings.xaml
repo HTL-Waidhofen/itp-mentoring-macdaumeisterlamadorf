@@ -20,7 +20,7 @@
         <GroupBox DockPanel.Dock="Top" Height="330" Header="Einstellungen">
             <DockPanel LastChildFill="False">
                 <TextBlock Height="10" DockPanel.Dock="Top"></TextBlock>
-            <ComboBox Height="20" IsReadOnly="True" IsEditable="True" Text="Sprache" DockPanel.Dock="Top">
+            <ComboBox Height="20" IsReadOnly="True" IsEditable="True" Text="Sprache" DockPanel.Dock="Top" Name="language_cbx" SelectionChanged="language_cbx_SelectionChanged">
                 <ComboBoxItem>Englisch</ComboBoxItem>
                 <ComboBoxItem>Deutsch</ComboBoxItem>
             </ComboBox>
