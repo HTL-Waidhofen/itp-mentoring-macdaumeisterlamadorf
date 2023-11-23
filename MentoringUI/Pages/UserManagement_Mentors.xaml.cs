@@ -18,9 +18,9 @@ namespace MentoringUI
     /// <summary>
     /// Interaktionslogik für UserManagement.xaml
     /// </summary>
-    public partial class UserManagement_Mentors : Page
+    public partial class Usermanagement_Mentor : Page
     {
-        public UserManagement_Mentors()
+        public Usermanagement_Mentor()
         {
             InitializeComponent();
         }
