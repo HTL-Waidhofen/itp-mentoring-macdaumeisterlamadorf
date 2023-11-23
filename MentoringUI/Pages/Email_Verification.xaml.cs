@@ -41,7 +41,7 @@ namespace MentoringUI
                 IsBodyHtml = false,
             };
             // Add recipient(s)
-            mailMessage.To.Add("emanuel.lamerana@gmail.com");
+            mailMessage.To.Add("user.mail");
             try
             {
                 // Send the email
