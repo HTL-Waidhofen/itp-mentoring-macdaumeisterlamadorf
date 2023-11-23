@@ -32,6 +32,16 @@ namespace MentoringUI
                 Credentials = new NetworkCredential("sener.mail", "pw"),
                 EnableSsl = true, // Update to true if your SMTP server requires SSL
             };
+            // Create a MailMessage object
+            MailMessage mailMessage = new MailMessage
+            {
+                From = new MailAddress("mentoring.mail.at"),
+                Subject = "Code Bestätigung",
+                Body = "1234",
+                IsBodyHtml = false,
+            };
+
+
         }
     }
 
