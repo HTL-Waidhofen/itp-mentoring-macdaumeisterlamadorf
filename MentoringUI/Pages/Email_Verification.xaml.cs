@@ -24,5 +24,20 @@ namespace MentoringUI
         {
             InitializeComponent();
         }
+        private void TestNumbers_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (TestNumbers..Foreground == Brushes.Gray)
+                email_txb.Text = null;
+            email_txb.Foreground = Brushes.Black;
+        }
+
+        private void email_txb_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(email_txb.Text))
+            {
+                email_txb.Text = "Enter Email here";
+                email_txb.Foreground = Brushes.Gray;
+            }
+        }
     }
 }
