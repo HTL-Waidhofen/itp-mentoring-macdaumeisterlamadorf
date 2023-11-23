@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,6 +25,14 @@ namespace MentoringUI
         public Email_Verification()
         {
             InitializeComponent();
+            // Set up your SMTP client
+            SmtpClient smtpClient = new SmtpClient("smtp-mail.outlook.com")
+            {
+                Port = 587, // Update the port according to your SMTP server configuration
+                Credentials = new NetworkCredential("sener.mail", "pw"),
+                EnableSsl = true, // Update to true if your SMTP server requires SSL
+            };
         }
     }
+
 }
