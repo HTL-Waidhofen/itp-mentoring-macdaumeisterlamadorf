@@ -25,14 +25,13 @@ namespace MentoringUI
         public Email_Verification()
         {
             InitializeComponent();
-            // Set up your SMTP client
             SmtpClient smtpClient = new SmtpClient("smtp-relay.gmail.com")
             {
-                Port = 587, // Update the port according to your SMTP server configuration
+                Port = 587,
                 Credentials = new NetworkCredential("sener.mail", "pw"),
-                EnableSsl = true, // Update to true if your SMTP server requires SSL
+                EnableSsl = true, 
             };
-            // Create a MailMessage object
+
             MailMessage mailMessage = new MailMessage
             {
                 From = new MailAddress("mentoring.mail.at"),
@@ -40,7 +39,7 @@ namespace MentoringUI
                 Body = "1234",
                 IsBodyHtml = false,
             };
-            // Add recipient(s)
+
             mailMessage.To.Add("user.mail");
             try
             {
