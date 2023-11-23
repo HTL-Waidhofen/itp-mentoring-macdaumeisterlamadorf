@@ -21,7 +21,7 @@
         <Label DockPanel.Dock="Top" Height="8"/>
         <TextBlock Text="Geben Sie den 8-stelligen Code an, welchen Sie per E-Mail erhalten haben" DockPanel.Dock="Top" Width="200" Height="35"  FontFamily="Cambria" />
         <Label DockPanel.Dock="Top" Height="8"/>
-        <TextBox x:Name="TestNumbers" TextWrapping="Wrap" Text="Zahlen Eingeben" DockPanel.Dock="Top" Width="200" Height="35" FontFamily="Cambria" GotFocus="email_txb_GotFocus"/>
+        <TextBox x:Name="TestNumbers" TextWrapping="Wrap" Text="Zahlen Eingeben" DockPanel.Dock="Top" Width="200" Height="35" FontFamily="Cambria" GotFocus="emailnuum_txb_GotFocus"/>
         <Label DockPanel.Dock="Top" Height="10"/>
         <Button Content="Bestätigen" DockPanel.Dock="Top" Width="200" Height="25"  FontFamily="Cambria" Click="btn_click_confirm"/>
     </DockPanel>
