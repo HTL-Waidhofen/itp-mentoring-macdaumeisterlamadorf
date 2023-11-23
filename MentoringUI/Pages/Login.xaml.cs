@@ -28,7 +28,7 @@ namespace MentoringUI
         {
             if (string.IsNullOrEmpty(email_txb.Text))
             {
-                email_txb.Text = "Enter Email here";
+                email_txb.Text = "Email";
                 email_txb.Foreground = Brushes.Gray;
             }
         }
@@ -43,7 +43,7 @@ namespace MentoringUI
         {
             if (string.IsNullOrEmpty(pwd_txb.Text))
             {
-                pwd_txb.Text = "Enter Password here";
+                pwd_txb.Text = "Password";
                 pwd_txb.Foreground = Brushes.Gray;
             }
         }
@@ -54,6 +54,10 @@ namespace MentoringUI
             pwd_txb.Foreground = Brushes.Black;
         }
 
-        
+        private void hyperlinkToRegisterPage_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow.Content = new Register();
+        }
     }
 }
