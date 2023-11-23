@@ -46,5 +46,15 @@ namespace MentoringUI
         {
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void return_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

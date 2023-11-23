@@ -11,7 +11,7 @@
 
     <DockPanel LastChildFill="True">
         <Grid DockPanel.Dock="Top" Height="100">
-            <Button Width="40" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 0 0 0" BorderBrush="Transparent" Background="Transparent" IsHitTestVisible="False">
+            <Button Width="40" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 0 0 0" BorderBrush="Transparent" Background="Transparent" IsHitTestVisible="False" Name="return_btn" Click"return_btn_Click">
                 <Image Source="/Images/return_button_black.png"></Image>
             </Button>
             <TextBlock FontWeight="Bold" FontSize="40"  VerticalAlignment="Center" Name="settings_lb" FontFamily="Cambria" HorizontalAlignment="Center">Einstellungen</TextBlock>
