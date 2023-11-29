@@ -37,4 +37,8 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="I18N" Version="2.1.17" />
+  </ItemGroup>
+
 </Project>
