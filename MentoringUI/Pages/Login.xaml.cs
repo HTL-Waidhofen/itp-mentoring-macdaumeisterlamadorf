@@ -59,5 +59,11 @@ namespace MentoringUI
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
             mainWindow.Content = new Register();
         }
+        private void login_btn_Click(object sender, RoutedEventArgs e)
+        {
+           //if(email_txb.Text==*Data from Datenbank*)
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow.Content = new Student();
+        }
     }
 }
