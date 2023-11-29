@@ -12,9 +12,9 @@
             <TextBlock FontWeight="Bold" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center"  FontFamily="Cambria" Name="admin_lbl">Admin</TextBlock>
             <Image Source="/Images/HTL-Logo.png" Height="100" HorizontalAlignment="Right" Name="HTL_Logo_img"/>
         </Grid>
-        <Button DockPanel.Dock="Top" Width="150" Height="25" Background="Transparent" BorderBrush="Transparent" FontFamily="Cambria" FontSize="17" Name="user_management_btn" Click="user_management_btn_Click">Nutzerverwaltung</Button>
-        <Button DockPanel.Dock="Top" Width="150" Height="25" Background="Transparent" BorderBrush="Transparent" FontFamily="Cambria" FontSize="17" Name="course_management_btn" Click="course_management_btn_Click">Kursverwaltung</Button>
-        <Button DockPanel.Dock="Bottom" Height="50" Width="50" HorizontalAlignment="Left" Background="Transparent" BorderBrush="Transparent" Name="setting_btn" Click="setting_btn_Click">
+        <Button DockPanel.Dock="Top" Width="150" Height="25" Background="Transparent" BorderBrush="Transparent" FontFamily="Cambria" FontSize="17" Name="user_management_btn" Click="user_management_btn_Click" Cursor="Hand">Nutzerverwaltung</Button>
+        <Button DockPanel.Dock="Top" Width="150" Height="25" Background="Transparent" BorderBrush="Transparent" FontFamily="Cambria" FontSize="17" Name="course_management_btn" Click="course_management_btn_Click" Cursor="Hand">Kursverwaltung</Button>
+        <Button DockPanel.Dock="Bottom" Height="50" Width="50" HorizontalAlignment="Left" Background="Transparent" BorderBrush="Transparent" Name="setting_btn" Click="setting_btn_Click" Cursor="Hand">
             <Image Source="/Images/setting.png" Name="setting_img"></Image>
         </Button>
     </DockPanel>
