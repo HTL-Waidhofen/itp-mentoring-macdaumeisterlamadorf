@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using i18n;
 
 namespace MentoringUI
 {
@@ -44,7 +45,7 @@ namespace MentoringUI
 
         private void language_cbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            
         }
         private void return_btn_Click(object sender, RoutedEventArgs e)
         {
