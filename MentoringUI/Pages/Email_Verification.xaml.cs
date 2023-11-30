@@ -25,6 +25,7 @@ namespace MentoringUI
         public Email_Verification()
         {
             InitializeComponent();
+            //Variable Username aus der Datenbank
             Random random = new Random();
             int randomNumber = random.Next(10000, 100000);
             SmtpClient smtpClient = new SmtpClient("smtp-mail.outlook.com")
@@ -38,9 +39,8 @@ namespace MentoringUI
             {
                 From = new MailAddress("verify.htlwy.mentoring@outlook.com"),
                 Subject = "Code zur Authentifizierung ihres Kontos",
-                Body = "Um die Sicherheit Ihres Kontos weiter zu stärken, haben wir die Zwei-Faktor-Authentifizierung (2FA) aktiviert. Bitte verwenden Sie den folgenden Code, um sich anzumelden:\r\n\r\nIhr 2FA-Code:" + randomNumber + "\r\n\r\nBitte geben Sie diesen Code innerhalb der nächsten 10 Minuten ein, um Ihre Identität zu bestätigen und auf Ihr Konto zuzugreifen. Sollten Sie Schwierigkeiten haben oder diese Anmeldung nicht initiieren, kontaktieren Sie bitte umgehend unseren Kundenservice.\r\n\r\nWir schätzen Ihr Vertrauen und stehen Ihnen für eventuelle Fragen gerne zur Verfügung. Vielen Dank für Ihr Verständnis und Ihre Mitarbeit.\r\n\r\nMit freundlichen Grüßen,\r\n\r\n[Ihr Unternehmen/Organisation]\r\n[Kontaktinformationen]",
+                Body = "Sehr geehrte/r [Empfängername],\r\n\r\n Um die Sicherheit Ihres Kontos weiter zu stärken, haben wir die Zwei-Faktor-Authentifizierung (2FA) aktiviert. Bitte verwenden Sie den folgenden Code, um sich anzumelden:\r\n\r\nIhr 2FA-Code:" + randomNumber + "\r\n\r\nBitte geben Sie diesen Code innerhalb der nächsten 10 Minuten ein, um Ihre Identität zu bestätigen und auf Ihr Konto zuzugreifen. Sollten Sie Schwierigkeiten haben oder diese Anmeldung nicht initiieren, kontaktieren Sie bitte umgehend unseren Kundenservice.\r\n\r\nWir schätzen Ihr Vertrauen und stehen Ihnen für eventuelle Fragen gerne zur Verfügung. Vielen Dank für Ihr Verständnis und Ihre Mitarbeit.\r\n\r\nMit freundlichen Grüßen,\r\n\r\n[Ihr Unternehmen/Organisation]\r\n[Kontaktinformationen]",
                 IsBodyHtml = false,
-                //"Sehr geehrte/r [Empfängername],\r\n\r\n 
             };
 
             mailMessage.To.Add("daniel.macek@htlwy.at");
