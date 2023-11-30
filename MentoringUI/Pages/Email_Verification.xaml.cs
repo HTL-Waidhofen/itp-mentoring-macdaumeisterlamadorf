@@ -25,7 +25,9 @@ namespace MentoringUI
         public Email_Verification()
         {
             InitializeComponent();
-            //Variable Username aus der Datenbank
+            //
+            //Variable Username aus der Datenbank#
+            //
             Random random = new Random();
             int randomNumber = random.Next(10000, 100000);
             SmtpClient smtpClient = new SmtpClient("smtp-mail.outlook.com")
