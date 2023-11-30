@@ -101,7 +101,7 @@ namespace MentoringUI
         }
         private void login_btn_Click(object sender, RoutedEventArgs e)
         {
-           //if(email_txb.Text==*Data from Datenbank*)
+           //Überprüfung mit Datenbank kommt später hier hin
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
             mainWindow.Content = new Student();
         }
