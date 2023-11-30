@@ -14,7 +14,7 @@
             <Image x:Name="htl_logo"  Source="/Images/HTL-Logo.png" Height="100" HorizontalAlignment="Right"/>
         </Grid>
         <Grid DockPanel.Dock="Top">
-            <Button Content="Anzeige Hinzufügen" HorizontalAlignment="Left" Height="20" Width="130"/>
+            <Button Content="Anzeige Hinzufügen" Margin="50,0,0,0" HorizontalAlignment="Left" Height="20" Width="130"/>
         </Grid>
         <Label DockPanel.Dock="Top" Height="15"/>
         <TextBox DockPanel.Dock="Top" TextWrapping="Wrap" Text="Suche:" Width="600"/>
