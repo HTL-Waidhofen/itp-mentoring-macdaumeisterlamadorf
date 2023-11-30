@@ -42,18 +42,15 @@ namespace MentoringUI
 
         private void InitializePasswordBox()
         {
-            // Set the initial visibility of the PasswordBox and placeholder TextBox
             ShowPasswordBox();
             ShowPlaceholderTextBox();
 
-            // Call the PasswordChanged event handler to handle initial state
             PasswordBox_PasswordChanged(null, null);
         }
 
 
         private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
         {
-            // Show or hide the placeholder TextBox based on the PasswordBox content
             if (string.IsNullOrEmpty(passwordBox.Password))
             {
                 ShowPlaceholderTextBox();
@@ -66,13 +63,11 @@ namespace MentoringUI
 
         private void PlaceholderTextBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            // Switch focus to the PasswordBox when the placeholder TextBox is clicked
             passwordBox.Focus();
         }
 
         private void PlaceholderTextBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            // Show or hide the placeholder TextBox based on the PasswordBox content
             if (string.IsNullOrEmpty(passwordBox.Password))
             {
                 ShowPlaceholderTextBox();
