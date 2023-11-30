@@ -37,10 +37,12 @@ namespace MentoringUI
                 case 0:
                     ((MainWindow)Application.Current.MainWindow).Background = dark;
                     ((MainWindow)Application.Current.MainWindow).Foreground = light;
+                    return_btn_img.Source = new BitmapImage(new Uri("/Images/return_button_white.png", UriKind.Relative));
                     break;
                 case 1:
                     ((MainWindow)Application.Current.MainWindow).Background = light;
                     ((MainWindow)Application.Current.MainWindow).Foreground = dark;
+                    return_btn_img.Source = new BitmapImage(new Uri("/Images/return_button_black.png", UriKind.Relative));
                     break;
             }
         }
