@@ -30,7 +30,7 @@ namespace MentoringUI
 
         private void appearance_cbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Brush? dark = (Brush?)new BrushConverter().ConvertFromString("#35363A");
+            Brush? dark = (Brush?)new BrushConverter().ConvertFromString("#505050");
             Brush? light = (Brush?)new BrushConverter().ConvertFromString("#FFFFFF");
             switch(appearance_cbx.SelectedIndex)
             {
