@@ -47,6 +47,11 @@ namespace MentoringUI
 
             mailMessage.To.Add("daniel.macek@htlwy.at");
                 smtpClient.Send(mailMessage);
+
+            if (int.Parse(TestNumbers.Text) == randomNumber)
+            {
+                MessageBox.Show("Ihr Konto wurde verifizert");
+            }
         }
     }
 
