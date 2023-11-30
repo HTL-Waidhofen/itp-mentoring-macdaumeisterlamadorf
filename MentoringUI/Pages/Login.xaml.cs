@@ -23,6 +23,7 @@ namespace MentoringUI
         public Login()
         {
             InitializeComponent();
+            InitializePasswordBox();
         }
         private void email_txb_LostFocus(object sender, RoutedEventArgs e)
         {
@@ -39,22 +40,71 @@ namespace MentoringUI
             email_txb.Foreground = Brushes.Black;
         }
 
-        private void pwd_txb_LostFocus(object sender, RoutedEventArgs e)
+        private void InitializePasswordBox()
         {
-            if (string.IsNullOrEmpty(pwd_txb.Text))
-            {
-                pwd_txb.Text = "Password";
-                pwd_txb.Foreground = Brushes.Gray;
-            }
-        }
-        private void pwd_txb_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (pwd_txb.Foreground == Brushes.Gray)
-                pwd_txb.Text = null;
-            pwd_txb.Foreground = Brushes.Black;
+            // Set the initial visibility of the PasswordBox and placeholder TextBox
+            ShowPasswordBox();
+            ShowPlaceholderTextBox();
+
+            // Call the PasswordChanged event handler to handle initial state
+            PasswordBox_PasswordChanged(null, null);
         }
 
-        private void hyperlinkToRegisterPage_Click(object sender, RoutedEventArgs e)
+
+        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            // Show or hide the placeholder TextBox based on the PasswordBox content
+            if (string.IsNullOrEmpty(passwordBox.Password))
+            {
+                ShowPlaceholderTextBox();
+            }
+            else
+            {
+                HidePlaceholderTextBox();
+            }
+        }
+
+        private void PlaceholderTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            // Switch focus to the PasswordBox when the placeholder TextBox is clicked
+            passwordBox.Focus();
+        }
+
+        private void PlaceholderTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            // Show or hide the placeholder TextBox based on the PasswordBox content
+            if (string.IsNullOrEmpty(passwordBox.Password))
+            {
+                ShowPlaceholderTextBox();
+            }
+            else
+            {
+                HidePlaceholderTextBox();
+            }
+        }
+
+        private void ShowPasswordBox()
+        {
+            passwordBox.Visibility = Visibility.Visible;
+        }
+
+        private void HidePasswordBox()
+        {
+            passwordBox.Visibility = Visibility.Collapsed;
+        }
+
+        private void ShowPlaceholderTextBox()
+        {
+            placeholderPwd_tbx.Visibility = Visibility.Visible;
+        }
+
+        private void HidePlaceholderTextBox()
+        {
+            placeholderPwd_tbx.Visibility = Visibility.Collapsed;
+        }
+    
+
+    private void hyperlinkToRegisterPage_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
             mainWindow.Content = new Register();
