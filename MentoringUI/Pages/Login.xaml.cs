@@ -88,11 +88,6 @@ namespace MentoringUI
             passwordBox.Visibility = Visibility.Visible;
         }
 
-        private void HidePasswordBox()
-        {
-            passwordBox.Visibility = Visibility.Collapsed;
-        }
-
         private void ShowPlaceholderTextBox()
         {
             placeholderPwd_tbx.Visibility = Visibility.Visible;
@@ -104,7 +99,7 @@ namespace MentoringUI
         }
     
 
-    private void hyperlinkToRegisterPage_Click(object sender, RoutedEventArgs e)
+        private void hyperlinkToRegisterPage_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
             mainWindow.Content = new Register();
@@ -114,6 +109,16 @@ namespace MentoringUI
            //if(email_txb.Text==*Data from Datenbank*)
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
             mainWindow.Content = new Student();
+        }
+
+        private void passwordBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            placeholderPwd_tbx.Text = null;
+        }
+
+        private void passwordBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            placeholderPwd_tbx.Text = "Password";
         }
     }
 }
