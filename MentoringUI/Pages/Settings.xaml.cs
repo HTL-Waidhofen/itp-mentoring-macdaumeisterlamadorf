@@ -36,9 +36,11 @@ namespace MentoringUI
             {
                 case 0:
                     ((MainWindow)Application.Current.MainWindow).Background = dark;
+                    ((MainWindow)Application.Current.MainWindow).Foreground = light;
                     break;
                 case 1:
                     ((MainWindow)Application.Current.MainWindow).Background = light;
+                    ((MainWindow)Application.Current.MainWindow).Foreground = dark;
                     break;
             }
         }
