@@ -44,12 +44,10 @@ namespace MentoringUI
             switch (int.Parse(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "AppsUseLightTheme", 1).ToString()))
             {
                 case 0:
-                    SetColor(light, dark);
-                    return_btn_img.Source = new BitmapImage(new Uri("/Images/return_button_dark.png", UriKind.Relative));
+                    SetColor(light, dark, "/Images/return_button_white.png");
                     break;
                 case 1:
-                    SetColor(dark, light);
-                    return_btn_img.Source = new BitmapImage(new Uri("/Images/return_button_white.png", UriKind.Relative));
+                    SetColor(dark, light, "/Images/return_button_black.png");
                     break;
             }
         }
@@ -62,27 +60,24 @@ namespace MentoringUI
                     switch (int.Parse(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "AppsUseLightTheme", 1).ToString()))
                     {
                         case 0:
-                            SetColor(light, dark);
-                    return_btn_img.Source = new BitmapImage(new Uri("/Images/return_button_dark.png", UriKind.Relative));
+                            SetColor(light, dark, "/Images/return_button_black.png");
                         break;
                         case 1:
-                            SetColor(dark, light);
-                    return_btn_img.Source = new BitmapImage(new Uri("/Images/return_button_white.png", UriKind.Relative));
+                            SetColor(dark, light, "/Images/return_button_white.png");
                         break;
                     }
                     break;
                 case 1:
-                    SetColor(light, dark);
-                    return_btn_img.Source = new BitmapImage(new Uri("/Images/return_button_white.png", UriKind.Relative));
+                    SetColor(light, dark, "/Images/return_button_white.png");
                     break;
                 case 2:
-                    SetColor(dark, light);
-                    return_btn_img.Source = new BitmapImage(new Uri("/Images/return_button_black.png", UriKind.Relative));
+                    SetColor(dark, light, "/Images/return_button_black.png");
                     break;
             }
         }
-        private void SetColor(Brush foreground, Brush background)
+        private void SetColor(Brush foreground, Brush background, string path = "")
         {
+            return_btn_img.Source = new BitmapImage(new Uri(path, UriKind.Relative));
             ((MainWindow)Application.Current.MainWindow).Background = background;
             ((MainWindow)Application.Current.MainWindow).Foreground = foreground;
         }
