@@ -25,6 +25,7 @@ namespace MentoringUI
     public partial class Settings : Page
     {
         int Index;
+        private DispatcherTimer timer = new DispatcherTimer();
         public Settings(int index)
         {
             InitializeComponent();
