@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using i18n;
+using Microsoft.Win32;
 
 namespace MentoringUI
 {
@@ -32,9 +33,18 @@ namespace MentoringUI
         {
             Brush? dark = (Brush?)new BrushConverter().ConvertFromString("#505050");
             Brush? light = (Brush?)new BrushConverter().ConvertFromString("#FFFFFF");
-            Brush? defaultColor = (Brush?)new BrushConverter().ConvertFromString(SystemColors.DesktopColor.ToString());
+            Brush? defaultColor = (Brush?)new BrushConverter().ConvertFromString("#FFFFFF");
             switch(appearance_cbx.SelectedIndex)
             {
+                case 0:
+                    switch (int.Parse(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "AppsUseLightTheme", 1).ToString()))
+                    {
+                        case 0:
+                        break;
+                        case 1:
+                        break;
+                    }
+                    break;
                 case 1:
                     ((MainWindow)Application.Current.MainWindow).Background = dark;
                     ((MainWindow)Application.Current.MainWindow).Foreground = light;
