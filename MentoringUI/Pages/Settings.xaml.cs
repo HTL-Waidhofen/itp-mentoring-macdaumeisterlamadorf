@@ -33,6 +33,7 @@ namespace MentoringUI
             Index = index;
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += ChangeColor;
+            timer.Start();
         }
             Brush? dark = (Brush?)new BrushConverter().ConvertFromString("#505050");
             Brush? light = (Brush?)new BrushConverter().ConvertFromString("#FFFFFF");
