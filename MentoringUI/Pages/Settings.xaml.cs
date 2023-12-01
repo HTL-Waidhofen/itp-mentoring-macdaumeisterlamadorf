@@ -30,16 +30,27 @@ namespace MentoringUI
             Index = index;
             this.GotFocus += ChangeColor;
         }
+            Brush? dark = (Brush?)new BrushConverter().ConvertFromString("#505050");
+            Brush? light = (Brush?)new BrushConverter().ConvertFromString("#FFFFFF");
 
         private void ChangeColor(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            if(appearance_cbx.SelectedIndex == 0)
+            switch (int.Parse(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "AppsUseLightTheme", 1).ToString()))
+            {
+                case 0:
+                    SetColor(light, dark);
+                    return_btn_img.Source = new BitmapImage(new Uri("/Images/return_button_dark.png", UriKind.Relative));
+                    break;
+                case 1:
+                    SetColor(dark, light);
+                    return_btn_img.Source = new BitmapImage(new Uri("/Images/return_button_white.png", UriKind.Relative));
+                    break;
+            }
         }
 
         private void appearance_cbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Brush? dark = (Brush?)new BrushConverter().ConvertFromString("#505050");
-            Brush? light = (Brush?)new BrushConverter().ConvertFromString("#FFFFFF");
             switch(appearance_cbx.SelectedIndex)
             {
                 case 0:
