@@ -32,6 +32,7 @@ namespace MentoringUI
         {
             Brush? dark = (Brush?)new BrushConverter().ConvertFromString("#505050");
             Brush? light = (Brush?)new BrushConverter().ConvertFromString("#FFFFFF");
+            Brush? defaultColor = (Brush?)new BrushConverter().ConvertFromString(SystemColors.DesktopColor.ToString());
             switch(appearance_cbx.SelectedIndex)
             {
                 case 1:
