@@ -28,6 +28,12 @@ namespace MentoringUI
         {
             InitializeComponent();
             Index = index;
+            this.GotFocus += ChangeColor;
+        }
+
+        private void ChangeColor(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void appearance_cbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
