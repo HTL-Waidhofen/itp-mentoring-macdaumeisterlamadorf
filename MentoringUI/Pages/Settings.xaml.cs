@@ -29,7 +29,9 @@ namespace MentoringUI
         public Settings(int index)
         {
             InitializeComponent();
+
             Index = index;
+            timer.Interval = TimeSpan.FromSeconds(1);
         }
             Brush? dark = (Brush?)new BrushConverter().ConvertFromString("#505050");
             Brush? light = (Brush?)new BrushConverter().ConvertFromString("#FFFFFF");
