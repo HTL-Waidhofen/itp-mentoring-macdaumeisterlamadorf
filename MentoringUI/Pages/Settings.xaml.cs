@@ -31,7 +31,7 @@ namespace MentoringUI
             InitializeComponent();
 
             Index = index;
-            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Interval = TimeSpan.FromSeconds(0.1);
             timer.Tick += ChangeColor;
             timer.Start();
         }
