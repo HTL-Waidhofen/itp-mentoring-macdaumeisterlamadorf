@@ -13,7 +13,7 @@
         
         <Grid DockPanel.Dock="Top" Height="100">
 
-            <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="40"  Width="400" Name="settings_lb" VerticalAlignment="Center" HorizontalAlignment="Center">Email Bestätigen</TextBlock>
+            <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="40"  Width="400" Name="settings_lb" VerticalAlignment="Center" FontFamily="Cambria" HorizontalAlignment="Center">Email Bestätigen</TextBlock>
             <Image x:Name="htl_logo"  Source="/Images/HTL-Logo.png" Height="100" HorizontalAlignment="Right"/>
         </Grid>
         <Label DockPanel.Dock="Top" Height="45"/>
