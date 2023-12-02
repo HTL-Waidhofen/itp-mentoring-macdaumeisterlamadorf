@@ -121,13 +121,13 @@ namespace MentoringUI
 
             }
         }
-        private List<DependencyObject> GetAllChildren(DependencyObject parent)
+        private List<Control> GetAllChildren(DependencyObject parent)
         {
-            List<DependencyObject> children = new List<DependencyObject>();
+            List<Control> children = new List<Control>();
             for(int i = 0; i < VisualTreeHelper.GetChildrenCount(parent); i++)
             {
                 DependencyObject child = VisualTreeHelper.GetChild(parent, i);
-                children.Add(child);
+                children.Add(child as Control);
                 children.AddRange(GetAllChildren(child));
             }
             return children; 
