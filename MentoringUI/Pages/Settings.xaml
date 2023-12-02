@@ -33,19 +33,21 @@
                 </ComboBox>
                 <TextBlock Height="20" DockPanel.Dock="Top"></TextBlock>
                 <Grid DockPanel.Dock="Top" HorizontalAlignment="Left">
-                    <Button Height="20" Content="Beantragen auf Mentor">
+                    <Button Height="20" Width="200">
+                        <TextBlock TextAlignment="Left" Width="200" Background="Transparent">Beantragen auf Mentor</TextBlock>
                 </Button>
                 </Grid>
                     <TextBlock DockPanel.Dock="Top" Height="20"></TextBlock>
                 <Grid DockPanel.Dock="Top" HorizontalAlignment="Left">
-                <Button Height="20" Content="Auf Mentorenseite wechseln" DockPanel.Dock="Top">
+                <Button Height="20" DockPanel.Dock="Top">
+                        <TextBlock TextAlignment="Left" Width="200" Background="Transparent">Auf Mentorenseite wechseln</TextBlock>
                 </Button>
                 </Grid>
                     <TextBlock DockPanel.Dock="Top" Height="20"></TextBlock>
                 <Grid DockPanel.Dock="Top" HorizontalAlignment="Left">
-                    <Button Content="Ausloggen" Height="20" DockPanel.Dock="Left" Background="#e84445" Foreground="White" Name="nc_logout_btn"></Button>
                 </Grid>
                 <Grid DockPanel.Dock="Bottom">
+                    <Button Content="Ausloggen" Height="20" DockPanel.Dock="Left" Background="#e84445" Foreground="White" Name="nc_logout_btn" HorizontalAlignment="Left" Width="100"></Button>
                     <Button Content="Einstellungen speichern" HorizontalAlignment="Right"></Button>
                 </Grid>
             </DockPanel>
