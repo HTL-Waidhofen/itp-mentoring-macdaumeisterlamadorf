@@ -32,16 +32,14 @@
                     <ComboBoxItem Content="Hell"/>
                 </ComboBox>
                 <TextBlock Height="20" DockPanel.Dock="Top"></TextBlock>
-                <DockPanel DockPanel.Dock="Top" LastChildFill="False">
-                <Button Height="20" Content="Beantragen auf Mentor" DockPanel.Dock="Left">
+                <Grid DockPanel.Dock="Top" HorizontalAlignment="Left">
+                    <Button Height="20" Content="Beantragen auf Mentor">
                 </Button>
-                <Button Height="20" Content="Auf Mentorenseite wechseln" DockPanel.Dock="Left">
+                </Grid>
+                <Button Height="20" Content="Auf Mentorenseite wechseln" DockPanel.Dock="Top">
                 </Button>
-                </DockPanel>
-                <DockPanel DockPanel.Dock="Top" LastChildFill="False">
                     <TextBlock DockPanel.Dock="Top" Height="20"></TextBlock>
                     <Button Content="Ausloggen" Height="20" DockPanel.Dock="Left" Background="#e84445" Foreground="White" Name="nc_logout_btn"></Button>
-                </DockPanel> 
             </DockPanel>
         </GroupBox>
     </DockPanel>
