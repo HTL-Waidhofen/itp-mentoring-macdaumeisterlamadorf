@@ -80,6 +80,15 @@ namespace MentoringUI
             return_btn_img.Source = new BitmapImage(new Uri(path, UriKind.Relative));
             ((MainWindow)Application.Current.MainWindow).Background = background;
             ((MainWindow)Application.Current.MainWindow).Foreground = foreground;
+            List<Control> children = GetAllChildren(Main_Window);
+            foreach (Control child in children)
+            {
+                if(child != null)
+                {
+                child.Background = background;
+                child.Foreground = foreground;
+                }
+            }
         }
         private void language_cbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
