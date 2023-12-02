@@ -102,8 +102,11 @@ namespace MentoringUI
         private void login_btn_Click(object sender, RoutedEventArgs e)
         {
            //Überprüfung mit Datenbank kommt später hier hin
+           if(!string.IsNullOrEmpty(passwordBox.Password))
+            {
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
             mainWindow.Content = new Student();
+            }
         }
 
         private void passwordBox_GotFocus(object sender, RoutedEventArgs e)
