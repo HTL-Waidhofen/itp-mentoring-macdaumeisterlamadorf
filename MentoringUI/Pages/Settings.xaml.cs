@@ -124,6 +124,10 @@ namespace MentoringUI
         private List<DependencyObject> GetAllChildren(DependencyObject parent)
         {
             List<DependencyObject> children = new List<DependencyObject>();
+            for(int i = 0; i < VisualTreeHelper.GetChildrenCount(parent); i++)
+            {
+
+            }
         }
     }
 }
