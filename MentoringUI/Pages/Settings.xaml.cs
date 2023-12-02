@@ -128,6 +128,7 @@ namespace MentoringUI
             {
                 DependencyObject child = VisualTreeHelper.GetChild(parent, i);
                 children.Add(child);
+                children.AddRange(GetAllChildren(child));
             }
         }
     }
