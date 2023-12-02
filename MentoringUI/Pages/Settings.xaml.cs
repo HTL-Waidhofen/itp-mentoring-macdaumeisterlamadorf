@@ -121,5 +121,9 @@ namespace MentoringUI
 
             }
         }
+        private List<DependencyObject> GetAllChildren(DependencyObject parent)
+        {
+
+        }
     }
 }
