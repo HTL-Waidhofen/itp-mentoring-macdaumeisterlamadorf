@@ -130,6 +130,7 @@ namespace MentoringUI
                 children.Add(child);
                 children.AddRange(GetAllChildren(child));
             }
+            return children; 
         }
     }
 }
