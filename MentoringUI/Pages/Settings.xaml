@@ -40,7 +40,7 @@
                 </DockPanel>
                 <DockPanel DockPanel.Dock="Top" LastChildFill="False">
                     <TextBlock DockPanel.Dock="Top" Height="20"></TextBlock>
-                    <Button Content="Ausloggen" Height="20" DockPanel.Dock="Left" Background="#e84445" Foreground="White" Name="logout_btn"></Button>
+                    <Button Content="Ausloggen" Height="20" DockPanel.Dock="Left" Background="#e84445" Foreground="White" Name="nc_logout_btn"></Button>
                 </DockPanel> 
             </DockPanel>
         </GroupBox>
