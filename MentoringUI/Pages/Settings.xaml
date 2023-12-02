@@ -45,6 +45,9 @@
                 <Grid DockPanel.Dock="Top" HorizontalAlignment="Left">
                     <Button Content="Ausloggen" Height="20" DockPanel.Dock="Left" Background="#e84445" Foreground="White" Name="nc_logout_btn"></Button>
                 </Grid>
+                <Grid DockPanel.Dock="Bottom">
+                    <Button Content="Einstellungen speichern" HorizontalAlignment="Right"></Button>
+                </Grid>
             </DockPanel>
         </GroupBox>
     </DockPanel>
