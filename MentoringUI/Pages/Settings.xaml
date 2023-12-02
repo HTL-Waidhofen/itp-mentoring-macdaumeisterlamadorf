@@ -36,12 +36,13 @@
                     <Button Height="20" Content="Beantragen auf Mentor">
                 </Button>
                 </Grid>
+                    <TextBlock DockPanel.Dock="Top" Height="20"></TextBlock>
                 <Grid DockPanel.Dock="Top" HorizontalAlignment="Left">
                 <Button Height="20" Content="Auf Mentorenseite wechseln" DockPanel.Dock="Top">
                 </Button>
                 </Grid>
-                <Grid DockPanel.Dock="Top" HorizontalAlignment="Left">
                     <TextBlock DockPanel.Dock="Top" Height="20"></TextBlock>
+                <Grid DockPanel.Dock="Top" HorizontalAlignment="Left">
                     <Button Content="Ausloggen" Height="20" DockPanel.Dock="Left" Background="#e84445" Foreground="White" Name="nc_logout_btn"></Button>
                 </Grid>
             </DockPanel>
