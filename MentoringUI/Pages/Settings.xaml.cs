@@ -83,7 +83,7 @@ namespace MentoringUI
             List<Control> children = GetAllChildren(Main_Window);
             foreach (Control child in children)
             {
-                if(child != null)
+                if(child != null && !child.Name.StartsWith("nc"))
                 {
                 child.Background = background;
                 child.Foreground = foreground;
