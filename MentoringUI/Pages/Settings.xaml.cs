@@ -123,7 +123,7 @@ namespace MentoringUI
         }
         private List<DependencyObject> GetAllChildren(DependencyObject parent)
         {
-
+            List<DependencyObject> children = new List<DependencyObject>();
         }
     }
 }
