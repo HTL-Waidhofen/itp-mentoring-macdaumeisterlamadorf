@@ -18,7 +18,7 @@
             <TextBlock FontWeight="Bold" FontSize="40"  VerticalAlignment="Center" Name="settings_lb" FontFamily="Cambria" HorizontalAlignment="Center">Einstellungen</TextBlock>
                 <Image x:Name="htl_logo"  Source="/Images/HTL-Logo.png" Height="100" HorizontalAlignment="Right"/>
         </Grid>
-        <GroupBox DockPanel.Dock="Top" Height="330" Header="Einstellungen">
+        <GroupBox DockPanel.Dock="Top" Header="Einstellungen">
             <DockPanel LastChildFill="False">
                 <TextBlock Height="10" DockPanel.Dock="Top"></TextBlock>
             <ComboBox Height="20" IsReadOnly="True" IsEditable="True" Text="Sprache" DockPanel.Dock="Top" Name="language_cbx" SelectionChanged="language_cbx_SelectionChanged">
