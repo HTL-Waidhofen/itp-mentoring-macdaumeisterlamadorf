@@ -83,10 +83,20 @@ namespace MentoringUI
             List<Control> children = GetAllChildren(Main_Window);
             foreach (Control child in children)
             {
-                if(child != null && !child.Name.StartsWith("nc"))
+                if(child != null)
+                {
+                    if (child.Name.StartsWith("gc"))
+                    {
+                        if (foreground == light)
+                            child.Background = (Brush?)new BrushConverter().ConvertFromString("#999999");
+                        else
+                            child.Background = (Brush?)new BrushConverter().ConvertFromString("#CCCCCC");
+                    }
+                else if(!child.Name.StartsWith("nc"))
                 {
                 child.Background = background;
                 child.Foreground = foreground;
+                }
                 }
             }
         }
