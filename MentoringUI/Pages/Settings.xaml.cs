@@ -94,8 +94,25 @@ namespace MentoringUI
                     }
                 else if(!child.Name.StartsWith("nc"))
                 {
-                child.Background = background;
-                child.Foreground = foreground;
+                        if(child is ComboBox comboBox)
+            {
+                            foreach (var comboItem in comboBox.Items)
+                            {
+                                if (comboItem is ComboBoxItem comboBoxItem)
+                                {
+                                    if (foreground == light)
+                                        comboBoxItem.Background = (Brush?)new BrushConverter().ConvertFromString("#999999");
+                                    else
+                                        comboBoxItem.Background = Brushes.White;
+                                }
+                            }
+                        }
+                     else
+                     {
+                        child.Background = background;
+                        child.Foreground = foreground;
+                        }
+
                 }
                 }
             }
