@@ -22,11 +22,21 @@
             <DockPanel LastChildFill="False">
                 <TextBlock Height="10" DockPanel.Dock="Top"></TextBlock>
             <ComboBox Height="20" IsReadOnly="True" IsEditable="True" Text="Sprache" DockPanel.Dock="Top" Name="language_cbx" SelectionChanged="language_cbx_SelectionChanged">
-                <ComboBoxItem>Englisch</ComboBoxItem>
+                    <ComboBox.ItemContainerStyle>
+                        <Style TargetType="ComboBoxItem">
+                            <Setter Property="Background" Value="White" />
+                        </Style>
+                    </ComboBox.ItemContainerStyle>
+                    <ComboBoxItem>Englisch</ComboBoxItem>
                 <ComboBoxItem>Deutsch</ComboBoxItem>
             </ComboBox>
                 <TextBlock Height="20" DockPanel.Dock="Top"></TextBlock>
                 <ComboBox Height="20" IsReadOnly="True" IsEditable="True" Text="Anzeige" DockPanel.Dock="Top" Name="appearance_cbx" SelectionChanged="appearance_cbx_SelectionChanged">
+                    <ComboBox.ItemContainerStyle>
+                        <Style TargetType="ComboBoxItem">
+                            <Setter Property="Background" Value="White" />
+                        </Style>
+                    </ComboBox.ItemContainerStyle>
                     <ComboBoxItem Content="Systemeinstellungen verwenden"/>
                     <ComboBoxItem Content="Dunkel"/>
                     <ComboBoxItem Content="Hell"/>
