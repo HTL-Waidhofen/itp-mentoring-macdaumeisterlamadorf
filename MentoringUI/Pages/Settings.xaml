@@ -7,8 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Settings"
-      FontFamily="Cambria"
-      Name="Main_Window">
+      FontFamily="Cambria">
 
     <DockPanel LastChildFill="True">
         <Grid DockPanel.Dock="Top" Height="100">

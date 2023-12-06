@@ -50,6 +50,10 @@ namespace MentoringUI
                     SetColor(dark, light, "/Images/return_button_black.png");
                     break;
             }
+            else if(appearance_cbx.SelectedIndex == 1)
+                SetColor(light, dark, "/Images/return_button_white.png");
+            else if(appearance_cbx.SelectedIndex == 2)
+                SetColor(dark, light, "/Images/return_button_black.png");
         }
 
         private void appearance_cbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -80,7 +84,7 @@ namespace MentoringUI
             return_btn_img.Source = new BitmapImage(new Uri(path, UriKind.Relative));
             ((MainWindow)Application.Current.MainWindow).Background = background;
             ((MainWindow)Application.Current.MainWindow).Foreground = foreground;
-            List<Control> children = GetAllChildren(Main_Window);
+            List<Control> children = GetAllChildren(((MainWindow)Application.Current.MainWindow));
             foreach (Control child in children)
             {
                 if(child != null)
