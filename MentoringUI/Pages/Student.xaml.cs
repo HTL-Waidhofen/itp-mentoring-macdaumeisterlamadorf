@@ -23,6 +23,7 @@ namespace MentoringUI
         public Student()
         {
             InitializeComponent();
+             
         }
 
         private void setting_btn_Click(object sender, RoutedEventArgs e)
@@ -31,7 +32,7 @@ namespace MentoringUI
             mainWindow.Content = new Settings();
         }
 
-        private void mentorFilter_GotFocus(object sender, RoutedEventArgs e)
+        private void mentorFilter_LostFocus(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(mentorFilter.Text))
             {
@@ -40,7 +41,7 @@ namespace MentoringUI
             }
         }
 
-        private void mentorFilter_LostFocus(object sender, RoutedEventArgs e)
+        private void mentorFilter_GotFocus(object sender, RoutedEventArgs e)
         {
             if (mentorFilter.Foreground == Brushes.Gray)
                 mentorFilter.Text = null;
