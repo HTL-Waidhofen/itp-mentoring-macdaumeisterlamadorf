@@ -173,5 +173,10 @@ namespace MentoringUI
         {
             ((MainWindow)Application.Current.MainWindow).Content = new Startpage();
         }
+
+        private void gc_switchToMentorpage_btn_Click(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)Application.Current.MainWindow).Content = new Mentors();
+        }
     }
 }
