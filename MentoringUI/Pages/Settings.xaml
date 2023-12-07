@@ -48,7 +48,7 @@
                 </Grid>
                     <TextBlock DockPanel.Dock="Top" Height="20"></TextBlock>
                 <Grid DockPanel.Dock="Top" HorizontalAlignment="Left">
-                    <Button Height="20" DockPanel.Dock="Top" Background="#CCCCCC" Name="gc_switchToMentorpage_btn" Click="gc_switchToMentorpage_btn_Click">
+                    <Button Height="20" DockPanel.Dock="Top" Width="200" Background="#CCCCCC" Name="gc_switchToMentorpage_btn" Click="gc_switchToMentorpage_btn_Click">
                         <TextBlock TextAlignment="Left" Width="200">Auf Mentorenseite wechseln</TextBlock>
                 </Button>
                 </Grid>
