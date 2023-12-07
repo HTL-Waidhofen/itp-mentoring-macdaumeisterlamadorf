@@ -47,13 +47,13 @@ namespace MentoringUI
                     SetColor(light, dark, "/Images/return_button_white.png");
                     break;
                 case 1:
-                    SetColor(dark, light, "/Images/return_button_black.png");
+                    SetColor(Brushes.Black, light, "/Images/return_button_black.png");
                     break;
             }
             else if(appearance_cbx.SelectedIndex == 1)
                 SetColor(light, dark, "/Images/return_button_white.png");
             else if(appearance_cbx.SelectedIndex == 2)
-                SetColor(dark, light, "/Images/return_button_black.png");
+                SetColor(Brushes.Black, light, "/Images/return_button_black.png");
         }
 
         private void appearance_cbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -72,18 +72,18 @@ namespace MentoringUI
                     }
                     break;
                 case 1:
-                    SetColor(light, dark, "/Images/return_button_white.png");
+                    SetColor(Brushes.Black, light, "/Images/return_button_black.png");
                     break;
                 case 2:
-                    SetColor(dark, light, "/Images/return_button_black.png");
+                    SetColor(light, dark, "/Images/return_button_white.png");
                     break;
             }
         }
         private void SetColor(Brush foreground, Brush background, string path = "")
         {
             return_btn_img.Source = new BitmapImage(new Uri(path, UriKind.Relative));
-            ((MainWindow)Application.Current.MainWindow).Background = background;
             ((MainWindow)Application.Current.MainWindow).Foreground = foreground;
+            ((MainWindow)Application.Current.MainWindow).Background = background;
             List<Control> children = GetAllChildren(((MainWindow)Application.Current.MainWindow));
             foreach (Control child in children)
             {
@@ -110,10 +110,6 @@ namespace MentoringUI
                                         comboBoxItem.Background = Brushes.White;
                                 }
                             }
-                        }
-                     else
-                     {
-                        child.Background = background;
                         child.Foreground = foreground;
                         }
 
