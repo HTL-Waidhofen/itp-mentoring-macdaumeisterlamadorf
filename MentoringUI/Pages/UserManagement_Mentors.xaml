@@ -30,7 +30,7 @@
             <ListBox x:Name="courseEdit_lbx" Margin="10,0,10,0" BorderThickness="2" Height="240"></ListBox>
         </DockPanel>
         <DockPanel  DockPanel.Dock="Bottom">
-            <Button x:Name="settings_btn" Height="40" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left">
+            <Button x:Name="settings_btn" Height="40" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left" Click="settings_btn_Click">
                 <Image  Source="/Images/setting.png"></Image>
             </Button>
         </DockPanel>

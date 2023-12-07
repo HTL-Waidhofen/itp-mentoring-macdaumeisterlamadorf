@@ -24,5 +24,10 @@ namespace MentoringUI
         {
             InitializeComponent();
         }
+
+        private void settings_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
