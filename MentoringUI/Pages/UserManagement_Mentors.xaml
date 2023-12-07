@@ -15,7 +15,7 @@
                 <Image HorizontalAlignment="Right" x:Name="htl_logo"  Source="/Images/HTL-Logo.png" Height="100"/>
             </Grid>
         </DockPanel>
-        <DockPanel DockPanel.Dock="Top" Margin="0,20,0,0">
+        <DockPanel DockPanel.Dock="Top" Margin="0,10,0,0">
             <Grid>
                 <DockPanel>
                     <Button x:Name="student_btn" DockPanel.Dock="Left" BorderThickness="2" HorizontalAlignment="Left" Margin="10,0,0,0" Width="60">Schüler</Button>
@@ -27,10 +27,10 @@
             </Grid>
         </DockPanel>
         <DockPanel DockPanel.Dock="Top">
-            <ListBox x:Name="courseEdit_lbx" Margin="10,0,10,0" BorderThickness="2" Height="255"></ListBox>
+            <ListBox x:Name="courseEdit_lbx" Margin="10,0,10,0" BorderThickness="2" Height="240"></ListBox>
         </DockPanel>
         <DockPanel  DockPanel.Dock="Bottom">
-            <Button x:Name="settings_btn" Height="50" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left">
+            <Button x:Name="settings_btn" Height="40" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left">
                 <Image  Source="/Images/setting.png"></Image>
             </Button>
         </DockPanel>
