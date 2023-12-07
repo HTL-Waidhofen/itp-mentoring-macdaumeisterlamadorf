@@ -27,7 +27,7 @@
             <GroupBox Margin="5,10,5,0" Header="Mentoren auswahl">
                 <DockPanel>
                     <DockPanel DockPanel.Dock="Top">
-                        <TextBox x:Name="mentorFilter" ></TextBox>
+                        <TextBox x:Name="mentorFilter" GotFocus="mentorFilter_GotFocus"  Text="Suche" Foreground="Gray" LostFocus="mentorFilter_LostFocus"></TextBox>
                     </DockPanel>
                     <DockPanel>
                         <ListBox x:Name="mentorSelection_lbx" Margin="0,5,0,0" Height="95"></ListBox>
