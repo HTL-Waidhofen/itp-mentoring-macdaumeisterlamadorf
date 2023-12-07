@@ -35,8 +35,14 @@
                     </ComboBox>
                 </DockPanel>
             </Grid>
-            <TextBox x:Name="pwd_tbx" DockPanel.Dock="Top" Margin="0,10,0,0"/>
-            <TextBox x:Name="confirmpwd_tbx" DockPanel.Dock="Top" Margin="0,10,0,0"/>
+            <Grid DockPanel.Dock="Top">
+                <PasswordBox HorizontalAlignment="Center" x:Name="pwd_pbx" PasswordChanged="PasswordBox_PasswordChanged" GotFocus="PasswordBox_GotFocus" LostFocus="PasswordBox_LostFocus" DockPanel.Dock="Top" Margin="0,10,0,0" Width="183"/>
+                
+            </Grid>
+            <Grid DockPanel.Dock="Top">
+                <PasswordBox x:Name="confirmpwd_pbx" DockPanel.Dock="Top" Margin="0,10,0,0"/>
+
+            </Grid>
             <Button x:Name="register_btn" DockPanel.Dock="Top" Margin="0,10,0,0">Registrieren</Button>
         </DockPanel>
     </DockPanel>
