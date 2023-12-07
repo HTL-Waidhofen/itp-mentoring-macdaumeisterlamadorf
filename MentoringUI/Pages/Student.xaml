@@ -36,7 +36,7 @@
             </GroupBox>
         </DockPanel>
         <DockPanel  DockPanel.Dock="Bottom">
-            <Button x:Name="setting_btn" Height="40" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left">
+            <Button x:Name="setting_btn" Height="40" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left" Click="setting_btn_Click">
                 <Image  Source="/Images/setting.png"></Image>
             </Button>
         </DockPanel>
