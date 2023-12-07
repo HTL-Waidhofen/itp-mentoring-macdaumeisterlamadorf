@@ -168,5 +168,10 @@ namespace MentoringUI
             }
             return children; 
         }
+
+        private void nc_logout_btn_Click(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)Application.Current.MainWindow).Content = new Startpage();
+        }
     }
 }
