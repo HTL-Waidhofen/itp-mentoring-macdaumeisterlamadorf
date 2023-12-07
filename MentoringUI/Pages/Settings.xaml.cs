@@ -110,7 +110,6 @@ namespace MentoringUI
                                         comboBoxItem.Background = Brushes.White;
                                 }
                             }
-                        child.Foreground = foreground;
                         }
 
                 }
