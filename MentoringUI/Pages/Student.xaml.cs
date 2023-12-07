@@ -47,5 +47,11 @@ namespace MentoringUI
                 mentorFilter.Text = null;
             mentorFilter.Foreground = Brushes.Black;
         }
+
+        private void requestedMentors_btn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow.Content = new Requested_Mentors();
+        }
     }
 }
