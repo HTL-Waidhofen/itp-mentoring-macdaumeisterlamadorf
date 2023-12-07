@@ -54,5 +54,20 @@ namespace MentoringUI
                 name_tbx.Foreground = Brushes.Gray;
             }
         }
+        private void email_txb_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (email_tbx.Foreground == Brushes.Gray)
+                email_tbx.Text = null;
+            email_tbx.Foreground = Brushes.Black;
+        }
+
+        private void email_txb_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(email_tbx.Text))
+            {
+                email_tbx.Text = "Email";
+                email_tbx.Foreground = Brushes.Gray;
+            }
+        }
     }
 }
