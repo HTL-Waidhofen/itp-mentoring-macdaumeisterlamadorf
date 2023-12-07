@@ -15,7 +15,7 @@
         </Grid>
         <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="0,30,0,0">
             <TextBox x:Name="firstname_tbx" DockPanel.Dock="Top" GotFocus="firstname_txb_GotFocus" Text="Vorname" Foreground="Gray" LostFocus="firstname_txb_LostFocus"/>
-            <TextBox x:Name="name_tbx" DockPanel.Dock="Top" Margin="0,10,0,0"/>
+            <TextBox x:Name="name_tbx" DockPanel.Dock="Top" Margin="0,10,0,0" GotFocus="name_txb_GotFocus" Text="Nachname" Foreground="Gray" LostFocus="name_txb_LostFocus"/>
             <TextBox x:Name="email_tbx" DockPanel.Dock="Top" Margin="0,10,0,0"/>
             <Grid DockPanel.Dock="Top">
                 <DockPanel>

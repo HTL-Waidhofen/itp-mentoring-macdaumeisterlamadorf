@@ -31,7 +31,6 @@ namespace MentoringUI
                 firstname_tbx.Text = null;
             firstname_tbx.Foreground = Brushes.Black;
         }
-
         private void firstname_txb_LostFocus(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(firstname_tbx.Text))
@@ -40,6 +39,20 @@ namespace MentoringUI
                 firstname_tbx.Foreground = Brushes.Gray;
             }
         }
+        private void name_txb_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (name_tbx.Foreground == Brushes.Gray)
+                name_tbx.Text = null;
+            name_tbx.Foreground = Brushes.Black;
+        }
 
+        private void name_txb_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(name_tbx.Text))
+            {
+                name_tbx.Text = "Nachname";
+                name_tbx.Foreground = Brushes.Gray;
+            }
+        }
     }
 }
