@@ -17,9 +17,9 @@
             </Grid>
         </DockPanel>
         <DockPanel DockPanel.Dock="Top">
-            <GroupBox Header="Alle Kurse" Margin="5,10,5,0">
+            <GroupBox Header="Alle Kurse" Margin="5,0,5,0">
                 <DockPanel>
-                    <ListBox x:Name="allCourses_lbx" Height="105"></ListBox>
+                    <ListBox x:Name="allCourses_lbx" Height="95"></ListBox>
                 </DockPanel>
             </GroupBox>
         </DockPanel>
@@ -30,13 +30,13 @@
                         <TextBox x:Name="mentorFilter" ></TextBox>
                     </DockPanel>
                     <DockPanel>
-                        <ListBox x:Name="mentorSelection_lbx" Margin="0,5,0,0" Height="105"></ListBox>
+                        <ListBox x:Name="mentorSelection_lbx" Margin="0,5,0,0" Height="95"></ListBox>
                     </DockPanel>
                 </DockPanel>
             </GroupBox>
         </DockPanel>
         <DockPanel  DockPanel.Dock="Bottom">
-            <Button x:Name="setting_btn" Height="50" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left">
+            <Button x:Name="setting_btn" Height="40" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left">
                 <Image  Source="/Images/setting.png"></Image>
             </Button>
         </DockPanel>

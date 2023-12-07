@@ -6,5 +6,5 @@
         xmlns:local="clr-namespace:MentoringUI"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Frame Source="Pages/UserManagement_Mentors.xaml" Name="MainFrame"></Frame>
+    <Frame Source="Pages/Student.xaml" Name="MainFrame"></Frame>
 </Window>
