@@ -17,12 +17,12 @@
             <Image x:Name="htl_logo"  Source="/Images/HTL-Logo.png" Height="100" HorizontalAlignment="Right"/>
         </Grid>
         <Label DockPanel.Dock="Top" Height="45"/>
-        <TextBlock Text="Sie müssen Ihre Email verifizieren" DockPanel.Dock="Top" Width="200" Height="35" FontFamily="Cambria"/>
+        <TextBlock Text="Sie müssen Ihre Email verifizieren" DockPanel.Dock="Top" Width="280" Height="35" FontSize="18" FontFamily="Cambria"/>
         <Label DockPanel.Dock="Top" Height="8"/>
-        <TextBlock Text="Geben Sie den 8-stelligen Code an, welchen Sie per E-Mail erhalten haben" TextAlignment="Center" DockPanel.Dock="Top" Width="400" Height="35"  FontFamily="Cambria" />
+        <TextBlock Text="Bitte geben Sie den 8-stelligen Code an, welchen Sie per E-Mail erhalten haben" TextAlignment="Center" DockPanel.Dock="Top" Width="600" Height="35" FontSize="16" FontFamily="Cambria" />
         <Label DockPanel.Dock="Top" Height="8"/>
-        <TextBox x:Name="TestNumbers" TextWrapping="Wrap" TextAlignment="Center" Text="Zahlen Eingeben" DockPanel.Dock="Top" Width="200" Height="35" FontFamily="Cambria" />
+        <TextBox x:Name="TestNumbers" TextWrapping="Wrap" TextAlignment="Center" Text="Zahlen Eingeben" DockPanel.Dock="Top" Width="200" Height="35" FontSize="16" FontFamily="Cambria" />
         <Label DockPanel.Dock="Top" Height="10"/>
-        <Button Content="Bestätigen" DockPanel.Dock="Top" Width="200" Height="25"  FontFamily="Cambria" />
+        <Button Content="Bestätigen" DockPanel.Dock="Top" Width="200" Height="25" FontSize="16" FontFamily="Cambria" Click="Button_Click" />
     </DockPanel>
 </Page>

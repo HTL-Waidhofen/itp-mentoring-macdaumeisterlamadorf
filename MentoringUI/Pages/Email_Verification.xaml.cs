@@ -45,7 +45,7 @@ namespace MentoringUI
                 IsBodyHtml = false,
             };
 
-            mailMessage.To.Add("richard.daurer@gmail.com");
+            mailMessage.To.Add("user.mail@mail.com");
                 smtpClient.Send(mailMessage);
 
             if (int.Parse(TestNumbers.Text) == randomNumber)
