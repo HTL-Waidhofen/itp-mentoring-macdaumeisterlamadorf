@@ -28,7 +28,7 @@
             </Grid>
         </DockPanel>
         <DockPanel DockPanel.Dock="Top">
-            <ListBox VerticalAlignment="Stretch" HorizontalAlignment="Stretch" SelectionMode="Multiple"  x:Name="courseEdit_lbx" Margin="10,0,10,0" BorderThickness="2" Height="240">
+            <ListBox VerticalAlignment="Stretch" HorizontalAlignment="Stretch" SelectionMode="Multiple"  x:Name="courseEdit_lbx" Margin="10,0,10,10" BorderThickness="2">
                 <ListBoxItem  >Kekeke</ListBoxItem>
                 <ListBoxItem>hahaha</ListBoxItem>
                 <ListBoxItem>huhuhu</ListBoxItem>

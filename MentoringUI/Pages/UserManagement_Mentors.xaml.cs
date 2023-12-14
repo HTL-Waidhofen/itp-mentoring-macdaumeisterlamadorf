@@ -75,6 +75,11 @@ namespace MentoringUI
             double newHeight = e.NewSize.Height - 177;
             courseEdit_lbx.Height = newHeight;
         }
+
+        private void ListBoxItem_Unchecked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
     
     
