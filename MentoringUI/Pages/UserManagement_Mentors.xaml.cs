@@ -54,12 +54,22 @@ namespace MentoringUI
             MessageBoxResult result = MessageBox.Show("Are you sure you want to delete these Mentors?","Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
             if(result == MessageBoxResult.Yes)
             {
-
+                DeleteSelectedItems();
             }
             
         }
-        
-        
+        private void DeleteSelectedItems()
+        {
+            // Create a copy of the selected items
+            var selectedItems = new List<object>(courseEdit_lbx.SelectedItems.Cast<object>());
+
+            // Iterate over the copy and remove items from the original collection
+            foreach (var item in selectedItems)
+            {
+                courseEdit_lbx.Items.Remove(item);
+            }
+        }
+
     }
     
     
