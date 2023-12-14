@@ -72,7 +72,8 @@ namespace MentoringUI
 
         private void Page_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-
+            double newHeight = e.NewSize.Height - 177;
+            courseEdit_lbx.Height = newHeight;
         }
     }
     
