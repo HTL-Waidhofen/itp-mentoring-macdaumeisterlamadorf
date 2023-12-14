@@ -20,14 +20,18 @@
                 <DockPanel>
                     <Button Click="student_btn_Click" x:Name="student_btn" DockPanel.Dock="Left" BorderThickness="2" HorizontalAlignment="Left" Margin="10,0,0,0" Width="60">Schüler</Button>
                     <Button Click="mentor_btn_Click" x:Name="mentor_btn" DockPanel.Dock="Left" BorderThickness="2" HorizontalAlignment="Left" Margin="10,0,0,0" Width="60">Mentoren</Button>
-                    <Button x:Name="delete_btn" DockPanel.Dock="Right" BorderThickness="2" HorizontalAlignment="Right" Margin="0,0,10,0" Width="60">Editieren</Button>
-                    <Button x:Name="edit_btn" DockPanel.Dock="Right" BorderThickness="2" HorizontalAlignment="Right" Margin="0,0,10,0" Width="60">Löschen</Button>
+                    <Button Click="edit_btn_Click" x:Name="edit_btn" DockPanel.Dock="Right" BorderThickness="2" HorizontalAlignment="Right" Margin="0,0,10,0" Width="60">Editieren</Button>
+                    <Button Click="delete_btn_Click"  x:Name="delete_btn" DockPanel.Dock="Right" BorderThickness="2" HorizontalAlignment="Right" Margin="0,0,10,0" Width="60">Löschen</Button>
                 </DockPanel>
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Mentoren</TextBlock>
             </Grid>
         </DockPanel>
         <DockPanel DockPanel.Dock="Top">
-            <ListBox x:Name="courseEdit_lbx" Margin="10,0,10,0" BorderThickness="2" Height="240"></ListBox>
+            <ListBox SelectionMode="Multiple"  x:Name="courseEdit_lbx" Margin="10,0,10,0" BorderThickness="2" Height="240">
+                <ListBoxItem  >Kekeke</ListBoxItem>
+                <ListBoxItem>hahaha</ListBoxItem>
+                <ListBoxItem>huhuhu</ListBoxItem>
+            </ListBox>
         </DockPanel>
         <DockPanel  DockPanel.Dock="Bottom">
             <Button x:Name="settings_btn" Height="40" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left" Click="settings_btn_Click">

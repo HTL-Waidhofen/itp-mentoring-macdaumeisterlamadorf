@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.RightsManagement;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -42,5 +43,24 @@ namespace MentoringUI
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
             mainWindow.Content = new UserManagement_Mentors();
         }
+
+        private void edit_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void delete_btn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to delete these Mentors?","Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if(result == MessageBoxResult.Yes)
+            {
+
+            }
+            
+        }
+        
+        
     }
+    
+    
 }
