@@ -60,7 +60,6 @@ namespace MentoringUI
                 email_tbx.Text = null;
             email_tbx.Foreground = Brushes.Black;
         }
-
         private void email_txb_LostFocus(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(email_tbx.Text))
@@ -69,5 +68,17 @@ namespace MentoringUI
                 email_tbx.Foreground = Brushes.Gray;
             }
         }
+        private void register_btn_Click(object sender, RoutedEventArgs e)
+        {
+            if(!string.IsNullOrEmpty(pwd_pbx.Password))
+            {
+                MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+                mainWindow.Content = new Student();
+            }
+        }
+
+
+
+
     }
 }
