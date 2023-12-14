@@ -13,10 +13,10 @@
         
         <Grid DockPanel.Dock="Top" Height="100">
 
-            <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="40"  Width="400" Name="settings_lb" VerticalAlignment="Center" HorizontalAlignment="Center">Email Bestätigen</TextBlock>
+            <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="40"  Width="400" Name="settings_lb" VerticalAlignment="Center" FontFamily="Cambria" HorizontalAlignment="Center">Email Bestätigen</TextBlock>
             <Image x:Name="htl_logo"  Source="/Images/HTL-Logo.png" Height="100" HorizontalAlignment="Right"/>
         </Grid>
-        <Label DockPanel.Dock="Top" Height="8"/>
+        <Label DockPanel.Dock="Top" Height="45"/>
         <TextBlock Text="Sie müssen Ihre Email verifizieren" DockPanel.Dock="Top" Width="200" Height="35" FontFamily="Cambria"/>
         <Label DockPanel.Dock="Top" Height="8"/>
         <TextBlock Text="Geben Sie den 8-stelligen Code an, welchen Sie per E-Mail erhalten haben" TextAlignment="Center" DockPanel.Dock="Top" Width="400" Height="35"  FontFamily="Cambria" />
