@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using i18n;
 using Microsoft.Win32;
+using System.Resources;
 
 namespace MentoringUI
 {
