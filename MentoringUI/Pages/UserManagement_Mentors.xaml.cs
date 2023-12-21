@@ -25,7 +25,6 @@ namespace MentoringUI
         {
             InitializeComponent();
         }
-
         private void settings_btn_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
@@ -51,10 +50,17 @@ namespace MentoringUI
 
         private void delete_btn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Are you sure you want to delete these Mentors?","Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-            if(result == MessageBoxResult.Yes)
+            if(courseEdit_lbx.SelectedItems.Count != 0)
             {
-                DeleteSelectedItems();
+                MessageBoxResult result = MessageBox.Show("Are you sure you want to delete these Mentors?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if (result == MessageBoxResult.Yes)
+                {
+                    DeleteSelectedItems();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Select Mentors to delete them","Information",MessageBoxButton.OK,MessageBoxImage.Information);
             }
             
         }
@@ -82,5 +88,5 @@ namespace MentoringUI
         }
     }
     
-    
+
 }
