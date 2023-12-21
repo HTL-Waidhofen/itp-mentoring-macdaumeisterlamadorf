@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -14,9 +16,9 @@ using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Xml.Linq;
 using i18n;
 using Microsoft.Win32;
-using System.Resources;
 
 namespace MentoringUI
 {
@@ -128,6 +130,12 @@ namespace MentoringUI
                 case 1:
                     lang = "de";
                     break;
+            }
+            XElement file = XElement.Load(@$"..\..\..\..\Ressources.{lang}.resx");
+            foreach (var f in file.Elements("data"))
+            {
+                if (f.Attribute("name").Value == "SettingsLabel")
+                    settings_lb.Text = f.Value;
             }
         }
         private void return_btn_Click(object sender, RoutedEventArgs e)

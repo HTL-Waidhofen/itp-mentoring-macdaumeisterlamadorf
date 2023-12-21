@@ -10,7 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projektmappenelemente", "Projektmappenelemente", "{4D27F9D1-109E-454A-975D-6178E667777D}"
 	ProjectSection(SolutionItems) = preProject
 		Ressources.en.resx = Ressources.en.resx
-		Ressources.resx = Ressources.resx
+		Ressources.de.resx = Ressources.de.resx
 	EndProjectSection
 EndProject
 Global
