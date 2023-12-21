@@ -25,6 +25,7 @@ namespace MentoringUI
     public partial class Settings : Page
     {
         int Index;
+        private string lang = "";
         private DispatcherTimer timer = new DispatcherTimer();
         public Settings(int index)
         {
@@ -118,7 +119,15 @@ namespace MentoringUI
         }
         private void language_cbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            switch(language_cbx.SelectedIndex)
+            {
+                case 0:
+                    lang = "en";
+                    break;
+                case 1:
+                    lang = "de";
+                    break;
+            }
         }
         private void return_btn_Click(object sender, RoutedEventArgs e)
         {
