@@ -7,6 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MentoringUI", "MentoringUI\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SQLiteDataAccess", "SQLiteDataAccess\SQLiteDataAccess.csproj", "{21C54ED6-A85D-4B2C-9687-6E3467D88B96}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projektmappenelemente", "Projektmappenelemente", "{4D27F9D1-109E-454A-975D-6178E667777D}"
+	ProjectSection(SolutionItems) = preProject
+		Ressources.en.resx = Ressources.en.resx
+		Ressources.resx = Ressources.resx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
