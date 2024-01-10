@@ -129,6 +129,9 @@
   <data name="nc_requestMentor_txtbl" xml:space="preserve">
     <value>Beantragen auf Mentor</value>
   </data>
+  <data name="nc_settings_gbx" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
   <data name="nc_switchToMentorpage_txtbl" xml:space="preserve">
     <value>Auf Mentorseite wechseln</value>
   </data>
