@@ -7,6 +7,7 @@
       mc:Ignorable="d"
       SizeChanged="Page_SizeChanged"
       d:DesignHeight="450" d:DesignWidth="800"
+      Background="White"
       Title="UserManagement">
 
     <DockPanel LastChildFill="False">
@@ -22,14 +23,29 @@
                     <Button Click="student_btn_Click" x:Name="student_btn" DockPanel.Dock="Left" BorderThickness="2" HorizontalAlignment="Left" Margin="10,0,0,0" Width="60">Schüler</Button>
                     <Button Click="mentor_btn_Click" x:Name="mentor_btn" DockPanel.Dock="Left" BorderThickness="2" HorizontalAlignment="Left" Margin="10,0,0,0" Width="60">Mentoren</Button>
                     <Button Click="edit_btn_Click" x:Name="edit_btn" DockPanel.Dock="Right" BorderThickness="2" HorizontalAlignment="Right" Margin="0,0,10,0" Width="60">Editieren</Button>
-                    <Button Click="delete_btn_Click"  x:Name="delete_btn" DockPanel.Dock="Right" BorderThickness="2" HorizontalAlignment="Right" Margin="0,0,10,0" Width="60">Löschen</Button>
+                    <Button Click="delete_btn_Click"  x:Name="delete_btn" DockPanel.Dock="Right" BorderThickness="2" HorizontalAlignment="Right" Margin="0,0,10,0" Width="60" Content="🗑️"></Button>
                 </DockPanel>
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Mentoren</TextBlock>
             </Grid>
         </DockPanel>
         <DockPanel DockPanel.Dock="Top">
             <ListBox SelectionMode="Extended" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="courseEdit_lbx" Margin="10,0,10,10" BorderThickness="2">
-                <ListBoxItem  >Kekeke</ListBoxItem>
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    </Style>
+                </ListBox.ItemContainerStyle>
+                <ListBoxItem >
+                    <Grid >
+                        <Grid HorizontalAlignment="Right">
+                            <Button  Click="delete_btn_Click"  x:Name="delete_btn1" BorderThickness="2" Content="🗑️" ></Button>
+                        </Grid>
+                        <Grid HorizontalAlignment="Left">
+                            <Label>hahah</Label>
+                        </Grid>
+                       
+                    </Grid>
+                </ListBoxItem>
                 <ListBoxItem>hahaha</ListBoxItem>
                 <ListBoxItem>huhuhu</ListBoxItem>
             </ListBox>
