@@ -43,13 +43,13 @@
                 <TextBlock Height="20" DockPanel.Dock="Top"></TextBlock>
                 <Grid DockPanel.Dock="Top" HorizontalAlignment="Left">
                     <Button Height="20" Width="200" Background="#CCCCCC" Name="gc_requestMentor_btn">
-                        <TextBlock TextAlignment="Left" Width="200">Beantragen auf Mentor</TextBlock>
+                        <TextBlock TextAlignment="Left" Width="200" Name="nc_requestMentor_txtbl">Beantragen auf Mentor</TextBlock>
                 </Button>
                 </Grid>
                     <TextBlock DockPanel.Dock="Top" Height="20"></TextBlock>
                 <Grid DockPanel.Dock="Top" HorizontalAlignment="Left">
                     <Button Height="20" DockPanel.Dock="Top" Width="200" Background="#CCCCCC" Name="gc_switchToMentorpage_btn" Click="gc_switchToMentorpage_btn_Click">
-                        <TextBlock TextAlignment="Left" Width="200">Auf Mentorenseite wechseln</TextBlock>
+                        <TextBlock TextAlignment="Left" Width="200" Name="nc_switchToMentorpage_txtbl">Auf Mentorenseite wechseln</TextBlock>
                 </Button>
                 </Grid>
                     <TextBlock DockPanel.Dock="Top" Height="20"></TextBlock>
