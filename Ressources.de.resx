@@ -120,6 +120,9 @@
   <data name="appearance_cbx" xml:space="preserve">
     <value>Anzeige</value>
   </data>
+  <data name="course_management_btn" xml:space="preserve">
+    <value>Kursverwaltung</value>
+  </data>
   <data name="language_cbx" xml:space="preserve">
     <value>Sprache</value>
   </data>
@@ -137,5 +140,8 @@
   </data>
   <data name="settings_lb" xml:space="preserve">
     <value>Einstellungen</value>
+  </data>
+  <data name="user_management_btn" xml:space="preserve">
+    <value>Nutzerverwaltung</value>
   </data>
 </root>
