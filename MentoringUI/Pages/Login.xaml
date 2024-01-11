@@ -16,7 +16,7 @@
         </DockPanel>
         <DockPanel DockPanel.Dock="Top">
 
-            <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" x:Name="Header_tbl" Margin="0,10,0,0" FontWeight="Bold"  FontSize="40">Anmelden</TextBlock>
+            <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" x:Name="loginHeader_tbl" Margin="0,10,0,0" FontWeight="Bold"  FontSize="40">Anmelden</TextBlock>
             <TextBox DockPanel.Dock="Top" x:Name="email_txb" Margin="0,10,0,0" Width="200"></TextBox>
             <TextBox DockPanel.Dock="Top" x:Name="pwd_txb" Margin="0,10,0,0" Width="200"></TextBox>
             <Button DockPanel.Dock="Top" x:Name="login_btn" Margin="0,10,0,0" Width="100">Anmelden</Button>
