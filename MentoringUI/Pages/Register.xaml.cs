@@ -68,6 +68,71 @@ namespace MentoringUI
                 email_tbx.Foreground = Brushes.Gray;
             }
         }
+
+        private void InitializePasswordBox()
+        {
+            ShowPasswordBox();
+            ShowPlaceholderTextBox();
+
+            PasswordBox_PasswordChanged(null, null);
+        }
+
+
+        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(pwd_pbx.Password))
+            {
+                ShowPlaceholderTextBox();
+            }
+            else
+            {
+                HidePlaceholderTextBox();
+            }
+        }
+
+        private void PlaceholderTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            pwd_pbx.Focus();
+        }
+
+        private void PlaceholderTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(pwd_pbx.Password))
+            {
+                ShowPlaceholderTextBox();
+            }
+            else
+            {
+                HidePlaceholderTextBox();
+            }
+        }
+
+        private void ShowPasswordBox()
+        {
+            pwd_pbx.Visibility = Visibility.Visible;
+        }
+
+        private void ShowPlaceholderTextBox()
+        {
+            placeholderPwd_tbx.Visibility = Visibility.Visible;
+        }
+
+        private void HidePlaceholderTextBox()
+        {
+            placeholderPwd_tbx.Visibility = Visibility.Collapsed;
+        }
+
+        private void PasswordBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            placeholderPwd_tbx.Text = null;
+        }
+        private void PasswordBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            placeholderPwd_tbx.Text = "Passwort";
+        }
+
+
+
         private void register_btn_Click(object sender, RoutedEventArgs e)
         {
             if(!string.IsNullOrEmpty(pwd_pbx.Password))
