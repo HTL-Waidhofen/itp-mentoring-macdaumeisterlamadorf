@@ -120,6 +120,9 @@
   <data name="appearance_cbx" xml:space="preserve">
     <value>Anzeige</value>
   </data>
+  <data name="courses_gbx" xml:space="preserve">
+    <value>Alle Kurse</value>
+  </data>
   <data name="course_management_btn" xml:space="preserve">
     <value>Kursverwaltung</value>
   </data>
@@ -134,6 +137,9 @@
   </data>
   <data name="login_btn" xml:space="preserve">
     <value>Anmelden</value>
+  </data>
+  <data name="mentors_gbx" xml:space="preserve">
+    <value>Mentoren Auswahl</value>
   </data>
   <data name="nc_logout_btn" xml:space="preserve">
     <value>Ausloggen</value>
@@ -150,8 +156,14 @@
   <data name="register_tbl" xml:space="preserve">
     <value>Noch kein Konto?</value>
   </data>
+  <data name="requestedMentors_btn" xml:space="preserve">
+    <value>Bereits beantragte Mentoren</value>
+  </data>
   <data name="settings_lb" xml:space="preserve">
     <value>Einstellungen</value>
+  </data>
+  <data name="studentsHeader_tbl" xml:space="preserve">
+    <value>Schüler</value>
   </data>
   <data name="user_management_btn" xml:space="preserve">
     <value>Nutzerverwaltung</value>
