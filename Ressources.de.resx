@@ -123,8 +123,17 @@
   <data name="course_management_btn" xml:space="preserve">
     <value>Kursverwaltung</value>
   </data>
+  <data name="hyperlinkToRegisterPage" xml:space="preserve">
+    <value>Hier registrieren</value>
+  </data>
   <data name="language_cbx" xml:space="preserve">
     <value>Sprache</value>
+  </data>
+  <data name="loginHeader_tbl" xml:space="preserve">
+    <value>Anmelden</value>
+  </data>
+  <data name="login_btn" xml:space="preserve">
+    <value>Anmelden</value>
   </data>
   <data name="nc_logout_btn" xml:space="preserve">
     <value>Ausloggen</value>
@@ -137,6 +146,9 @@
   </data>
   <data name="nc_switchToMentorpage_txtbl" xml:space="preserve">
     <value>Auf Mentorseite wechseln</value>
+  </data>
+  <data name="register_tbl" xml:space="preserve">
+    <value>Noch kein Konto?</value>
   </data>
   <data name="settings_lb" xml:space="preserve">
     <value>Einstellungen</value>
