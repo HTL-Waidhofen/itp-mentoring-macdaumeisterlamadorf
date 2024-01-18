@@ -17,6 +17,6 @@
         </Grid>
         <Label DockPanel.Dock="Top" Height="15"/>
         <TextBox DockPanel.Dock="Top" TextWrapping="Wrap" Text="Suche:" Width="600" FontFamily="Cambria" />
-        <ListBox DockPanel.Dock="Top" Width="600" Height="270" Margin="0,10" FontFamily="Cambria"></ListBox>
+        <ListBox x:Name="mentorslbx" DockPanel.Dock="Top" Width="600" Margin="0,10" FontFamily="Cambria"></ListBox>
     </DockPanel>
 </Page>

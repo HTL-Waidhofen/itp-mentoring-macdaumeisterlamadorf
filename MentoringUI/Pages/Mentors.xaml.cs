@@ -24,5 +24,13 @@ namespace MentoringUI
         {
             InitializeComponent();
         }
+        private void FilterTextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            string filterText = filterTextBox.Text.ToLower();
+
+            var filteredMentors = allMentors.Where(mentor => mentor.ToLower().Contains(filterText)).ToList();
+
+            mentorslbx.ItemsSource = filteredMentors;
+        }
     }
 }
