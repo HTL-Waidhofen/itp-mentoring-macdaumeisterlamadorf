@@ -55,7 +55,7 @@ namespace MentoringUI
 
                 if (result == true)
                 {
-                    MessageBoxResult mResult = MessageBox.Show("Are you sure you want to edit this Mentor?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                    MessageBoxResult mResult = MessageBox.Show("Sind Sie sicher, dass Sie diesen Mentor bearbeiten wollen?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                     if (mResult == MessageBoxResult.Yes)
                     {
                         selectedItem.Content = dialog.InputText;
@@ -64,7 +64,7 @@ namespace MentoringUI
             }
             else
             {
-                MessageBox.Show("Please select an item to change its content.");
+                MessageBox.Show("Bitte wählen Sie einen Mentor aus, um ihn zu bearbeiten.");
             }
         }
 
@@ -72,7 +72,7 @@ namespace MentoringUI
         {
                 if (courseEdit_lbx.SelectedItems.Count > 1)
                 {
-                    MessageBoxResult result = MessageBox.Show("Are you sure you want to delete these Mentors?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                    MessageBoxResult result = MessageBox.Show("Sind Sie sicher, dass Sie diese Mentoren löschen wollen?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                     if (result == MessageBoxResult.Yes)
                     {
                         DeleteSelectedItems();
@@ -80,7 +80,7 @@ namespace MentoringUI
                 }
                 else if(courseEdit_lbx.SelectedItems.Count == 1)
                 {
-                    MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this Mentor?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                    MessageBoxResult result = MessageBox.Show("Sind Sie sicher, dass Sie diesen Mentor löschen wollen?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                     if (result == MessageBoxResult.Yes)
                     {
                         DeleteSelectedItems();
@@ -88,7 +88,7 @@ namespace MentoringUI
             }
                 else
                 {
-                    MessageBox.Show("Select Mentors to delete them", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Wählen Sie Mentoren aus, um sie zu löschen", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
         }
         private void DeleteSelectedItems()
@@ -105,11 +105,6 @@ namespace MentoringUI
         {
             double newHeight = e.NewSize.Height - 180;
             courseEdit_lbx.Height = newHeight;
-        }
-
-        private void ListBoxItem_Unchecked(object sender, RoutedEventArgs e)
-        {
-
         }
     }
     public partial class InputDialog : Window
