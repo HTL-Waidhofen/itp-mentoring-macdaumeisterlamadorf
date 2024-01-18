@@ -55,7 +55,11 @@ namespace MentoringUI
 
                 if (result == true)
                 {
-                    selectedItem.Content = dialog.InputText;
+                    MessageBoxResult mResult = MessageBox.Show("Are you sure you want to edit this Mentor?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                    if (mResult == MessageBoxResult.Yes)
+                    {
+                        selectedItem.Content = dialog.InputText;
+                    }
                 }
             }
             else
