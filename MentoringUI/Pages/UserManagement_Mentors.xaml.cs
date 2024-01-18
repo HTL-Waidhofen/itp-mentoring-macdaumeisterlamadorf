@@ -66,7 +66,7 @@ namespace MentoringUI
 
         private void delete_btn_Click(object sender, RoutedEventArgs e)
         {
-                if (courseEdit_lbx.SelectedItems.Count != 0)
+                if (courseEdit_lbx.SelectedItems.Count > 1)
                 {
                     MessageBoxResult result = MessageBox.Show("Are you sure you want to delete these Mentors?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                     if (result == MessageBoxResult.Yes)
