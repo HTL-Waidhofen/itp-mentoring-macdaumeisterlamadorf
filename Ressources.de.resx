@@ -129,9 +129,6 @@
   <data name="hyperlinkToRegisterPage" xml:space="preserve">
     <value>Hier registrieren</value>
   </data>
-  <data name="language_cbx" xml:space="preserve">
-    <value>Sprache</value>
-  </data>
   <data name="loginHeader_tbl" xml:space="preserve">
     <value>Anmelden</value>
   </data>
