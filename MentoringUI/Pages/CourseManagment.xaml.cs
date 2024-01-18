@@ -52,6 +52,11 @@ namespace MentoringUI
                 Course_lbx.Items.Remove(item);
             }
         }
+        private void Page_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            double newHeight = e.NewSize.Height - 180;
+            Course_lbx.Height = newHeight;
+        }
 
     }
 }
