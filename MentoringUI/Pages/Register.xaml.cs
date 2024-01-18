@@ -193,7 +193,24 @@ namespace MentoringUI
             confirmplaceholderPwd_tbx.Text = "Passwort";
         }
 
-        
+        private void ToggleButton_Checked(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(placeholderPwd_tbx.Text) && !string.IsNullOrEmpty(pwd_pbx.Password))
+            {
+                placeholderPwd_tbx.Foreground = Brushes.Black;
+                placeholderPwd_tbx.Text = pwd_pbx.Password.ToString();
+                placeholderPwd_tbx.Visibility = Visibility.Visible;
+                pwd_pbx.Visibility = Visibility.Collapsed;
+            }
+        }
+        private void ToggleButton_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(placeholderPwd_tbx.Text) && !string.IsNullOrEmpty(pwd_pbx.Password))
+            {
+                pwd_pbx.Visibility = Visibility.Visible;
+                placeholderPwd_tbx.Visibility = Visibility.Collapsed;
+            }
+        }
 
 
         private void register_btn_Click(object sender, RoutedEventArgs e)
