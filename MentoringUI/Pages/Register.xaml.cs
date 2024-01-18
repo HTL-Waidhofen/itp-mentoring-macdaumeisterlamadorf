@@ -190,7 +190,7 @@ namespace MentoringUI
         }
         private void ConfirmPasswordBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            confirmplaceholderPwd_tbx.Text = "Passwort";
+            confirmplaceholderPwd_tbx.Text = "Passwort bestätigen";
         }
 
         private void ToggleButton_Checked(object sender, RoutedEventArgs e)
