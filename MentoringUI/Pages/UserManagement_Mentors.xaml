@@ -34,9 +34,7 @@
                         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
                     </Style>
                 </ListBox.ItemContainerStyle>
-                <ListBoxItem >
-                    <TextBlock>hahah</TextBlock>
-                </ListBoxItem>
+                <ListBoxItem>hahah</ListBoxItem>
                 <ListBoxItem>hahaha</ListBoxItem>
                 <ListBoxItem>huhuhu</ListBoxItem>
             </ListBox>
