@@ -158,7 +158,7 @@ namespace MentoringUI
                     break;
             }
             XElement file = XElement.Load(@$"..\..\..\..\Ressources.{lang}.resx");
-            var childrenD = GetAllChildrenmainWindow;
+            var childrenD = GetAllChildren(mainWindow);
             foreach (var f in file.Elements("data"))
             {
                 for(int i = 0; i < childrenD.Count; i++)
