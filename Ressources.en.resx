@@ -138,7 +138,7 @@
   <data name="mentors_gbx" xml:space="preserve">
     <value>Choose Mentor</value>
   </data>
-  <data name="nc_logout_btn" xml:space="preserve">
+  <data name="nc_logout_txtblk" xml:space="preserve">
     <value>Log out</value>
   </data>
   <data name="nc_requestMentor_txtbl" xml:space="preserve">
