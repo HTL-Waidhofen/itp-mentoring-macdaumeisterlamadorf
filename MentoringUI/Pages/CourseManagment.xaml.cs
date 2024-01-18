@@ -29,6 +29,23 @@ namespace MentoringUI
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
             mainWindow.Content = new Settings();
         }
-
+        private void delete(object sender, RoutedEventArgs e)
+        {
+            if (Course_lbx.SelectedItems.Count != 0)
+            {
+                MessageBoxResult result = MessageBox.Show("Are you sure you want to delete these Mentors?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if (result == MessageBoxResult.Yes)
+                {
+                    DeleteSelectedItems();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Select Mentors to delete them", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
     }
 }
+
+
+
