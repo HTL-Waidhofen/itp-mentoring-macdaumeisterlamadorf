@@ -21,11 +21,15 @@
             <Button Content="Bearbeiten" Width="90"  Margin=" 0,0,0,0" FontFamily="Cambria"/>
         </DockPanel>
         <ListBox x:Name="Course_lbx" DockPanel.Dock="Top" Width="500" FontFamily="Cambria">
-            <ListBoxItem>hahaha</ListBoxItem>
-            <ListBoxItem>huhuhu</ListBoxItem>
+            <ListBoxItem>SEW Suizid mit Daurer</ListBoxItem>
+            <ListBoxItem>INSY mit Emanuel</ListBoxItem>
+            <ListBoxItem>Mathe mit Jan</ListBoxItem>
+            <ListBoxItem>GGP mit Grurl</ListBoxItem>
         </ListBox>
-        <Button x:Name="settings_btn" Height="50"  Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left">
-            <Image  Source="/Images/setting.png"></Image>
-        </Button>
+        <DockPanel  DockPanel.Dock="Bottom">
+            <Button x:Name="settings_btn" Height="40" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left" Click="settings_btn_Click">
+                <Image  Source="/Images/setting.png"></Image>
+            </Button>
+        </DockPanel>
     </DockPanel>
 </Page>
