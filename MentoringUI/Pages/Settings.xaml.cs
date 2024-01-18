@@ -29,6 +29,8 @@ namespace MentoringUI
     {
         int Index;
         private string lang = "de";
+        MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+
         private DispatcherTimer timer = new DispatcherTimer();
         public Settings(int index)
         {
@@ -87,9 +89,9 @@ namespace MentoringUI
         private void SetColor(Brush foreground, Brush background, string path = "")
         {
             return_btn_img.Source = new BitmapImage(new Uri(path, UriKind.Relative));
-            ((MainWindow)Application.Current.MainWindow).Foreground = foreground;
-            ((MainWindow)Application.Current.MainWindow).Background = background;
-            List<DependencyObject> children = GetAllChildren(((MainWindow)Application.Current.MainWindow));
+            mainWindow.Foreground = foreground;
+            mainWindow.Background = background;
+            List<DependencyObject> children = GetAllChildren(mainWindow);
             foreach (DependencyObject child in children)
             {
                  if (child is TextBlock textBlock)
@@ -156,7 +158,7 @@ namespace MentoringUI
                     break;
             }
             XElement file = XElement.Load(@$"..\..\..\..\Ressources.{lang}.resx");
-            var childrenD = GetAllChildren((MainWindow)Application.Current.MainWindow);
+            var childrenD = GetAllChildrenmainWindow;
             foreach (var f in file.Elements("data"))
             {
                 for(int i = 0; i < childrenD.Count; i++)
@@ -227,15 +229,14 @@ namespace MentoringUI
             }
             return children; 
         }
-
         private void nc_logout_btn_Click(object sender, RoutedEventArgs e)
         {
-            ((MainWindow)Application.Current.MainWindow).Content = new Startpage();
+            mainWindow.Content = new Startpage();
         }
 
         private void gc_switchToMentorpage_btn_Click(object sender, RoutedEventArgs e)
         {
-            ((MainWindow)Application.Current.MainWindow).Content = new Mentors();
+            mainWindow.Content = new Mentors();
         }
     }
 }
