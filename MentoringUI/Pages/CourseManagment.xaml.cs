@@ -44,6 +44,15 @@ namespace MentoringUI
                 MessageBox.Show("Select Mentors to delete them", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
+        private void DeleteSelectedItems()
+        {
+            var selectedItems = new List<object>(Course_lbx.SelectedItems.Cast<object>());
+            foreach (var item in selectedItems)
+            {
+                Course_lbx.Items.Remove(item);
+            }
+        }
+
     }
 }
 
