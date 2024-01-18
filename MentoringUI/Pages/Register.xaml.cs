@@ -131,7 +131,67 @@ namespace MentoringUI
             placeholderPwd_tbx.Text = "Passwort";
         }
 
+        private void InitializeConfirmPasswordBox()
+        {
+            ShowConfirmPasswordBox();
+            ShowConfirmPlaceholderTextBox();
 
+            ConfirmPasswordBox_PasswordChanged(null, null);
+        }
+
+
+        private void ConfirmPasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(confirmpwd_pbx.Password))
+            {
+                ShowConfirmPlaceholderTextBox();
+            }
+            else
+            {
+                HideConfirmPlaceholderTextBox();
+            }
+        }
+
+        private void ConfirmPlaceholderTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            confirmpwd_pbx.Focus();
+        }
+
+        private void ConfirmPlaceholderTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(confirmpwd_pbx.Password))
+            {
+                ShowConfirmPlaceholderTextBox();
+            }
+            else
+            {
+                HideConfirmPlaceholderTextBox();
+            }
+        }
+
+        private void ShowConfirmPasswordBox()
+        {
+            confirmpwd_pbx.Visibility = Visibility.Visible;
+        }
+
+        private void ShowConfirmPlaceholderTextBox()
+        {
+            confirmplaceholderPwd_tbx.Visibility = Visibility.Visible;
+        }
+
+        private void HideConfirmPlaceholderTextBox()
+        {
+            confirmplaceholderPwd_tbx.Visibility = Visibility.Collapsed;
+        }
+
+        private void ConfirmPasswordBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            confirmplaceholderPwd_tbx.Text = null;
+        }
+        private void ConfirmPasswordBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            confirmplaceholderPwd_tbx.Text = "Passwort";
+        }
 
         private void register_btn_Click(object sender, RoutedEventArgs e)
         {
