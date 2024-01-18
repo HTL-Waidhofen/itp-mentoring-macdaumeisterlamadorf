@@ -28,7 +28,7 @@ namespace MentoringUI
     public partial class Settings : Page
     {
         int Index;
-        private string lang = "";
+        private string lang = "de";
         private DispatcherTimer timer = new DispatcherTimer();
         public Settings(int index)
         {
@@ -58,6 +58,7 @@ namespace MentoringUI
                 SetColor(light, dark, "/Images/return_button_white.png");
             else if(appearance_cbx.SelectedIndex == 2)
                 SetColor(Brushes.Black, light, "/Images/return_button_black.png");
+            language_cbx_SelectionChanged(null, null);
         }
 
         private void appearance_cbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -88,35 +89,58 @@ namespace MentoringUI
             return_btn_img.Source = new BitmapImage(new Uri(path, UriKind.Relative));
             ((MainWindow)Application.Current.MainWindow).Foreground = foreground;
             ((MainWindow)Application.Current.MainWindow).Background = background;
-            List<Control> children = /*GetAllChildren(((MainWindow)Application.Current.MainWindow))*/ null;
-            foreach (Control child in children)
+            List<DependencyObject> children = GetAllChildren(((MainWindow)Application.Current.MainWindow));
+            foreach (DependencyObject child in children)
             {
-                if(child != null)
-                {
-                    if (child.Name.StartsWith("gc"))
+                 if (child is TextBlock textBlock)
+                 {
+                    if (!textBlock.Name.StartsWith("nc"))
                     {
                         if (foreground == light)
-                            child.Background = (Brush?)new BrushConverter().ConvertFromString("#999999");
-                        else
-                            child.Background = (Brush?)new BrushConverter().ConvertFromString("#CCCCCC");
-                    }
-                else if(!child.Name.StartsWith("nc"))
-                {
-                        if(child is ComboBox comboBox)
-            {
-                            foreach (var comboItem in comboBox.Items)
-                            {
-                                if (comboItem is ComboBoxItem comboBoxItem)
-                                {
-                                    if (foreground == light)
-                                        comboBoxItem.Background = (Brush?)new BrushConverter().ConvertFromString("#999999");
-                                    else
-                                        comboBoxItem.Background = Brushes.White;
-                                }
-                            }
+                        {
+                            textBlock.Background = dark;
+                            textBlock.Foreground = light;
                         }
+                        else
+                        {
+                            textBlock.Background = light;
+                            textBlock.Foreground = dark;
+                        }
+                    }
+                 }
+                 else if (child is Button button)
+                 {
+                    if (!button.Name.StartsWith("nc"))
+                    {
+                        if (foreground == light)
+                        {
+                            button.Background = dark;
+                            button.Foreground = light;
+                        }
+                        else
+                        {
+                            button.Background = light;
+                            button.Foreground = dark;
+                        }
+                    }
+                 }
+                 else if(child is ComboBox comboBox)
+                foreach (var comboItem in comboBox.Items)
+                {
+                    if (comboItem is ComboBoxItem comboBoxItem)
+                    {
+                        if (foreground == light)
+                            {
+                            comboBoxItem.Background = dark;
+                            comboBoxItem.Foreground = light;
 
-                }
+                            }
+                            else
+                            {
+                            comboBoxItem.Background = light;
+                            comboBoxItem.Foreground = dark;
+                            }
+                    }
                 }
             }
         }
