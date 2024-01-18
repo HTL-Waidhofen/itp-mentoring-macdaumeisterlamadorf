@@ -24,5 +24,11 @@ namespace MentoringUI
         {
             InitializeComponent();
         }
+        private void settings_btn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow.Content = new Settings();
+        }
+
     }
 }
