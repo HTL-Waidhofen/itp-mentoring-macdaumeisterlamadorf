@@ -74,6 +74,14 @@ namespace MentoringUI
                         DeleteSelectedItems();
                     }
                 }
+                else if(courseEdit_lbx.SelectedItems.Count == 1)
+                {
+                    MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this Mentor?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        DeleteSelectedItems();
+                    }
+            }
                 else
                 {
                     MessageBox.Show("Select Mentors to delete them", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
