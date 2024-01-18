@@ -211,7 +211,24 @@ namespace MentoringUI
                 placeholderPwd_tbx.Visibility = Visibility.Collapsed;
             }
         }
-
+        private void ConfirmToggleButton_Checked(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(confirmplaceholderPwd_tbx.Text) && !string.IsNullOrEmpty(confirmpwd_pbx.Password))
+            {
+                confirmplaceholderPwd_tbx.Foreground = Brushes.Black;
+                confirmplaceholderPwd_tbx.Text = confirmpwd_pbx.Password.ToString();
+                confirmplaceholderPwd_tbx.Visibility = Visibility.Visible;
+                confirmpwd_pbx.Visibility = Visibility.Collapsed;
+            }
+        }
+        private void ConfirmToggleButton_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(confirmplaceholderPwd_tbx.Text) && !string.IsNullOrEmpty(confirmpwd_pbx.Password))
+            {
+                confirmpwd_pbx.Visibility = Visibility.Visible;
+                confirmplaceholderPwd_tbx.Visibility = Visibility.Collapsed;
+            }
+        }
 
         private void register_btn_Click(object sender, RoutedEventArgs e)
         {
