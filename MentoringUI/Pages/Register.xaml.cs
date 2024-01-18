@@ -193,6 +193,9 @@ namespace MentoringUI
             confirmplaceholderPwd_tbx.Text = "Passwort";
         }
 
+        
+
+
         private void register_btn_Click(object sender, RoutedEventArgs e)
         {
             if(!string.IsNullOrEmpty(pwd_pbx.Password))
