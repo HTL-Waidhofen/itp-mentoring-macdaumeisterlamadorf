@@ -18,5 +18,10 @@
         <Label DockPanel.Dock="Top" Height="15"/>
         <TextBox x:Name="filterTextBox" DockPanel.Dock="Top" TextWrapping="Wrap" Text="Suche:" Width="600" FontFamily="Cambria" />
         <ListBox x:Name="mentorslbx" DockPanel.Dock="Top" Width="600" Margin="0,10" FontFamily="Cambria"></ListBox>
+        <DockPanel  DockPanel.Dock="Bottom">
+            <Button x:Name="settings_btn" Height="40" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left" Click="settings_btn_Click">
+                <Image  Source="/Images/setting.png"></Image>
+            </Button>
+        </DockPanel>
     </DockPanel>
 </Page>
