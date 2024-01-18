@@ -45,31 +45,44 @@ namespace MentoringUI
 
         private void edit_btn_Click(object sender, RoutedEventArgs e)
         {
+            ListBoxItem selectedItem = (ListBoxItem)courseEdit_lbx.SelectedItem;
 
-        }
-
-        private void delete_btn_Click(object sender, RoutedEventArgs e)
-        {
-            if(courseEdit_lbx.SelectedItems.Count != 0)
+            if (selectedItem != null)
             {
-                MessageBoxResult result = MessageBox.Show("Are you sure you want to delete these Mentors?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-                if (result == MessageBoxResult.Yes)
+                var dialog = new InputDialog(selectedItem.Content.ToString());
+
+                bool? result = dialog.ShowDialog();
+
+                if (result == true)
                 {
-                    DeleteSelectedItems();
+                    selectedItem.Content = dialog.InputText;
                 }
             }
             else
             {
-                MessageBox.Show("Select Mentors to delete them","Information",MessageBoxButton.OK,MessageBoxImage.Information);
+                MessageBox.Show("Please select an item to change its content.");
             }
-            
+        }
+
+        private void delete_btn_Click(object sender, RoutedEventArgs e)
+        {
+                if (courseEdit_lbx.SelectedItems.Count != 0)
+                {
+                    MessageBoxResult result = MessageBox.Show("Are you sure you want to delete these Mentors?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        DeleteSelectedItems();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Select Mentors to delete them", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
         }
         private void DeleteSelectedItems()
         {
-            // Create a copy of the selected items
             var selectedItems = new List<object>(courseEdit_lbx.SelectedItems.Cast<object>());
 
-            // Iterate over the copy and remove items from the original collection
             foreach (var item in selectedItems)
             {
                 courseEdit_lbx.Items.Remove(item);
@@ -87,6 +100,48 @@ namespace MentoringUI
 
         }
     }
-    
+    public partial class InputDialog : Window
+    {
+        private TextBox textBox;
+        private Button OKButton;
+        private Button CancelButton;
+
+        public string InputText { get; private set; }
+
+        public InputDialog(string initialText)
+        {
+            InitializeComponent();
+            textBox.Text = initialText;
+        }
+
+        private void InitializeComponent()
+        {
+            textBox = new TextBox();
+            OKButton = new Button() { Content = "OK" };
+            CancelButton = new Button() { Content = "Cancel" };
+
+            OKButton.Click += OKButton_Click;
+            CancelButton.Click += CancelButton_Click;
+
+            StackPanel panel = new StackPanel();
+            panel.Children.Add(textBox);
+            panel.Children.Add(OKButton);
+            panel.Children.Add(CancelButton);
+
+
+            Content = panel;
+        }
+
+        private void OKButton_Click(object sender, RoutedEventArgs e)
+        {
+            InputText = textBox.Text;
+            DialogResult = true;
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+        }
+    }
 
 }
