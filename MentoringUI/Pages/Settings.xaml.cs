@@ -88,7 +88,7 @@ namespace MentoringUI
             return_btn_img.Source = new BitmapImage(new Uri(path, UriKind.Relative));
             ((MainWindow)Application.Current.MainWindow).Foreground = foreground;
             ((MainWindow)Application.Current.MainWindow).Background = background;
-            List<Control> children = GetAllChildren(((MainWindow)Application.Current.MainWindow));
+            List<Control> children = /*GetAllChildren(((MainWindow)Application.Current.MainWindow))*/ null;
             foreach (Control child in children)
             {
                 if(child != null)
@@ -132,10 +132,25 @@ namespace MentoringUI
                     break;
             }
             XElement file = XElement.Load(@$"..\..\..\..\Ressources.{lang}.resx");
+            var childrenD = GetAllChildren((MainWindow)Application.Current.MainWindow);
             foreach (var f in file.Elements("data"))
             {
-                if (f.Attribute("name").Value == "SettingsLabel")
-                    settings_lb.Text = f.Value;
+                for(int i = 0; i < childrenD.Count; i++)
+                {
+                       if (childrenD[i] is TextBlock textBlock)
+                        if(textBlock.Name == f.Attribute("name").Value)
+                             textBlock.Text = f.Value.Replace("\n", "").Trim();
+                       if (childrenD[i] is ComboBox comboBox)
+                        if(comboBox.Name == f.Attribute("name").Value && comboBox.Name != "language_cbx")
+                                 comboBox.Text = f.Value.Replace("\n", "").Trim();
+                       if (childrenD[i] is Button button)
+                        if(button.Name == f.Attribute("name").Value)
+                                 button.Content = f.Value.Replace("\n", "").Trim();
+                       if (childrenD[i] is GroupBox groupBox)
+                        if(groupBox.Name == f.Attribute("name").Value)
+                                 groupBox.Header = f.Value.Replace("\n", "").Trim();
+                       
+                }
             }
         }
         private void return_btn_Click(object sender, RoutedEventArgs e)
@@ -174,14 +189,17 @@ namespace MentoringUI
 
             }
         }
-        private List<Control> GetAllChildren(DependencyObject parent)
+        private List<DependencyObject> GetAllChildren(DependencyObject parent)
         {
-            List<Control> children = new List<Control>();
+            List<DependencyObject> children = new List<DependencyObject>();
             for(int i = 0; i < VisualTreeHelper.GetChildrenCount(parent); i++)
             {
                 DependencyObject child = VisualTreeHelper.GetChild(parent, i);
-                children.Add(child as Control);
+                if(child!= null)
+                {
+                children.Add(child);
                 children.AddRange(GetAllChildren(child));
+                }
             }
             return children; 
         }
