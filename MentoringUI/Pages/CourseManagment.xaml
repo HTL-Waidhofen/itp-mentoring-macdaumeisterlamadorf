@@ -23,7 +23,6 @@
         <ListBox x:Name="Course_lbx" DockPanel.Dock="Top" Width="500" FontFamily="Cambria">
             <ListBoxItem>SEW Suizid mit Daurer</ListBoxItem>
             <ListBoxItem>INSY mit Emanuel</ListBoxItem>
-            <ListBoxItem>Mathe mit Jan</ListBoxItem>
             <ListBoxItem>GGP mit Grurl</ListBoxItem>
         </ListBox>
         <DockPanel  DockPanel.Dock="Bottom">
