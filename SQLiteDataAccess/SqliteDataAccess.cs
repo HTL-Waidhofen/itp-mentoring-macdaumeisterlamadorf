@@ -187,6 +187,27 @@ namespace SQLiteDataAccess
                 }
             }
         }
+        public static void UpdateDisplay(string connectionString, Display updatedDisplay)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                string stm = "UPDATE Display SET startTime = @startTime, endTime = @endTime, course = @course, " +
+                             "price = @price, description = @description, mentorID_FK = @mentorID_FK WHERE displayID = @displayID";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(stm, connection))
+                {
+                    cmd.Parameters.AddWithValue("@startTime", updatedDisplay.StartTime);
+                    cmd.Parameters.AddWithValue("@endTime", updatedDisplay.EndTime);
+                    cmd.Parameters.AddWithValue("@course", updatedDisplay.Course);
+                    cmd.Parameters.AddWithValue("@price", updatedDisplay.Price);
+                    cmd.Parameters.AddWithValue("@description", updatedDisplay.Description);
+                    cmd.Parameters.AddWithValue("@mentorID_FK", updatedDisplay.MentorID_FK);
+                    cmd.Parameters.AddWithValue("@displayID", updatedDisplay.DisplayID);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
     public class User
     {
