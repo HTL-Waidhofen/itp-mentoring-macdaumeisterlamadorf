@@ -100,6 +100,20 @@ namespace SQLiteDataAccess
                 }
             }
         }
+        public static void AddMentor(string connectionString, Mentor mentor)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                using (SQLiteCommand cmd = connection.CreateCommand())
+                {
+                    cmd.CommandText = "INSERT INTO Mentor(courses) VALUES(@courses)";
+                    cmd.Parameters.AddWithValue("@courses", mentor.Courses);
+                    cmd.Prepare();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
     public class User
     {
