@@ -68,6 +68,38 @@ namespace SQLiteDataAccess
                 }
             }
         }
+        public static List<User> LoadUsers(string connectionString)
+        {
+            using (var connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                List<User> userList = new List<User>();
+                string stm = "SELECT * FROM User";
+
+                using (var cmd = new SQLiteCommand(stm, connection))
+                {
+                    using (SQLiteDataReader rdr = cmd.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                        {
+                            int id = rdr.GetInt32(0);
+                            char appearance = char.Parse(rdr.GetString(1));
+                            string language = rdr.GetString(2);
+                            string firstname = rdr.GetString(3);
+                            string lastname = rdr.GetString(4);
+                            string email = rdr.GetString(5);
+                            string phoneNumber = rdr.GetString(6);
+                            string password = rdr.GetString(7);
+                            int mentorID = rdr.GetInt32(8);
+                            string userClass = rdr.GetString(9);
+
+                            userList.Add(new User(id, appearance, language, firstname, lastname, email, phoneNumber, password, mentorID, userClass));
+                        }
+                        return userList;
+                    }
+                }
+            }
+        }
     }
     public class User
     {
