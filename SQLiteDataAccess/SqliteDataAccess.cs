@@ -167,6 +167,26 @@ namespace SQLiteDataAccess
                 }
             }
         }
+        public static void AddDisplay(string connectionString, Display display)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                using (SQLiteCommand cmd = connection.CreateCommand())
+                {
+                    cmd.CommandText = "INSERT INTO Display(startTime, endTime, course, price, description, mentorID_FK) " +
+                                      "VALUES(@startTime, @endTime, @course, @price, @description, @mentorID_FK)";
+                    cmd.Parameters.AddWithValue("@startTime", display.StartTime);
+                    cmd.Parameters.AddWithValue("@endTime", display.EndTime);
+                    cmd.Parameters.AddWithValue("@course", display.Course);
+                    cmd.Parameters.AddWithValue("@price", display.Price);
+                    cmd.Parameters.AddWithValue("@description", display.Description);
+                    cmd.Parameters.AddWithValue("@mentorID_FK", display.MentorID_FK);
+                    cmd.Prepare();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
     public class User
     {
