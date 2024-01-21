@@ -52,6 +52,22 @@ namespace SQLiteDataAccess
                 }
             }
         }
+        public static void DeleteUser(string connectionString, int userID)
+        {
+            using (var connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+
+                string stm = "DELETE FROM User WHERE ID = @userID";
+
+                using (var cmd = new SQLiteCommand(stm, connection))
+                {
+                    cmd.Parameters.AddWithValue("@userID", userID);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
     public class User
     {
