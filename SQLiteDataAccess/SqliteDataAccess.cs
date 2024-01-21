@@ -1,4 +1,5 @@
-﻿namespace SQLiteDataAccess
+﻿using System.Data.SQLite;
+namespace SQLiteDataAccess
 {
     public class SqliteDataAccess
     {
