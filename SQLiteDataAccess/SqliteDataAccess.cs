@@ -91,5 +91,14 @@
     {
         public string Coursename { get; set; }
         public int CourseID { get; set; }
+        public Course(string coursename)
+        {
+            Coursename = coursename;
+        }
+        public Course(int courseID, string coursename)
+        {
+            CourseID = courseID;
+            Coursename = coursename;
+        }
     }
 }
