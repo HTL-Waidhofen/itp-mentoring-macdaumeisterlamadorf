@@ -87,4 +87,9 @@
             MentorID_FK = mentorID_FK;
         }
     }
+    public class Course
+    {
+        public string Coursename { get; set; }
+        public int CourseID { get; set; }
+    }
 }
