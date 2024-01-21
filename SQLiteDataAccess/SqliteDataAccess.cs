@@ -280,6 +280,20 @@ namespace SQLiteDataAccess
                 }
             }
         }
+        public static void DeleteCourse(string connectionString, int courseID)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                string stm = "DELETE FROM Course WHERE CourseID = @courseID";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(stm, connection))
+                {
+                    cmd.Parameters.AddWithValue("@courseID", courseID);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
     public class User
     {
