@@ -3,7 +3,28 @@ namespace SQLiteDataAccess
 {
     public class SqliteDataAccess
     {
-
+        static void AddUser(string connectionString, User user)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                using (SQLiteCommand cmd = connection.CreateCommand())
+                {
+                    cmd.CommandText = "INSERT INTO User(appearance, language, firstname, lastname, email, phonenumber, password, mentorID_FK, class) VALUES(@appearance, @language, @firstname, @lastname, @email, @phonenumber, @password, @mentorID_FK, @class)";
+                    cmd.Parameters.AddWithValue("@appearance", user.Appearance.ToString());
+                    cmd.Parameters.AddWithValue("@language", user.Language);
+                    cmd.Parameters.AddWithValue("@firstname", user.Firstname);
+                    cmd.Parameters.AddWithValue("@lastname", user.Lastname);
+                    cmd.Parameters.AddWithValue("@email", user.Email);
+                    cmd.Parameters.AddWithValue("@phonenumber", user.Phonenumber);
+                    cmd.Parameters.AddWithValue("@password", user.Password);
+                    cmd.Parameters.AddWithValue("@mentorID_FK", user.MentorID_FK);
+                    cmd.Parameters.AddWithValue("@class", user.Class);
+                    cmd.Prepare();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
     public class User
     {
