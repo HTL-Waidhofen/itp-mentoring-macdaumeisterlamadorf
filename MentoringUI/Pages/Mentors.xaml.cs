@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,22 @@ namespace MentoringUI
     /// </summary>
     public partial class Mentors : Page
     {
+        private ObservableCollection<string> allMentors;
         public Mentors()
         {
             InitializeComponent();
+            allMentors = new ObservableCollection<string> { "Daniel Daurer","Benjamin Zechmeister","Alexander Kaltenbauer","Leon Lampesberger"};
+            mentorslbx.ItemsSource = allMentors;
+
+            filterTextBox.TextChanged += FilterTextBox_TextChanged;
+        }
+        private void FilterTextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            string filterText = filterTextBox.Text.ToLower();
+
+            var filteredMentors = allMentors.Where(mentor => mentor.ToLower().Contains(filterText)).ToList();
+
+            mentorslbx.ItemsSource = filteredMentors;
         }
     }
 }
