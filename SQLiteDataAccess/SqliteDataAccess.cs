@@ -129,6 +129,20 @@ namespace SQLiteDataAccess
                 }
             }
         }
+        public static void DeleteMentor(string connectionString, int mentorID)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                string stm = "DELETE FROM Mentor WHERE mentorID = @mentorID";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(stm, connection))
+                {
+                    cmd.Parameters.AddWithValue("@mentorID", mentorID);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
     public class User
     {
