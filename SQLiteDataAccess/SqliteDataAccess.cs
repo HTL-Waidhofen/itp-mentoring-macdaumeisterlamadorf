@@ -294,6 +294,30 @@ namespace SQLiteDataAccess
                 }
             }
         }
+        public static List<Course> LoadCourses(string connectionString)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                List<Course> courseList = new List<Course>();
+                string stm = "SELECT * FROM Course";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(stm, connection))
+                {
+                    using (SQLiteDataReader rdr = cmd.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                        {
+                            string coursename = rdr.GetString(0);
+                            int courseID = rdr.GetInt32(1);
+
+                            courseList.Add(new Course(courseID, coursename));
+                        }
+                        return courseList;
+                    }
+                }
+            }
+        }
     }
     public class User
     {
