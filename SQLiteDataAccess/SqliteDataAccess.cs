@@ -44,4 +44,10 @@
             Class = @class;
         }
     }
+    public class Mentor
+    {
+        public int MentorID { get; set; }
+        public string Courses { get; set; }
+    }
+
 }
