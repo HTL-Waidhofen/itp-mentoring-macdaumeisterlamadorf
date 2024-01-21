@@ -265,6 +265,21 @@ namespace SQLiteDataAccess
                 }
             }
         }
+        public static void UpdateCourse(string connectionString, Course updatedCourse)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                string stm = "UPDATE Course SET Coursename = @coursename WHERE CourseID = @courseID";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(stm, connection))
+                {
+                    cmd.Parameters.AddWithValue("@coursename", updatedCourse.Coursename);
+                    cmd.Parameters.AddWithValue("@courseID", updatedCourse.CourseID);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
     public class User
     {
