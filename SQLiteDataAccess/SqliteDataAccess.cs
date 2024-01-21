@@ -208,6 +208,20 @@ namespace SQLiteDataAccess
                 }
             }
         }
+        public static void DeleteDisplay(string connectionString, int displayID)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                string stm = "DELETE FROM Display WHERE displayID = @displayID";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(stm, connection))
+                {
+                    cmd.Parameters.AddWithValue("@displayID", displayID);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
     public class User
     {
