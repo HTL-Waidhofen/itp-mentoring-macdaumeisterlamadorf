@@ -251,6 +251,20 @@ namespace SQLiteDataAccess
                 }
             }
         }
+        public static void AddCourse(string connectionString, Course course)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                using (SQLiteCommand cmd = connection.CreateCommand())
+                {
+                    cmd.CommandText = "INSERT INTO Course(Coursename) VALUES(@coursename)";
+                    cmd.Parameters.AddWithValue("@coursename", course.Coursename);
+                    cmd.Prepare();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
     public class User
     {
