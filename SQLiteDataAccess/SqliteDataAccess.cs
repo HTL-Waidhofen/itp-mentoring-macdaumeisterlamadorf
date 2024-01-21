@@ -3,7 +3,7 @@ namespace SQLiteDataAccess
 {
     public class SqliteDataAccess
     {
-        static void AddUser(string connectionString, User user)
+        public static void AddUser(string connectionString, User user)
         {
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
@@ -21,6 +21,33 @@ namespace SQLiteDataAccess
                     cmd.Parameters.AddWithValue("@mentorID_FK", user.MentorID_FK);
                     cmd.Parameters.AddWithValue("@class", user.Class);
                     cmd.Prepare();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+        public static void UpdateUser(string connectionString, User updatedUser)
+        {
+            using (var connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+
+                string stm = "UPDATE User SET appearance = @appearance, language = @language, firstname = @firstname, " +
+                             "lastname = @lastname, email = @email, phonenumber = @phonenumber, password = @password, " +
+                             "mentorID_FK = @mentorID_FK, class = @class WHERE ID = @userID";
+
+                using (var cmd = new SQLiteCommand(stm, connection))
+                {
+                    cmd.Parameters.AddWithValue("@appearance", updatedUser.Appearance.ToString());
+                    cmd.Parameters.AddWithValue("@language", updatedUser.Language);
+                    cmd.Parameters.AddWithValue("@firstname", updatedUser.Firstname);
+                    cmd.Parameters.AddWithValue("@lastname", updatedUser.Lastname);
+                    cmd.Parameters.AddWithValue("@email", updatedUser.Email);
+                    cmd.Parameters.AddWithValue("@phonenumber", updatedUser.Phonenumber);
+                    cmd.Parameters.AddWithValue("@password", updatedUser.Password);
+                    cmd.Parameters.AddWithValue("@mentorID_FK", updatedUser.MentorID_FK);
+                    cmd.Parameters.AddWithValue("@class", updatedUser.Class);
+                    cmd.Parameters.AddWithValue("@userID", updatedUser.ID);
+
                     cmd.ExecuteNonQuery();
                 }
             }
