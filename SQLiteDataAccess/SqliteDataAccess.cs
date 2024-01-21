@@ -58,5 +58,14 @@
             Courses = courses;
         }
     }
-
+    public class Display
+    {
+        public int DisplayID { get; set; }
+        public string StartTime { get; set; }
+        public string EndTime { get; set; }
+        public string Course { get; set; }
+        public string Price { get; set; }
+        public string Description { get; set; }
+        public int MentorID_FK { get; set; }
+    }
 }
