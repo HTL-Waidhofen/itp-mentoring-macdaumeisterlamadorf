@@ -114,6 +114,21 @@ namespace SQLiteDataAccess
                 }
             }
         }
+        public static void UpdateMentor(string connectionString, Mentor updatedMentor)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                string stm = "UPDATE Mentor SET courses = @courses WHERE mentorID = @mentorID";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(stm, connection))
+                {
+                    cmd.Parameters.AddWithValue("@courses", updatedMentor.Courses);
+                    cmd.Parameters.AddWithValue("@mentorID", updatedMentor.MentorID);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
     public class User
     {
