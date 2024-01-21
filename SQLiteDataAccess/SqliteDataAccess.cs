@@ -143,6 +143,30 @@ namespace SQLiteDataAccess
                 }
             }
         }
+        public static List<Mentor> LoadMentors(string connectionString)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                List<Mentor> mentorList = new List<Mentor>();
+                string stm = "SELECT * FROM Mentor";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(stm, connection))
+                {
+                    using (SQLiteDataReader rdr = cmd.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                        {
+                            int mentorID = rdr.GetInt32(0);
+                            string courses = rdr.GetString(1);
+
+                            mentorList.Add(new Mentor(mentorID, courses));
+                        }
+                        return mentorList;
+                    }
+                }
+            }
+        }
     }
     public class User
     {
