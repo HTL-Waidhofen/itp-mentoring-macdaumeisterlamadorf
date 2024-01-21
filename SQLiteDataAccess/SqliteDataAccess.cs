@@ -67,5 +67,24 @@
         public string Price { get; set; }
         public string Description { get; set; }
         public int MentorID_FK { get; set; }
+        public Display(int displayID, string startTime, string endTime, string course, string price, string description, int mentorID_FK)
+        {
+            DisplayID = displayID;
+            StartTime = startTime;
+            EndTime = endTime;
+            Course = course;
+            Price = price;
+            Description = description;
+            MentorID_FK = mentorID_FK;
+        }
+        public Display(string startTime, string endTime, string course, string price, string description, int mentorID_FK)
+        {
+            StartTime = startTime;
+            EndTime = endTime;
+            Course = course;
+            Price = price;
+            Description = description;
+            MentorID_FK = mentorID_FK;
+        }
     }
 }
