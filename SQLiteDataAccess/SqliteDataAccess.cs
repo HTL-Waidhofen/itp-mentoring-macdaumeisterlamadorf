@@ -48,6 +48,15 @@
     {
         public int MentorID { get; set; }
         public string Courses { get; set; }
+        public Mentor(string courses)
+        {
+            Courses = courses;
+        }
+        public Mentor(int mentorID, string courses)
+        {
+            MentorID = mentorID;
+            Courses = courses;
+        }
     }
 
 }
