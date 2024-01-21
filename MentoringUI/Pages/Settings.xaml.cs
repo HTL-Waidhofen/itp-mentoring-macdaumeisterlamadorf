@@ -26,7 +26,7 @@ namespace MentoringUI
     /// Interaktionslogik für Settings.xaml
     /// </summary>
     public partial class Settings : Page
-    {
+    
         int Index;
         private string lang = "de";
         MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
