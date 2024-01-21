@@ -15,11 +15,20 @@
             <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="40"  Width="400" Name="settings_lb"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Cambria" >Kursverwaltung </TextBlock>
             <Image x:Name="htl_logo"  Source="/Images/HTL-Logo.png" Height="100" HorizontalAlignment="Right"/>
         </Grid>
-        
+        <Label DockPanel.Dock="Top" Height="15"></Label>
         <DockPanel DockPanel.Dock="Top" LastChildFill="False" >
-            <Button Content="remove" Width="90" Margin=" 150,0,5,0" FontFamily="Cambria"/>
-            <Button Content="edit" Width="90"  Margin=" 0,0,0,0" FontFamily="Cambria"/>
+            <Button Content="Löschen" Width="90" Margin=" 150,0,5,0" FontFamily="Cambria"/>
+            <Button Content="Bearbeiten" Width="90"  Margin=" 0,0,0,0" FontFamily="Cambria"/>
         </DockPanel>
-        <TextBox DockPanel.Dock="Top" TextWrapping="Wrap" Text="" Width="500" Height="300" FontFamily="Cambria"/>
+        <ListBox x:Name="Course_lbx" DockPanel.Dock="Top" Width="500" FontFamily="Cambria">
+            <ListBoxItem>SEW Suizid mit Daurer</ListBoxItem>
+            <ListBoxItem>INSY mit Emanuel</ListBoxItem>
+            <ListBoxItem>GGP mit Grurl</ListBoxItem>
+        </ListBox>
+        <DockPanel  DockPanel.Dock="Bottom">
+            <Button x:Name="settings_btn" Height="40" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left" Click="settings_btn_Click">
+                <Image  Source="/Images/setting.png"></Image>
+            </Button>
+        </DockPanel>
     </DockPanel>
 </Page>
