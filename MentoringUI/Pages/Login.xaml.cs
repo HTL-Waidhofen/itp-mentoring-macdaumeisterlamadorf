@@ -20,6 +20,7 @@ namespace MentoringUI
     /// </summary>
     public partial class Login : Page
     {
+        string connectionString = @"Data Source=..\..\..\..\Database\itpmentoring.db;Version3;";
         public Login()
         {
             InitializeComponent();
