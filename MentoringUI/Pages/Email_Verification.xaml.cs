@@ -25,9 +25,9 @@ namespace MentoringUI
         public Email_Verification()
         {
             InitializeComponent();
-            //
-            //Variable Username aus der Datenbank#
-            //
+        }
+        private void submit_btn_Click(object sender, RoutedEventArgs e)
+        {
             Random random = new Random();
             int randomNumber = random.Next(10000, 100000);
             SmtpClient smtpClient = new SmtpClient("smtp-mail.outlook.com")
@@ -46,7 +46,7 @@ namespace MentoringUI
             };
 
             mailMessage.To.Add("user.mail@mail.com");
-                smtpClient.Send(mailMessage);
+            smtpClient.Send(mailMessage);
 
             if (int.Parse(TestNumbers.Text) == randomNumber)
             {

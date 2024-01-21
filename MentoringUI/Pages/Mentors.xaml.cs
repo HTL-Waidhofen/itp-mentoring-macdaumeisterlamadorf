@@ -25,8 +25,8 @@ namespace MentoringUI
         public Mentors()
         {
             InitializeComponent();
-            allMentors = new ObservableCollection<string> { "Daniel Daurer","Benjamin Zechmeister","Alexander Kaltenbauer","Leon Lampesberger"};
-            mentorslbx.ItemsSource = allMentors;
+            //allMentors = new ObservableCollection<string> { "Daniel Daurer","Benjamin Zechmeister","Alexander Kaltenbauer","Leon Lampesberger"};
+            //mentorslbx.ItemsSource = allMentors;
 
             filterTextBox.TextChanged += FilterTextBox_TextChanged;
         }
@@ -37,6 +37,11 @@ namespace MentoringUI
             var filteredMentors = allMentors.Where(mentor => mentor.ToLower().Contains(filterText)).ToList();
 
             mentorslbx.ItemsSource = filteredMentors;
+        }
+
+        private void settings_btn_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.MainWindow.Content = new Settings(4);
         }
     }
 }
