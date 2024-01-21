@@ -222,6 +222,35 @@ namespace SQLiteDataAccess
                 }
             }
         }
+        public static List<Display> LoadDisplays(string connectionString)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                List<Display> displayList = new List<Display>();
+                string stm = "SELECT * FROM Display";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(stm, connection))
+                {
+                    using (SQLiteDataReader rdr = cmd.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                        {
+                            int displayID = rdr.GetInt32(0);
+                            string startTime = rdr.GetString(1);
+                            string endTime = rdr.GetString(2);
+                            string course = rdr.GetString(3);
+                            string price = rdr.GetString(4);
+                            string description = rdr.GetString(5);
+                            int mentorID_FK = rdr.GetInt32(6);
+
+                            displayList.Add(new Display(displayID, startTime, endTime, course, price, description, mentorID_FK));
+                        }
+                        return displayList;
+                    }
+                }
+            }
+        }
     }
     public class User
     {
