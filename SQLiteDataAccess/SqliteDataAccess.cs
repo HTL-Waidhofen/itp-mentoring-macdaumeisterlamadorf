@@ -427,5 +427,9 @@ namespace SQLiteDataAccess
             CourseID = courseID;
             Coursename = coursename;
         }
+        public override string ToString()
+        {
+            return Coursename;
+        }
     }
 }
