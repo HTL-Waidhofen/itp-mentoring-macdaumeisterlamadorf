@@ -409,6 +409,10 @@ namespace SQLiteDataAccess
             Description = description;
             MentorID_FK = mentorID_FK;
         }
+        public override string ToString()
+        {
+            return $"{DisplayID}-{StartTime}-{EndTime}-{Course}-{Price}-{Description}-{MentorID_FK}";
+        }
     }
     public class Course
     {
