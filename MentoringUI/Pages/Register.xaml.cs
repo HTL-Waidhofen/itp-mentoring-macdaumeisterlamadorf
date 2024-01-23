@@ -232,11 +232,13 @@ namespace MentoringUI
 
         private void register_btn_Click(object sender, RoutedEventArgs e)
         {
-            if(!string.IsNullOrEmpty(pwd_pbx.Password))
-            {
-                MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-                mainWindow.Content = new Student();
-            }
+            
+            
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow.Content = new Email_Verification();
+
+                
+            
         }
 
 

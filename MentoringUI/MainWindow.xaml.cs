@@ -25,7 +25,7 @@ namespace MentoringUI
         {
             InitializeComponent();
 
-            MainFrame.Content = new Startpage();
+            MainFrame.Content = new Register();
         }
     }
 }
