@@ -83,7 +83,7 @@ namespace SQLiteDataAccess
                         while (rdr.Read())
                         {
                             int id = rdr.GetInt32(0);
-                            int appearance = rdr.GetInt32(1);
+                            char appearance = char.Parse(rdr.GetString(1));
                             string language = rdr.GetString(2);
                             string firstname = rdr.GetString(3);
                             string lastname = rdr.GetString(4);
@@ -322,7 +322,7 @@ namespace SQLiteDataAccess
     public class User
     {
         public int ID { get; set; }
-        public int Appearance { get; set; }
+        public char Appearance { get; set; }
         public string Language { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
@@ -332,7 +332,7 @@ namespace SQLiteDataAccess
         public int MentorID_FK { get; set; }
         public string Class { get; set; }
 
-        public User(int appearance, string language, string firstname, string lastname, string email, string phonenumber, string password, int mentorID_FK, string @class)
+        public User(char appearance, string language, string firstname, string lastname, string email, string phonenumber, string password, int mentorID_FK, string @class)
         {
             Appearance = appearance;
             Language = language;
@@ -345,7 +345,7 @@ namespace SQLiteDataAccess
             Class = @class;
         }
 
-        public User(int ID, int appearance, string language, string firstname, string lastname, string email, string phonenumber, string password, int mentorID_FK, string @class)
+        public User(int ID, char appearance, string language, string firstname, string lastname, string email, string phonenumber, string password, int mentorID_FK, string @class)
         {
             this.ID = ID;
             Appearance = appearance;
@@ -357,6 +357,10 @@ namespace SQLiteDataAccess
             Password = password;
             MentorID_FK = mentorID_FK;
             Class = @class;
+        }
+        public override string ToString()
+        {
+            return $"{ID}-{Appearance}-{Language}-{Firstname}-{Lastname}-{Email}-{Phonenumber}-{Password}-{MentorID_FK}-{Class}";
         }
     }
     public class Mentor
