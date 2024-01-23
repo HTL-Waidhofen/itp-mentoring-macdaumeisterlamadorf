@@ -83,7 +83,7 @@ namespace SQLiteDataAccess
                         while (rdr.Read())
                         {
                             int id = rdr.GetInt32(0);
-                            int appearance = rdr.GetInt32(1));
+                            int appearance = rdr.GetInt32(1);
                             string language = rdr.GetString(2);
                             string firstname = rdr.GetString(3);
                             string lastname = rdr.GetString(4);
