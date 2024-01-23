@@ -376,6 +376,10 @@ namespace SQLiteDataAccess
             MentorID = mentorID;
             Courses = courses;
         }
+        public override string ToString()
+        {
+            return $"{MentorID}-{Courses}";
+        }
     }
     public class Display
     {
