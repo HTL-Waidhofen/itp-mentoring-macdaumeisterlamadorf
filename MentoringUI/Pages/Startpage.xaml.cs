@@ -22,6 +22,8 @@ namespace MentoringUI
     /// </summary>
     public partial class Startpage : Page
     {
+        static int cnt = 0;
+
         private DispatcherTimer autoSwipeTimer;
         private int autoSwipeInterval = 3000;
 
