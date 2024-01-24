@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,9 +22,40 @@ namespace MentoringUI
     /// </summary>
     public partial class Email_Verification : Page
     {
-        public Email_Verification()
+            static Random random = new Random();
+            int randomNumber = random.Next(10000, 100000);
+        public Email_Verification(string email)
         {
             InitializeComponent();
+            SmtpClient smtpClient = new SmtpClient("smtp-mail.outlook.com")
+            {
+                Port = 587,
+                Credentials = new NetworkCredential("verify.htlwy.mentor@outlook.com", "HTL.2024.Mentoring!"),
+                EnableSsl = true,
+            };
+
+            MailMessage mailMessage = new MailMessage
+            {
+                From = new MailAddress("verify.htlwy.mentor@outlook.com"),
+                Subject = "Code zur Authentifizierung ihres Kontos",
+                Body = "Ihr 2FA-Code:" + randomNumber,
+                IsBodyHtml = false,
+            };
+
+            mailMessage.To.Add(email);
+            smtpClient.Send(mailMessage);
+        }
+        private void submit_btn_Click(object sender, RoutedEventArgs e)
+        {
+            if (int.Parse(TestNumbers.Text) == randomNumber)
+            {
+                MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+                mainWindow.Content = new Student();
+            }
+            else
+            {
+                MessageBox.Show("Falscher Code");
+            }
         }
     }
 }

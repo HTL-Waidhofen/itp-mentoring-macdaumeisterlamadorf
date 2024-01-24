@@ -14,19 +14,19 @@
             <Image x:Name="Logo_img" Source="/Images/HTL-Logo.png" Height="100" HorizontalAlignment="Right" ></Image>
         </Grid>
         <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="0,30,0,0">
-            <TextBox x:Name="email_tbx" DockPanel.Dock="Top"/>
-            <TextBox x:Name="firstname_tbx" DockPanel.Dock="Top" Margin="0,10,0,0"/>
-            <TextBox x:Name="name_tbx" DockPanel.Dock="Top" Margin="0,10,0,0"/>
+            <TextBox x:Name="firstname_tbx" DockPanel.Dock="Top" GotFocus="firstname_txb_GotFocus" Text="Vorname" Foreground="Gray" LostFocus="firstname_txb_LostFocus"/>
+            <TextBox x:Name="name_tbx" DockPanel.Dock="Top" Margin="0,10,0,0" GotFocus="name_txb_GotFocus" Text="Nachname" Foreground="Gray" LostFocus="name_txb_LostFocus"/>
+            <TextBox x:Name="email_tbx" DockPanel.Dock="Top" Margin="0,10,0,0" GotFocus="email_txb_GotFocus" Text="Email" Foreground="Gray" LostFocus="email_txb_LostFocus"/>
             <Grid DockPanel.Dock="Top">
                 <DockPanel>
-                    <ComboBox x:Name="department_cbx" Width="150" Margin="0,10,0,0">
+                    <ComboBox x:Name="department_cbx" Width="150" Margin="0,10,0,0" IsEditable="True" IsReadOnly="True" Text="Abteilung" Foreground="Gray">
                         <ComboBoxItem>Informationstechnologie</ComboBoxItem>
                         <ComboBoxItem>Wirtschaftsingeneure</ComboBoxItem>
                         <ComboBoxItem>Maschinenbau</ComboBoxItem>
                         <ComboBoxItem>Elektrotechnik</ComboBoxItem>
                         <ComboBoxItem>Mechatronik</ComboBoxItem>
                     </ComboBox>
-                    <ComboBox x:Name="class_cbx" Margin="5,10,0,0">
+                    <ComboBox x:Name="class_cbx" Margin="5,10,0,0" IsEditable="True" IsReadOnly="True" Text="Klasse" Foreground="Gray">
                         <ComboBoxItem>1</ComboBoxItem>
                         <ComboBoxItem>2</ComboBoxItem>
                         <ComboBoxItem>3</ComboBoxItem>
@@ -35,9 +35,17 @@
                     </ComboBox>
                 </DockPanel>
             </Grid>
-            <TextBox x:Name="pwd_tbx" DockPanel.Dock="Top" Margin="0,10,0,0"/>
-            <TextBox x:Name="confirmpwd_tbx" DockPanel.Dock="Top" Margin="0,10,0,0"/>
-            <Button x:Name="register_btn" DockPanel.Dock="Top" Margin="0,10,0,0">Registrieren</Button>
+            <Grid DockPanel.Dock="Top">
+                <PasswordBox x:Name="pwd_pbx" PasswordChanged="PasswordBox_PasswordChanged" GotFocus="PasswordBox_GotFocus" LostFocus="PasswordBox_LostFocus" Margin="0,10,0,0" Width="225"/>
+                <TextBox x:Name="placeholderPwd_tbx" Text="Passwort" Foreground="Gray" Margin="0,10,0,0" GotFocus="PlaceholderTextBox_GotFocus" LostFocus="PlaceholderTextBox_LostFocus"></TextBox>
+                <ToggleButton HorizontalAlignment="Right" VerticalAlignment="Center" x:Name="toggle_btn" Content="👁" Height="17.96" Margin="163,10,0,0" Background="Transparent" BorderBrush="Transparent" Checked="ToggleButton_Checked" Unchecked="ToggleButton_Unchecked"></ToggleButton>
+            </Grid>
+            <Grid DockPanel.Dock="Top">
+                <PasswordBox x:Name="confirmpwd_pbx" PasswordChanged="ConfirmPasswordBox_PasswordChanged" GotFocus="ConfirmPasswordBox_GotFocus" LostFocus="ConfirmPasswordBox_LostFocus" Margin="0,10,0,0" Width="225"/>
+                <TextBox x:Name="confirmplaceholderPwd_tbx" Text="Passwort bestätigen" Foreground="Gray" Margin="0,10,0,0" GotFocus="ConfirmPlaceholderTextBox_GotFocus" LostFocus="ConfirmPlaceholderTextBox_LostFocus" Grid.ColumnSpan="2"></TextBox>
+                <ToggleButton HorizontalAlignment="Right" VerticalAlignment="Center" x:Name="confirmtoggle_btn" Content="👁" Height="18" Margin="163,10,0,0" Background="Transparent" BorderBrush="Transparent" Checked="ConfirmToggleButton_Checked" Unchecked="ConfirmToggleButton_Unchecked" Grid.Column="1"></ToggleButton>
+            </Grid>
+            <Button x:Name="register_btn" DockPanel.Dock="Top" Margin="0,10,0,0" Click="register_btn_Click">Registrieren</Button>
         </DockPanel>
     </DockPanel>
 </Page>

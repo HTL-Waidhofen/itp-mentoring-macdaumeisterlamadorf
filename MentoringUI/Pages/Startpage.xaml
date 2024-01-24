@@ -11,7 +11,7 @@
     <DockPanel LastChildFill="False">
         <Grid DockPanel.Dock="Top">
             <Label FontWeight="Bold" FontSize="40" Width="200" FontFamily="Century Gothic">Mentoren</Label>
-            <Button x:Name="loginBtn" FontSize="16" Width="60" Height="40" HorizontalAlignment="Right" Margin="0 0 40 0" Background="Transparent">Login</Button>
+            <Button x:Name="login_btn" FontSize="16" Width="60" Height="40" HorizontalAlignment="Right" Margin="0 0 40 0" Background="Transparent" Click="login_btn_Click">Login</Button>
         </Grid>
         
         <DockPanel LastChildFill="False" Margin="80 0 0 0">
