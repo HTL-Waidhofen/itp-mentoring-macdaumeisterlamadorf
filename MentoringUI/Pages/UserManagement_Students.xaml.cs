@@ -30,5 +30,11 @@ namespace MentoringUI
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
             mainWindow.Content = new Settings();
         }
+
+        private void student_btn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow.Content = new UserManagement_Students();
+        }
     }
 }
