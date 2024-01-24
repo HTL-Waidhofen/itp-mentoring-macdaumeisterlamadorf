@@ -12,16 +12,16 @@
             <TextBlock FontWeight="Bold" FontSize="40" Margin="0,25,0,25" Width="200" Name="mentorHeader_tbx" FontFamily="Cambria" HorizontalAlignment="Center">Mentoren</TextBlock>
             <Image x:Name="htl_logo"  Source="/Images/HTL-Logo.png" Height="100" HorizontalAlignment="Right"/>
         </Grid>
-        <Grid DockPanel.Dock="Top">
-            <Button Content="Anzeige Hinzufügen" Margin="49,0,0,0" HorizontalAlignment="Left" Height="20" Width="130" FontFamily="Cambria" Background="White" />
-        </Grid>
+        <Grid DockPanel.Dock="Top"/>
         <Label DockPanel.Dock="Top" Height="15"/>
-        <TextBox x:Name="filterTextBox" DockPanel.Dock="Top" TextWrapping="Wrap" Text="Suche:" Width="600" FontFamily="Cambria" />
-        <ListBox x:Name="courses_lbx" DockPanel.Dock="Top" Width="600" Margin="0,10" FontFamily="Cambria"></ListBox>
+        <ListBox x:Name="courses_lbx" DockPanel.Dock="Top" Width="600" Margin="0,10" FontFamily="Cambria" Height="225" SelectionMode="Extended"></ListBox>
         <DockPanel  DockPanel.Dock="Bottom">
+            <DockPanel LastChildFill="False">
             <Button x:Name="settings_btn" Height="40" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left" Click="settings_btn_Click">
                 <Image  Source="/Images/setting.png"></Image>
             </Button>
+                <Button Width="100" DockPanel.Dock="Right" Name="saveCourses_btn" Click="saveCourses_btn_Click">Speichern</Button>
+            </DockPanel>
         </DockPanel>
     </DockPanel>
 </Page>
