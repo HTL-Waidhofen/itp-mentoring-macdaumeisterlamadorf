@@ -53,5 +53,26 @@ namespace MentoringUI
                 mentorFilter.Text = null;
             mentorFilter.Foreground = Brushes.Black;
         }
+
+        private void allCourses_lbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            List<Mentor> mentors = SqliteDataAccess.LoadMentors(connectionString);
+            List<User> users = SqliteDataAccess.LoadUsers(connectionString);
+            List<Mentor> mentorsWithCourse = new List<Mentor>();
+            foreach(Mentor mentor in mentors)
+            {
+                if (mentor.Courses.Contains(allCourses_lbx.SelectedItem.ToString()))
+                    mentorsWithCourse.Add(mentor);
+            }
+            mentorSelection_lbx.Items.Clear();
+            foreach(Mentor mentor in mentorsWithCourse)
+            {
+                    for(int i = 0; i < users.Count; i++)
+                    {
+                        if(mentor.MentorID == users[i].MentorID_FK)
+                               mentorSelection_lbx.Items.Add($"Name: {users[i].Firstname} {users[i].Lastname};Class: {users[i].Class};Email: {users[i].Email};Courses: {mentor.Courses}");
+                    }
+            }
+        }
     }
 }
