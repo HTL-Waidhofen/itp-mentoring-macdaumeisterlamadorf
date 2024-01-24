@@ -10,13 +10,12 @@ namespace SQLiteDataAccess
                 connection.Open();
                 using (SQLiteCommand cmd = connection.CreateCommand())
                 {
-                    cmd.CommandText = "INSERT INTO User(appearance, language, firstname, lastname, email, phonenumber, password, mentorID_FK, class) VALUES(@appearance, @language, @firstname, @lastname, @email, @phonenumber, @password, @mentorID_FK, @class)";
+                    cmd.CommandText = "INSERT INTO User(appearance, language, firstname, lastname, email, password, mentorID_FK, class) VALUES(@appearance, @language, @firstname, @lastname, @email, @password, @mentorID_FK, @class)";
                     cmd.Parameters.AddWithValue("@appearance", user.Appearance.ToString());
                     cmd.Parameters.AddWithValue("@language", user.Language);
                     cmd.Parameters.AddWithValue("@firstname", user.Firstname);
                     cmd.Parameters.AddWithValue("@lastname", user.Lastname);
                     cmd.Parameters.AddWithValue("@email", user.Email);
-                    cmd.Parameters.AddWithValue("@phonenumber", user.Phonenumber);
                     cmd.Parameters.AddWithValue("@password", user.Password);
                     cmd.Parameters.AddWithValue("@mentorID_FK", user.MentorID_FK);
                     cmd.Parameters.AddWithValue("@class", user.Class);
@@ -32,7 +31,7 @@ namespace SQLiteDataAccess
                 connection.Open();
 
                 string stm = "UPDATE User SET appearance = @appearance, language = @language, firstname = @firstname, " +
-                             "lastname = @lastname, email = @email, phonenumber = @phonenumber, password = @password, " +
+                             "lastname = @lastname, email = @email, password = @password, " +
                              "mentorID_FK = @mentorID_FK, class = @class WHERE ID = @userID";
 
                 using (var cmd = new SQLiteCommand(stm, connection))
@@ -42,7 +41,6 @@ namespace SQLiteDataAccess
                     cmd.Parameters.AddWithValue("@firstname", updatedUser.Firstname);
                     cmd.Parameters.AddWithValue("@lastname", updatedUser.Lastname);
                     cmd.Parameters.AddWithValue("@email", updatedUser.Email);
-                    cmd.Parameters.AddWithValue("@phonenumber", updatedUser.Phonenumber);
                     cmd.Parameters.AddWithValue("@password", updatedUser.Password);
                     cmd.Parameters.AddWithValue("@mentorID_FK", updatedUser.MentorID_FK);
                     cmd.Parameters.AddWithValue("@class", updatedUser.Class);
@@ -88,12 +86,11 @@ namespace SQLiteDataAccess
                             string firstname = rdr.GetString(3);
                             string lastname = rdr.GetString(4);
                             string email = rdr.GetString(5);
-                            string phoneNumber = rdr.GetString(6);
-                            string password = rdr.GetString(7);
-                            int mentorID = rdr.GetInt32(8);
-                            string userClass = rdr.GetString(9);
+                            string password = rdr.GetString(6);
+                            int mentorID = rdr.GetInt32(7);
+                            string userClass = rdr.GetString(8);
 
-                            userList.Add(new User(id, appearance, language, firstname, lastname, email, phoneNumber, password, mentorID, userClass));
+                            userList.Add(new User(id, appearance, language, firstname, lastname, email,  password, mentorID, userClass));
                         }
                         return userList;
                     }
@@ -327,25 +324,23 @@ namespace SQLiteDataAccess
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public string Email { get; set; }
-        public string Phonenumber { get; set; }
         public string Password { get; set; }
         public int MentorID_FK { get; set; }
         public string Class { get; set; }
 
-        public User(char appearance, string language, string firstname, string lastname, string email, string phonenumber, string password, int mentorID_FK, string @class)
+        public User(char appearance, string language, string firstname, string lastname, string email, string password, int mentorID_FK, string @class)
         {
             Appearance = appearance;
             Language = language;
             Firstname = firstname;
             Lastname = lastname;
             Email = email;
-            Phonenumber = phonenumber;
             Password = password;
             MentorID_FK = mentorID_FK;
             Class = @class;
         }
 
-        public User(int ID, char appearance, string language, string firstname, string lastname, string email, string phonenumber, string password, int mentorID_FK, string @class)
+        public User(int ID, char appearance, string language, string firstname, string lastname, string email, string password, int mentorID_FK, string @class)
         {
             this.ID = ID;
             Appearance = appearance;
@@ -353,14 +348,13 @@ namespace SQLiteDataAccess
             Firstname = firstname;
             Lastname = lastname;
             Email = email;
-            Phonenumber = phonenumber;
             Password = password;
             MentorID_FK = mentorID_FK;
             Class = @class;
         }
         public override string ToString()
         {
-            return $"{ID}-{Appearance}-{Language}-{Firstname}-{Lastname}-{Email}-{Phonenumber}-{Password}-{MentorID_FK}-{Class}";
+            return $"{ID}-{Appearance}-{Language}-{Firstname}-{Lastname}-{Email}-{Password}-{MentorID_FK}-{Class}";
         }
     }
     public class Mentor

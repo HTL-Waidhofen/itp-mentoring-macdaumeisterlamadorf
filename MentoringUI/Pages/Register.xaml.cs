@@ -257,7 +257,7 @@ namespace MentoringUI
                             department = "FME";
                         break;
                     }
-                    SQLiteDataAccess.User user = new SQLiteDataAccess.User('d', "de", firstname_tbx.Text, name_tbx.Text, email_tbx.Text, null, pwd_pbx.Password, -1, $"{class_cbx.SelectedItem.ToString().Substring(class_cbx.SelectedItem.ToString().IndexOf(":") + 1).Trim()}.{department}");
+                    SQLiteDataAccess.User user = new SQLiteDataAccess.User('d', "de", firstname_tbx.Text, name_tbx.Text, email_tbx.Text, pwd_pbx.Password, -1, $"{class_cbx.SelectedItem.ToString().Substring(class_cbx.SelectedItem.ToString().IndexOf(":") + 1).Trim()}.{department}");
                     SQLiteDataAccess.SqliteDataAccess.AddUser(connectionString, user);
                     MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
                     mainWindow.Content = new Email_Verification(email_tbx.Text);
