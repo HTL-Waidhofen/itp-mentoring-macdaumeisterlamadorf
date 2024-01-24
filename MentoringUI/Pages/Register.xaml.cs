@@ -238,6 +238,24 @@ namespace MentoringUI
             {
                 if (IsValidEmail(email_tbx.Text) && pwd_pbx.Password == confirmpwd_pbx.Password)
                 {
+                    string department = department_cbx.SelectedItem.ToString().Substring(department_cbx.SelectedItem.ToString().IndexOf(":") +1).Trim();
+                    switch (department){
+                        case "Informationstechnologie":
+                            department = "IT";
+                        break;
+                        case "Wirtschaftsingeneure":
+                            department = "WIM";
+                        break;
+                        case "Maschinenbau":
+                            department = "MBA";
+                        break;
+                        case "Elektrotechnik":
+                            department = "ET";
+                        break;
+                        case "Mechatronik":
+                            department = "FME";
+                        break;
+                    }
                     MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
                     mainWindow.Content = new Email_Verification(email_tbx.Text);
                 }
