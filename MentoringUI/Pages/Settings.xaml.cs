@@ -29,7 +29,7 @@ namespace MentoringUI
     { 
         int Index;
         private string lang = "de";
-        string connectionString = @"Data Source=..\..\..\..\Database\itpmentoring.db;Version3;";
+        string connectionString = @"Data Source=..\..\..\..\Database\itpmentoring.db;Version=3;";
         MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
 
         private DispatcherTimer timer = new DispatcherTimer();
