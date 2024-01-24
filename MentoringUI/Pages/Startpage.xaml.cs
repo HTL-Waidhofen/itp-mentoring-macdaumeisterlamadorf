@@ -42,5 +42,15 @@ namespace MentoringUI
 
             autoSwipeTimer.Start();
         }
+
+        private void AutoSwipeTimer_Tick(object sender, EventArgs e)
+        {
+            AutoSwipe();
+        }
+
+        private void AutoSwipe()
+        {
+            SwipeRight(null, null);
+        }
     }
 }
