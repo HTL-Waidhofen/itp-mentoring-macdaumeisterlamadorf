@@ -24,5 +24,32 @@ namespace MentoringUI
         {
             InitializeComponent();
         }
+        private void setting_btn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow.Content = new Settings(3);
+        }
+
+        private void mentorFilter_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(mentorFilter.Text))
+            {
+                mentorFilter.Text = "Suche";
+                mentorFilter.Foreground = Brushes.Gray;
+            }
+        }
+
+        private void mentorFilter_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (mentorFilter.Foreground == Brushes.Gray)
+                mentorFilter.Text = null;
+            mentorFilter.Foreground = Brushes.Black;
+        }
+
+        private void requestedMentors_btn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow.Content = new Requested_Mentors();
+        }
     }
 }

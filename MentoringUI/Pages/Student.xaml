@@ -19,7 +19,7 @@
         <DockPanel DockPanel.Dock="Top">
             <GroupBox Header="Alle Kurse" Margin="5,10,5,0" Name="courses_gbx">
                 <DockPanel>
-                    <ListBox x:Name="allCourses_lbx" Height="105"></ListBox>
+                    <ListBox x:Name="allCourses_lbx" Height="90"></ListBox>
                 </DockPanel>
             </GroupBox>
         </DockPanel>
@@ -27,16 +27,16 @@
             <GroupBox Margin="5,10,5,0" Header="Mentoren auswahl" Name="mentors_gbx">
                 <DockPanel>
                     <DockPanel DockPanel.Dock="Top">
-                        <TextBox x:Name="mentorFilter" ></TextBox>
+                        <TextBox x:Name="mentorFilter" GotFocus="mentorFilter_GotFocus"  Text="Suche" Foreground="Gray" LostFocus="mentorFilter_LostFocus"></TextBox>
                     </DockPanel>
                     <DockPanel>
-                        <ListBox x:Name="mentorSelection_lbx" Margin="0,5,0,0" Height="105"></ListBox>
+                        <ListBox x:Name="mentorSelection_lbx" Margin="0,5,0,0" Height="90"></ListBox>
                     </DockPanel>
                 </DockPanel>
             </GroupBox>
         </DockPanel>
         <DockPanel  DockPanel.Dock="Bottom">
-            <Button x:Name="setting_btn" Height="50" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left">
+            <Button x:Name="setting_btn" Height="40" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left" Click="setting_btn_Click">
                 <Image  Source="/Images/setting.png"></Image>
             </Button>
         </DockPanel>
