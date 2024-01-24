@@ -91,5 +91,15 @@ namespace MentoringUI
                 MessageBox.Show("Wählen Sie Mentoren aus, um sie zu löschen", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
+
+        private void DeleteSelectedItems()
+        {
+            var selectedItems = new List<object>(courseEdit_lbx.SelectedItems.Cast<object>());
+
+            foreach (var item in selectedItems)
+            {
+                courseEdit_lbx.Items.Remove(item);
+            }
+        }
     }
 }
