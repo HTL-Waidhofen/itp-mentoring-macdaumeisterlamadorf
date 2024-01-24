@@ -237,6 +237,7 @@ namespace MentoringUI
         {
             if(!string.IsNullOrEmpty(firstname_tbx.Text) && !string.IsNullOrEmpty(name_tbx.Text) && !string.IsNullOrEmpty(email_tbx.Text) && department_cbx.SelectedIndex != -1 && class_cbx.SelectedIndex != -1 && !string.IsNullOrEmpty(pwd_pbx.Password) && !string.IsNullOrEmpty(confirmpwd_pbx.Password))
             {
+                if(!CheckIfEmailExists(email_tbx.Text))
                 if (IsValidEmail(email_tbx.Text) && pwd_pbx.Password == confirmpwd_pbx.Password)
                 {
                     string department = department_cbx.SelectedItem.ToString().Substring(department_cbx.SelectedItem.ToString().IndexOf(":") +1).Trim();
@@ -264,6 +265,18 @@ namespace MentoringUI
                 }
             }
         }
+
+        private bool CheckIfEmailExists(string email)
+        {
+            List<SQLiteDataAccess.User> users = SQLiteDataAccess.SqliteDataAccess.LoadUsers(connectionString);
+            foreach(SQLiteDataAccess.User user in users)
+            {
+                if (user.Email == email)
+                    return true;
+            }
+            return false;
+        }
+
         private bool IsValidEmail(string email)
         {
             var valid = true;
