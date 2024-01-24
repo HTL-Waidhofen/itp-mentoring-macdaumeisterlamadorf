@@ -128,6 +128,10 @@ namespace MentoringUI
             List<DependencyObject> children = GetAllChildren(mainWindow);
             foreach (DependencyObject child in children)
             {
+                if(VisualTreeHelper.GetParent(child) is ContentPresenter) { }
+                else
+                {
+
                  if (child is TextBlock textBlock)
                  {
                     if (!textBlock.Name.StartsWith("nc"))
@@ -177,6 +181,7 @@ namespace MentoringUI
                             comboBoxItem.Foreground = dark;
                             }
                     }
+                }
                 }
             }
         }
