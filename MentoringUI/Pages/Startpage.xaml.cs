@@ -29,9 +29,9 @@ namespace MentoringUI
 
         string[] pictures =
         {
-            "Images/HTL-Logo.png",
-            "Images/Beachtime.png",
-            "Images/Strand.jpg"
+            @"..\..\..\Images/HTL-Logo.png",
+            @"..\..\..\Images/Beachtime.png",
+            @"..\..\..\Images/Strand.jpg"
         };
 
         public Startpage()
