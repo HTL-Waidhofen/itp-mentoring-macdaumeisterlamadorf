@@ -24,8 +24,12 @@ namespace MentoringUI
         public MainWindow()
         {
             InitializeComponent();
+<<<<<<< HEAD
 
             MainFrame.Content = new Register();
+=======
+            MainFrame.Content = new Settings(4);
+>>>>>>> main
         }
     }
 }

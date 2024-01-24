@@ -15,14 +15,18 @@
             </Grid>
         </DockPanel>
         <DockPanel DockPanel.Dock="Top">
-
             <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" x:Name="Header_tbl" Margin="0,10,0,0" FontWeight="Bold"  FontSize="40">Anmelden</TextBlock>
-            <TextBox DockPanel.Dock="Top" x:Name="email_txb" Margin="0,10,0,0" Width="200"></TextBox>
-            <TextBox DockPanel.Dock="Top" x:Name="pwd_txb" Margin="0,10,0,0" Width="200"></TextBox>
-            <Button DockPanel.Dock="Top" x:Name="login_btn" Margin="0,10,0,0" Width="100">Anmelden</Button>
+            <TextBox DockPanel.Dock="Top" x:Name="email_txb" Margin="0,10,0,0" Width="200" GotFocus="email_txb_GotFocus" Text="Email" Foreground="Gray" LostFocus="email_txb_LostFocus" ></TextBox>
+
+            <Grid DockPanel.Dock="Top">
+                <PasswordBox x:Name="passwordBox" PasswordChanged="PasswordBox_PasswordChanged" GotFocus="passwordBox_GotFocus" LostFocus="passwordBox_LostFocus" Margin="0,10,0,0" Width="200"/>
+                <TextBox x:Name="placeholderPwd_tbx" Text="Password" Foreground="Gray" Margin="0,10,0,0" Width="200" GotFocus="PlaceholderTextBox_GotFocus" LostFocus="PlaceholderTextBox_LostFocus"/>
+            </Grid>
+            
+            <Button DockPanel.Dock="Top" x:Name="login_btn" Margin="0,10,0,0" Width="100" Click="login_btn_Click">Anmelden</Button>
             <TextBlock DockPanel.Dock="Top" x:Name="register_tbl" Margin="0,5,0,0" HorizontalAlignment="Center">
                 Noch kein Konto?
-                <Hyperlink x:Name="hyperlinkToRegisterPage">Hier registrieren</Hyperlink>
+                <Hyperlink x:Name="hyperlinkToRegisterPage" Click="hyperlinkToRegisterPage_Click">Hier registrieren</Hyperlink>
             </TextBlock>
 
         </DockPanel>
