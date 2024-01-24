@@ -38,6 +38,7 @@ namespace MentoringUI
         {
             InitializeComponent();
             this.user = user;
+            lang = user.Language;
             Index = index;
             timer.Interval = TimeSpan.FromSeconds(0.1);
             timer.Tick += ChangeColor;
@@ -159,6 +160,7 @@ namespace MentoringUI
                     lang = "de";
                     break;
             }
+            SQLiteDataAccess.SqliteDataAccess.UpdateUser(connectionString, new SQLiteDataAccess.User(user.ID, user.Appearance, lang, user.Firstname, user.Lastname, user.Email, user.Password, user.MentorID_FK, user.Class));
             XElement file = XElement.Load(@$"..\..\..\..\Ressources.{lang}.resx");
             var childrenD = GetAllChildren(mainWindow);
             foreach (var f in file.Elements("data"))
@@ -169,7 +171,7 @@ namespace MentoringUI
                         if(textBlock.Name == f.Attribute("name").Value)
                              textBlock.Text = f.Value.Replace("\n", "").Trim();
                        if (childrenD[i] is ComboBox comboBox)
-                        if(comboBox.Name == f.Attribute("name").Value && comboBox.Name != "language_cbx")
+                        if(comboBox.Name == f.Attribute("name").Value)
                                  comboBox.Text = f.Value.Replace("\n", "").Trim();
                        if (childrenD[i] is Button button)
                         if(button.Name == f.Attribute("name").Value)
