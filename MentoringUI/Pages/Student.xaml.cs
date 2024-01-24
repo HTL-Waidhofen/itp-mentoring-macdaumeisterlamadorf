@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLiteDataAccess;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,10 +22,14 @@ namespace MentoringUI
     public partial class Student : Page
     {
         SQLiteDataAccess.User user;
+        string connectionString = @"Data Source=..\..\..\..\Database\itpmentoring.db;Version=3;";
         public Student(SQLiteDataAccess.User user)
         {
             InitializeComponent();
-            this.user = user; 
+            this.user = user;
+            List<Course> courses = SQLiteDataAccess.SqliteDataAccess.LoadCourses(connectionString);
+            allCourses_lbx.Items.Clear();
+            for (int i = 0; i < courses.Count; i++) allCourses_lbx.Items.Add(courses[i]);
         }
 
         private void setting_btn_Click(object sender, RoutedEventArgs e)
