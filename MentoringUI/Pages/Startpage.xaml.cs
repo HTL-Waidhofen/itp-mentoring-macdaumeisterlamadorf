@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace MentoringUI
 {
@@ -23,7 +24,10 @@ namespace MentoringUI
     {
         static int cnt = 0;
 
-        string[] pictures = 
+        private DispatcherTimer autoSwipeTimer;
+        private int autoSwipeInterval = 3000;
+
+        string[] pictures =
         {
             "Images/HTL-Logo.png",
             "Images/Beachtime.png",
@@ -33,6 +37,22 @@ namespace MentoringUI
         public Startpage()
         {
             InitializeComponent();
+
+            autoSwipeTimer = new DispatcherTimer();
+            autoSwipeTimer.Tick += AutoSwipeTimer_Tick;
+            autoSwipeTimer.Interval = TimeSpan.FromMilliseconds(autoSwipeInterval);
+
+            autoSwipeTimer.Start();
+        }
+
+        private void AutoSwipeTimer_Tick(object sender, EventArgs e)
+        {
+            AutoSwipe();
+        }
+
+        private void AutoSwipe()
+        {
+            SwipeRight(null, null);
         }
 
         private void SwipeRight(object sender, RoutedEventArgs e)
