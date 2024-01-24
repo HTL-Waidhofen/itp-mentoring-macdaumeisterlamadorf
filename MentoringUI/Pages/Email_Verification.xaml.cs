@@ -22,12 +22,9 @@ namespace MentoringUI
     /// </summary>
     public partial class Email_Verification : Page
     {
-        public Email_Verification()
+        public Email_Verification(string email)
         {
             InitializeComponent();
-        }
-        private void submit_btn_Click(object sender, RoutedEventArgs e)
-        {
             Random random = new Random();
             int randomNumber = random.Next(10000, 100000);
             SmtpClient smtpClient = new SmtpClient("smtp-mail.outlook.com")
@@ -45,13 +42,17 @@ namespace MentoringUI
                 IsBodyHtml = false,
             };
 
-            mailMessage.To.Add("user.mail@mail.com");
+            mailMessage.To.Add(email);
             smtpClient.Send(mailMessage);
 
             if (int.Parse(TestNumbers.Text) == randomNumber)
             {
                 MessageBox.Show("Ihr Konto wurde verifizert");
             }
+        }
+        private void submit_btn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
