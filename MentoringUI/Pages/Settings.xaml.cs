@@ -28,15 +28,16 @@ namespace MentoringUI
     public partial class Settings : Page
     { 
         int Index;
+        SQLiteDataAccess.User user;
         private string lang = "de";
         string connectionString = @"Data Source=..\..\..\..\Database\itpmentoring.db;Version=3;";
         MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
 
         private DispatcherTimer timer = new DispatcherTimer();
-        public Settings(int index)
+        public Settings(int index, SQLiteDataAccess.User user)
         {
             InitializeComponent();
-
+            this.user = user;
             Index = index;
             timer.Interval = TimeSpan.FromSeconds(0.1);
             timer.Tick += ChangeColor;
@@ -192,25 +193,25 @@ namespace MentoringUI
                     mainWindow.Content = new Login();
                     break;
                 case 2:
-                    mainWindow.Content = new Login();
+                    mainWindow.Content = new Register();
                     break;
                 case 3:
-                    mainWindow.Content = new Student();
+                    mainWindow.Content = new Student(user);
                     break;
                 case 4:
-                    mainWindow.Content = new Mentors();
+                    mainWindow.Content = new Mentors(user);
                     break;
                 case 5:
-                    mainWindow.Content = new Admin();
+                    mainWindow.Content = new Admin(user);
                     break;
                 case 6:
-                    mainWindow.Content = new CourseManagment();
+                    mainWindow.Content = new CourseManagment(user);
                     break;
                 case 7:
-                    mainWindow.Content = new UserManagement_Students();
+                    mainWindow.Content = new UserManagement_Students(user);
                     break;
                 case 8:
-                    mainWindow.Content = new UserManagement_Mentors();
+                    mainWindow.Content = new UserManagement_Mentors(user);
                     break;
 
 
@@ -237,7 +238,7 @@ namespace MentoringUI
 
         private void gc_switchToMentorpage_btn_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.Content = new Mentors();
+            mainWindow.Content = new Mentors(user);
         }
     }
 }

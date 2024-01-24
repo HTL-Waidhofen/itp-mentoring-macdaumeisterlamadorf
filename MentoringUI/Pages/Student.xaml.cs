@@ -20,16 +20,17 @@ namespace MentoringUI
     /// </summary>
     public partial class Student : Page
     {
-        public Student()
+        SQLiteDataAccess.User user;
+        public Student(SQLiteDataAccess.User user)
         {
             InitializeComponent();
-             
+            this.user = user; 
         }
 
         private void setting_btn_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-            mainWindow.Content = new Settings(3);
+            mainWindow.Content = new Settings(3, user);
         }
 
         private void mentorFilter_LostFocus(object sender, RoutedEventArgs e)
@@ -46,12 +47,6 @@ namespace MentoringUI
             if (mentorFilter.Foreground == Brushes.Gray)
                 mentorFilter.Text = null;
             mentorFilter.Foreground = Brushes.Black;
-        }
-
-        private void requestedMentors_btn_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-            mainWindow.Content = new Requested_Mentors();
         }
     }
 }

@@ -20,14 +20,16 @@ namespace MentoringUI
     /// </summary>
     public partial class CourseManagment : Page
     {
-        public CourseManagment()
+        SQLiteDataAccess.User user;
+        public CourseManagment(SQLiteDataAccess.User user)
         {
             InitializeComponent();
+            this.user = user;
         }
         private void settings_btn_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-            mainWindow.Content = new Settings(6);
+            mainWindow.Content = new Settings(6, user);
         }
         private void delete(object sender, RoutedEventArgs e)
         {

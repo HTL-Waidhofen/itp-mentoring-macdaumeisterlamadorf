@@ -22,9 +22,10 @@ namespace MentoringUI
     /// </summary>
     public partial class Email_Verification : Page
     {
-            static Random random = new Random();
-            int randomNumber = random.Next(10000, 100000);
-        public Email_Verification(string email)
+        SQLiteDataAccess.User user;
+        static Random random = new Random();
+        int randomNumber = random.Next(10000, 100000);
+        public Email_Verification(string email, SQLiteDataAccess.User user)
         {
             InitializeComponent();
             SmtpClient smtpClient = new SmtpClient("smtp-mail.outlook.com")
@@ -44,13 +45,14 @@ namespace MentoringUI
 
             mailMessage.To.Add(email);
             smtpClient.Send(mailMessage);
+            this.user = user;
         }
         private void submit_btn_Click(object sender, RoutedEventArgs e)
         {
             if (int.Parse(TestNumbers.Text) == randomNumber)
             {
                 MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-                mainWindow.Content = new Student();
+                mainWindow.Content = new Student(user);
             }
             else
             {

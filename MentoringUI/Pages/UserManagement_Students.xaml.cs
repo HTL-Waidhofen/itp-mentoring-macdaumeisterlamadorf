@@ -20,27 +20,29 @@ namespace MentoringUI
     /// </summary>
     public partial class UserManagement_Students : Page
     {
-        public UserManagement_Students()
+        SQLiteDataAccess.User user;
+        public UserManagement_Students(SQLiteDataAccess.User user)
         {
             InitializeComponent();
+            this.user = user;
         }
 
         private void settings_btn_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-            mainWindow.Content = new Settings(7);
+            mainWindow.Content = new Settings(7, user);
         }
 
         private void student_btn_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-            mainWindow.Content = new UserManagement_Students();
+            mainWindow.Content = new UserManagement_Students(user);
         }
 
         private void mentor_btn_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-            mainWindow.Content = new UserManagement_Mentors();
+            mainWindow.Content = new UserManagement_Mentors(user);
         }
 
         private void edit_btn_Click(object sender, RoutedEventArgs e)
