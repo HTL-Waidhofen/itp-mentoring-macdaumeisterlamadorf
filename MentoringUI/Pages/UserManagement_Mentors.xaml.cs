@@ -52,11 +52,9 @@ namespace MentoringUI
 
         private void edit_btn_Click(object sender, RoutedEventArgs e)
         {
-            ListBoxItem selectedItem = (ListBoxItem)mentors_lbx.SelectedItem;
-
-            if (selectedItem != null)
+            if (!string.IsNullOrEmpty(mentors_lbx.SelectedItem.ToString()))
             {
-                var dialog = new InputDialog(selectedItem.Content.ToString());
+                var dialog = new InputDialog(mentors_lbx.SelectedItem.ToString());
 
                 bool? result = dialog.ShowDialog();
 
@@ -65,7 +63,11 @@ namespace MentoringUI
                     MessageBoxResult mResult = MessageBox.Show("Sind Sie sicher, dass Sie diesen Mentor bearbeiten wollen?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                     if (mResult == MessageBoxResult.Yes)
                     {
-                        selectedItem.Content = dialog.InputText;
+                        mentors_lbx.SelectedItem = dialog.InputText;
+                        SqliteDataAccess.UpdateMentor(connectionString, new Mentor(int.Parse(mentors_lbx.SelectedItem.ToString().Split('-')[0]), dialog.InputText.Split('-')[1]));
+                        List<Mentor> mentors = SQLiteDataAccess.SqliteDataAccess.LoadMentors(connectionString);
+                        mentors_lbx.Items.Clear();
+                        for (int i = 0; i < mentors.Count; i++) mentors_lbx.Items.Add(mentors[i].ToString());
                     }
                 }
             }
