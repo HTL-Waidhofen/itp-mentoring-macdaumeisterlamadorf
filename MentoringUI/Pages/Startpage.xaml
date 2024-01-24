@@ -16,16 +16,16 @@
         
         <DockPanel LastChildFill="False" Margin="80 0 0 0">
             <Grid DockPanel.Dock="Bottom">
-                <Button x:Name="leftBtn" Width="50" Height="20" BorderThickness="0" Margin="-70 -220 660 220" Background="Transparent" BorderBrush="Transparent">
+                <Button x:Name="leftBtn" Width="50" Height="20" BorderThickness="0" Margin="-70 -220 660 220" Background="Transparent" BorderBrush="Transparent" Click="SwipeLeft">
                     <Image Source="/Images/arrow_left.png"/>
                 </Button>
 
-                <Button x:Name="rightBtn" Width="40" Height="20" Margin="670 -220 -70 220" Background="Transparent" BorderBrush="Transparent">
+                <Button x:Name="rightBtn" Width="40" Height="20" Margin="670 -220 -70 220" Background="Transparent" BorderBrush="Transparent" Click="SwipeRight">
                     <Image Source="/Images/arrow_right.png"/>
                 </Button>
             </Grid>
 
-            <Image Width="640" Height="320" Name="imageControl" Stretch="Uniform"/>
+            <Image Width="640" Height="320" Name="imageDisplay" Stretch="Uniform" Source="/Images/HTL-Logo.png"/>
         </DockPanel>
     </DockPanel>
 
