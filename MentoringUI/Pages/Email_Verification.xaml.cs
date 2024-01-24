@@ -47,7 +47,15 @@ namespace MentoringUI
         }
         private void submit_btn_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (int.Parse(TestNumbers.Text) == randomNumber)
+            {
+                MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+                mainWindow.Content = new Student();
+            }
+            else
+            {
+                MessageBox.Show("Falscher Code");
+            }
         }
     }
 }
