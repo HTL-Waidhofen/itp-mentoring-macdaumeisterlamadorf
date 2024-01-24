@@ -11,7 +11,7 @@
     <DockPanel LastChildFill="False">
         <DockPanel DockPanel.Dock="Top">
             <Grid>
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" FontSize="40" x:Name="usermanagementHeade_tbl">Nutzerverwaltung</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" FontSize="40" x:Name="usermanagementHeader_tbl">Nutzerverwaltung</TextBlock>
                 <Image HorizontalAlignment="Right" x:Name="htl_logo"  Source="/Images/HTL-Logo.png" Height="100"/>
             </Grid>
         </DockPanel>
@@ -23,7 +23,7 @@
                     <Button Click="edit_btn_Click" x:Name="edit_btn" DockPanel.Dock="Right" BorderThickness="2" HorizontalAlignment="Right" Margin="0,0,10,0" Width="60">Editieren</Button>
                     <Button Click="delete_btn_Click"  x:Name="delete_btn" DockPanel.Dock="Right" BorderThickness="2" HorizontalAlignment="Right" Margin="0,0,10,0" Width="60" Content="🗑️"></Button>
                 </DockPanel>
-                <TextBlock x:Name="miniMentorHeader_tbl" HorizontalAlignment="Center" VerticalAlignment="Center">Mentoren</TextBlock>
+                <TextBlock x:Name="miniStudentHeader_tbl" HorizontalAlignment="Center" VerticalAlignment="Center">Schüler</TextBlock>
             </Grid>
         </DockPanel>
         <DockPanel DockPanel.Dock="Top">
@@ -41,4 +41,5 @@
             </Button>
         </DockPanel>
     </DockPanel>
+
 </Page>
