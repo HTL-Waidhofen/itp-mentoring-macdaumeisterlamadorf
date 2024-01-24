@@ -42,5 +42,30 @@ namespace MentoringUI
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
             mainWindow.Content = new UserManagement_Mentors();
         }
+
+        private void edit_btn_Click(object sender, RoutedEventArgs e)
+        {
+            ListBoxItem selectedItem = (ListBoxItem)courseEdit_lbx.SelectedItem;
+
+            if (selectedItem != null)
+            {
+                var dialog = new InputDialog(selectedItem.Content.ToString());
+
+                bool? result = dialog.ShowDialog();
+
+                if (result == true)
+                {
+                    MessageBoxResult mResult = MessageBox.Show("Sind Sie sicher, dass Sie diesen Mentor bearbeiten wollen?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                    if (mResult == MessageBoxResult.Yes)
+                    {
+                        selectedItem.Content = dialog.InputText;
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Bitte wählen Sie einen Mentor aus, um ihn zu bearbeiten.");
+            }
+        }
     }
 }
