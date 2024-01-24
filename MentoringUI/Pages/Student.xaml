@@ -11,7 +11,6 @@
     <DockPanel LastChildFill="False">
         <DockPanel DockPanel.Dock="Top" LastChildFill="False">
             <Grid DockPanel.Dock="Top">
-                <Button x:Name="requestedMentors_btn" Width="160" Margin="20,0,0,0" Height="20" VerticalAlignment="Center" HorizontalAlignment="Left">Bereits Beantragte Mentoren</Button>
                 <TextBlock x:Name="studentsHeader_tbl" FontWeight="Bold" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center">Schüler</TextBlock>
                 <Image x:Name="htl_logo"  Source="/Images/HTL-Logo.png" Height="100" HorizontalAlignment="Right"/>
             </Grid>
