@@ -29,7 +29,7 @@ namespace MentoringUI
     { 
         int Index;
         SQLiteDataAccess.User user;
-        private string lang = "de";
+        private string lang;
         string connectionString = @"Data Source=..\..\..\..\Database\itpmentoring.db;Version=3;";
         MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
 
@@ -43,6 +43,10 @@ namespace MentoringUI
             timer.Interval = TimeSpan.FromSeconds(0.1);
             timer.Tick += ChangeColor;
             timer.Start();
+            if(lang == "en")
+                language_cbx.SelectedIndex = 0;
+            else if(lang == "de")
+                language_cbx.SelectedIndex = 1;
         }
             Brush? dark = (Brush?)new BrushConverter().ConvertFromString("#505050");
             Brush? light = (Brush?)new BrushConverter().ConvertFromString("#FFFFFF");
@@ -63,7 +67,16 @@ namespace MentoringUI
                 SetColor(light, dark, "/Images/return_button_white.png");
             else if(appearance_cbx.SelectedIndex == 2)
                 SetColor(Brushes.Black, light, "/Images/return_button_black.png");
-            language_cbx_SelectionChanged(null, null);
+            if (lang == "en")
+            {
+                language_cbx.SelectedIndex = 1;
+                language_cbx.SelectedIndex = 0;
+            }
+            else if (lang == "de")
+            {
+                language_cbx.SelectedIndex = 0;
+                language_cbx.SelectedIndex = 1;
+            }
         }
 
         private void appearance_cbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
