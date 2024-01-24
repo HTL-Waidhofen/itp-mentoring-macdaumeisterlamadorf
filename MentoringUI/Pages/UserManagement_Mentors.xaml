@@ -27,15 +27,12 @@
             </Grid>
         </DockPanel>
         <DockPanel DockPanel.Dock="Top">
-            <ListBox SelectionMode="Extended" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="courseEdit_lbx" Margin="10,0,10,10" BorderThickness="2">
+            <ListBox SelectionMode="Extended" x:Name="courseEdit_lbx" Margin="10,0,10,10" BorderThickness="2" Height="225">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="ListBoxItem">
                         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
                     </Style>
                 </ListBox.ItemContainerStyle>
-                <ListBoxItem>hahah</ListBoxItem>
-                <ListBoxItem>hahaha</ListBoxItem>
-                <ListBoxItem>huhuhu</ListBoxItem>
             </ListBox>
         </DockPanel>
         <DockPanel  DockPanel.Dock="Bottom">
@@ -44,5 +41,5 @@
             </Button>
         </DockPanel>
     </DockPanel>
-        
+
 </Page>
