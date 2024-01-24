@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLiteDataAccess;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,7 @@ namespace MentoringUI
     /// </summary>
     public partial class Login : Page
     {
-        string connectionString = @"Data Source=..\..\..\..\Database\itpmentoring.db;Version3;";
+        string connectionString = @"Data Source=..\..\..\..\Database\itpmentoring.db;Version=3;";
         public Login()
         {
             InitializeComponent();
@@ -103,10 +104,18 @@ namespace MentoringUI
         private void login_btn_Click(object sender, RoutedEventArgs e)
         {
            //Überprüfung mit Datenbank kommt später hier hin
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
            if(!string.IsNullOrEmpty(passwordBox.Password))
             {
-            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-            mainWindow.Content = new Student();
+                List<User> users = SqliteDataAccess.LoadUsers(connectionString);
+                foreach(User user in users)
+                {
+                    if(user.Email == email_txb.Text)
+                    {
+                        if(user.Password == passwordBox.Password)
+                            mainWindow.Content = new Student();
+                    }
+                }
             }
         }
 
