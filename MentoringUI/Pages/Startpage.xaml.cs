@@ -59,21 +59,10 @@ namespace MentoringUI
             imageDisplay.Source = (ImageSource)new ImageSourceConverter().ConvertFromString(pictures[cnt]);
         }
 
-        private void AutomaticSwipe(object sender, EventArgs e)
+        private void login_btn_Click(object sender, RoutedEventArgs e)
         {
-            
-
-            while (true)
-            {
-                cnt++;
-
-                if (cnt >= pictures.Length)
-                {
-                    cnt = 0;
-                }
-
-                Thread.Sleep(2000);
-            }
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow.Content = new Login();
         }
     }
 }
