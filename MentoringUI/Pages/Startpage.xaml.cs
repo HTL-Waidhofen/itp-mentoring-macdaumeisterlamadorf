@@ -52,5 +52,29 @@ namespace MentoringUI
         {
             SwipeRight(null, null);
         }
+
+        private void SwipeRight(object sender, RoutedEventArgs e)
+        {
+            cnt++;
+
+            if (cnt >= pictures.Length)
+            {
+                cnt = 0;
+            }
+
+            imageDisplay.Source = (ImageSource)new ImageSourceConverter().ConvertFromString(pictures[cnt]);
+        }
+
+        private void SwipeLeft(object sender, RoutedEventArgs e)
+        {
+            cnt--;
+
+            if (cnt < 0)
+            {
+                cnt = pictures.Length - 1;
+            }
+
+            imageDisplay.Source = (ImageSource)new ImageSourceConverter().ConvertFromString(pictures[cnt]);
+        }
     }
 }
