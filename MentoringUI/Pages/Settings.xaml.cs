@@ -29,7 +29,7 @@ namespace MentoringUI
     { 
         int Index;
         SQLiteDataAccess.User user;
-        private string lang;
+        private string lang, appearance;
         string connectionString = @"Data Source=..\..\..\..\Database\itpmentoring.db;Version=3;";
         MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
 
@@ -39,6 +39,7 @@ namespace MentoringUI
             InitializeComponent();
             this.user = user;
             lang = user.Language;
+            //appearance = user.Appearance.ToString();
             Index = index;
             timer.Interval = TimeSpan.FromSeconds(0.1);
             timer.Tick += ChangeColor;
@@ -47,12 +48,26 @@ namespace MentoringUI
                 language_cbx.SelectedIndex = 0;
             else if(lang == "de")
                 language_cbx.SelectedIndex = 1;
+            int appIndex = -1;
+            if (user.Appearance == 's')
+                appIndex = 0;
+            else if (user.Appearance == 'd')
+                appIndex = 1;
+            else if (user.Appearance == 'l')
+                appIndex = 2;
+                appearance_cbx.SelectedIndex = appIndex;
         }
             Brush? dark = (Brush?)new BrushConverter().ConvertFromString("#505050");
             Brush? light = (Brush?)new BrushConverter().ConvertFromString("#FFFFFF");
 
         private void ChangeColor(object sender, EventArgs e)
         {
+            if (appearance == "s")
+                appearance_cbx.SelectedIndex = 0;
+            else if(appearance == "d")
+                appearance_cbx.SelectedIndex = 1;
+            else if(appearance == "l")
+                appearance_cbx.SelectedIndex = 2;
             if(appearance_cbx.SelectedIndex == 0)
             switch (int.Parse(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "AppsUseLightTheme", 1).ToString()))
             {
@@ -69,12 +84,12 @@ namespace MentoringUI
                 SetColor(Brushes.Black, light, "/Images/return_button_black.png");
             if (lang == "en")
             {
-                language_cbx.SelectedIndex = 1;
+                language_cbx.SelectedIndex = -1;
                 language_cbx.SelectedIndex = 0;
             }
             else if (lang == "de")
             {
-                language_cbx.SelectedIndex = 0;
+                language_cbx.SelectedIndex = -1;
                 language_cbx.SelectedIndex = 1;
             }
         }
@@ -93,12 +108,15 @@ namespace MentoringUI
                             SetColor(dark, light, "/Images/return_button_white.png");
                         break;
                     }
+                    SQLiteDataAccess.SqliteDataAccess.UpdateUser(connectionString, new SQLiteDataAccess.User(user.ID, 's', user.Language, user.Firstname, user.Lastname, user.Email, user.Password, user.MentorID_FK, user.Class));
                     break;
                 case 1:
                     SetColor(Brushes.Black, light, "/Images/return_button_black.png");
+                    SQLiteDataAccess.SqliteDataAccess.UpdateUser(connectionString, new SQLiteDataAccess.User(user.ID, 'd', user.Language, user.Firstname, user.Lastname, user.Email, user.Password, user.MentorID_FK, user.Class));
                     break;
                 case 2:
                     SetColor(light, dark, "/Images/return_button_white.png");
+                    SQLiteDataAccess.SqliteDataAccess.UpdateUser(connectionString, new SQLiteDataAccess.User(user.ID, 'l', user.Language, user.Firstname, user.Lastname, user.Email, user.Password, user.MentorID_FK, user.Class));
                     break;
             }
         }
