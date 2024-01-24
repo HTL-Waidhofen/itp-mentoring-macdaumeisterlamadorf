@@ -67,5 +67,29 @@ namespace MentoringUI
                 MessageBox.Show("Bitte wählen Sie einen Mentor aus, um ihn zu bearbeiten.");
             }
         }
+
+        private void delete_btn_Click(object sender, RoutedEventArgs e)
+        {
+            if (courseEdit_lbx.SelectedItems.Count > 1)
+            {
+                MessageBoxResult result = MessageBox.Show("Sind Sie sicher, dass Sie diese Mentoren löschen wollen?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if (result == MessageBoxResult.Yes)
+                {
+                    DeleteSelectedItems();
+                }
+            }
+            else if (courseEdit_lbx.SelectedItems.Count == 1)
+            {
+                MessageBoxResult result = MessageBox.Show("Sind Sie sicher, dass Sie diesen Mentor löschen wollen?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if (result == MessageBoxResult.Yes)
+                {
+                    DeleteSelectedItems();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Wählen Sie Mentoren aus, um sie zu löschen", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
     }
 }
