@@ -22,13 +22,13 @@ namespace MentoringUI
     public partial class Mentors : Page
     {
         private ObservableCollection<string> allMentors;
-        public Mentors()
+        SQLiteDataAccess.User user;
+        public Mentors(SQLiteDataAccess.User user)
         {
             InitializeComponent();
-            //allMentors = new ObservableCollection<string> { "Daniel Daurer","Benjamin Zechmeister","Alexander Kaltenbauer","Leon Lampesberger"};
-            //mentorslbx.ItemsSource = allMentors;
 
             filterTextBox.TextChanged += FilterTextBox_TextChanged;
+            this.user = user;
         }
         private void FilterTextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
@@ -41,7 +41,7 @@ namespace MentoringUI
 
         private void settings_btn_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.MainWindow.Content = new Settings(4);
+            Application.Current.MainWindow.Content = new Settings(4, user);
         }
     }
 }
