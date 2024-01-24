@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLiteDataAccess;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.RightsManagement;
@@ -22,10 +23,14 @@ namespace MentoringUI
     public partial class UserManagement_Mentors: Page
     {
         SQLiteDataAccess.User user;
+        string connectionString = @"Data Source=..\..\..\..\Database\itpmentoring.db;Version=3;";
         public UserManagement_Mentors(SQLiteDataAccess.User user)
         {
             InitializeComponent();
             this.user = user;
+            List<Mentor> mentors = SQLiteDataAccess.SqliteDataAccess.LoadMentors(connectionString);
+            mentors_lbx.Items.Clear();
+            for (int i = 0; i < mentors.Count; i++) mentors_lbx.Items.Add(mentors[i].ToString());
         }
         private void settings_btn_Click(object sender, RoutedEventArgs e)
         {
@@ -47,7 +52,7 @@ namespace MentoringUI
 
         private void edit_btn_Click(object sender, RoutedEventArgs e)
         {
-            ListBoxItem selectedItem = (ListBoxItem)courseEdit_lbx.SelectedItem;
+            ListBoxItem selectedItem = (ListBoxItem)mentors_lbx.SelectedItem;
 
             if (selectedItem != null)
             {
@@ -72,41 +77,35 @@ namespace MentoringUI
 
         private void delete_btn_Click(object sender, RoutedEventArgs e)
         {
-                if (courseEdit_lbx.SelectedItems.Count > 1)
-                {
-                    MessageBoxResult result = MessageBox.Show("Sind Sie sicher, dass Sie diese Mentoren löschen wollen?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-                    if (result == MessageBoxResult.Yes)
-                    {
-                        DeleteSelectedItems();
-                    }
-                }
-                else if(courseEdit_lbx.SelectedItems.Count == 1)
+                if(mentors_lbx.SelectedItems.Count == 1)
                 {
                     MessageBoxResult result = MessageBox.Show("Sind Sie sicher, dass Sie diesen Mentor löschen wollen?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                     if (result == MessageBoxResult.Yes)
                     {
                         DeleteSelectedItems();
                     }
-            }
+                }
                 else
                 {
-                    MessageBox.Show("Wählen Sie Mentoren aus, um sie zu löschen", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Wählen Sie einen Mentoren aus, um diesen zu löschen", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
         }
         private void DeleteSelectedItems()
         {
-            var selectedItems = new List<object>(courseEdit_lbx.SelectedItems.Cast<object>());
+            var selectedItems = new List<object>(mentors_lbx.SelectedItems.Cast<object>());
 
             foreach (var item in selectedItems)
             {
-                courseEdit_lbx.Items.Remove(item);
+                mentors_lbx.Items.Remove(item);
+                List<Mentor> allMentors = SqliteDataAccess.LoadMentors(connectionString);
+                SqliteDataAccess.DeleteMentor(connectionString, int.Parse(item.ToString().Split("-")[0]));
             }
         }
 
         private void Page_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             double newHeight = e.NewSize.Height - 180;
-            courseEdit_lbx.Height = newHeight;
+            mentors_lbx.Height = newHeight;
         }
     }
     public partial class InputDialog : Window

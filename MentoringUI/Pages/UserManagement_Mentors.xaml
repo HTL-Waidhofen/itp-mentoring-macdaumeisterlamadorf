@@ -27,7 +27,7 @@
             </Grid>
         </DockPanel>
         <DockPanel DockPanel.Dock="Top">
-            <ListBox SelectionMode="Extended" x:Name="courseEdit_lbx" Margin="10,0,10,10" BorderThickness="2" Height="225">
+            <ListBox SelectionMode="Single" x:Name="mentors_lbx" Margin="10,0,10,10" BorderThickness="2" Height="225">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="ListBoxItem">
                         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
