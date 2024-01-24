@@ -4,33 +4,42 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MentoringUI"
-      mc:Ignorable="d" 
+      mc:Ignorable="d"
+      SizeChanged="Page_SizeChanged"
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="UserManagement">
-
+      Title="UserManagement_Mentors">
     <DockPanel LastChildFill="False">
         <DockPanel DockPanel.Dock="Top">
             <Grid>
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" FontSize="40" x:Name="usermanagementHeade_tbl">Nutzerverwaltung</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" FontSize="40" x:Name="usermanagementHeader_tbl">Nutzerverwaltung</TextBlock>
                 <Image HorizontalAlignment="Right" x:Name="htl_logo"  Source="/Images/HTL-Logo.png" Height="100"/>
             </Grid>
         </DockPanel>
-        <DockPanel DockPanel.Dock="Top" Margin="0,20,0,0">
+        <DockPanel DockPanel.Dock="Top" Margin="0,10,0,0">
             <Grid>
                 <DockPanel>
-                    <Button x:Name="student_btn" DockPanel.Dock="Left" BorderThickness="2" HorizontalAlignment="Left" Margin="10,0,0,0" Width="60">Schüler</Button>
-                    <Button x:Name="mentor_btn" DockPanel.Dock="Left" BorderThickness="2" HorizontalAlignment="Left" Margin="10,0,0,0" Width="60">Mentoren</Button>
-                    <Button x:Name="delete_btn" DockPanel.Dock="Right" BorderThickness="2" HorizontalAlignment="Right" Margin="0,0,10,0" Width="60">Editieren</Button>
-                    <Button x:Name="edit_btn" DockPanel.Dock="Right" BorderThickness="2" HorizontalAlignment="Right" Margin="0,0,10,0" Width="60">Löschen</Button>
+                    <Button Click="student_btn_Click" x:Name="student_btn" DockPanel.Dock="Left" BorderThickness="2" HorizontalAlignment="Left" Margin="10,0,0,0" Width="60">Schüler</Button>
+                    <Button Click="mentor_btn_Click" x:Name="mentor_btn" DockPanel.Dock="Left" BorderThickness="2" HorizontalAlignment="Left" Margin="10,0,0,0" Width="60">Mentoren</Button>
+                    <Button Click="edit_btn_Click" x:Name="edit_btn" DockPanel.Dock="Right" BorderThickness="2" HorizontalAlignment="Right" Margin="0,0,10,0" Width="60">Editieren</Button>
+                    <Button Click="delete_btn_Click"  x:Name="delete_btn" DockPanel.Dock="Right" BorderThickness="2" HorizontalAlignment="Right" Margin="0,0,10,0" Width="60" Content="🗑️"></Button>
                 </DockPanel>
-                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Mentoren</TextBlock>
+                <TextBlock x:Name="miniMentorHeader_tbl" HorizontalAlignment="Center" VerticalAlignment="Center">Mentoren</TextBlock>
             </Grid>
         </DockPanel>
         <DockPanel DockPanel.Dock="Top">
-            <ListBox x:Name="courseEdit_lbx" Margin="10,0,10,0" BorderThickness="2" Height="255"></ListBox>
+            <ListBox SelectionMode="Extended" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="courseEdit_lbx" Margin="10,0,10,10" BorderThickness="2">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    </Style>
+                </ListBox.ItemContainerStyle>
+                <ListBoxItem>hahah</ListBoxItem>
+                <ListBoxItem>hahaha</ListBoxItem>
+                <ListBoxItem>huhuhu</ListBoxItem>
+            </ListBox>
         </DockPanel>
         <DockPanel  DockPanel.Dock="Bottom">
-            <Button x:Name="settings_btn" Height="50" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left">
+            <Button x:Name="settings_btn" Height="40" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left" Click="settings_btn_Click">
                 <Image  Source="/Images/setting.png"></Image>
             </Button>
         </DockPanel>

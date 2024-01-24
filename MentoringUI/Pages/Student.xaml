@@ -11,20 +11,20 @@
     <DockPanel LastChildFill="False">
         <DockPanel DockPanel.Dock="Top" LastChildFill="False">
             <Grid DockPanel.Dock="Top">
-                <Button x:Name="requestedMentors_btn" Width="160" Margin="20,0,0,0" Height="20" VerticalAlignment="Center" HorizontalAlignment="Left" Click="requestedMentors_btn_Click">Bereits Beantragte Mentoren</Button>
-                <TextBlock x:Name="header_tbl" FontWeight="Bold" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center">Schüler</TextBlock>
+                <Button x:Name="requestedMentors_btn" Width="160" Margin="20,0,0,0" Height="20" VerticalAlignment="Center" HorizontalAlignment="Left">Bereits Beantragte Mentoren</Button>
+                <TextBlock x:Name="studentsHeader_tbl" FontWeight="Bold" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center">Schüler</TextBlock>
                 <Image x:Name="htl_logo"  Source="/Images/HTL-Logo.png" Height="100" HorizontalAlignment="Right"/>
             </Grid>
         </DockPanel>
         <DockPanel DockPanel.Dock="Top">
-            <GroupBox Header="Alle Kurse" Margin="5,0,5,0">
+            <GroupBox Header="Alle Kurse" Margin="5,10,5,0" Name="courses_gbx">
                 <DockPanel>
                     <ListBox x:Name="allCourses_lbx" Height="95"></ListBox>
                 </DockPanel>
             </GroupBox>
         </DockPanel>
         <DockPanel DockPanel.Dock="Top">
-            <GroupBox Margin="5,10,5,0" Header="Mentoren auswahl">
+            <GroupBox Margin="5,10,5,0" Header="Mentoren auswahl" Name="mentors_gbx">
                 <DockPanel>
                     <DockPanel DockPanel.Dock="Top">
                         <TextBox x:Name="mentorFilter" GotFocus="mentorFilter_GotFocus"  Text="Suche" Foreground="Gray" LostFocus="mentorFilter_LostFocus"></TextBox>

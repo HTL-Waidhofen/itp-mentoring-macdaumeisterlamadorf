@@ -37,4 +37,13 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="I18N" Version="2.1.17" />
+    <PackageReference Include="System.Resources.ResourceManager" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SQLiteDataAccess\SQLiteDataAccess.csproj" />
+  </ItemGroup>
+
 </Project>

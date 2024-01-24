@@ -11,21 +11,21 @@
     <DockPanel LastChildFill="False">
         <Grid DockPanel.Dock="Top">
             <Label FontWeight="Bold" FontSize="40" Width="200" FontFamily="Century Gothic">Mentoren</Label>
-            <Button x:Name="loginBtn" FontSize="16" Width="60" Height="40" HorizontalAlignment="Right" Margin="0 0 40 0" Background="Transparent">Login</Button>
+            <Button x:Name="login_btn" FontSize="16" Width="60" Height="40" HorizontalAlignment="Right" Margin="0 0 40 0" Background="Transparent" Click="login_btn_Click">Login</Button>
         </Grid>
         
         <DockPanel LastChildFill="False" Margin="80 0 0 0">
             <Grid DockPanel.Dock="Bottom">
-                <Button x:Name="leftBtn" Width="50" Height="20" BorderThickness="0" Margin="-70 -220 660 220" Background="Transparent" BorderBrush="Transparent">
+                <Button x:Name="leftBtn" Width="50" Height="20" BorderThickness="0" Margin="-70 -220 660 220" Background="Transparent" BorderBrush="Transparent" Click="SwipeLeft">
                     <Image Source="/Images/arrow_left.png"/>
                 </Button>
 
-                <Button x:Name="rightBtn" Width="40" Height="20" Margin="670 -220 -70 220" Background="Transparent" BorderBrush="Transparent">
+                <Button x:Name="rightBtn" Width="40" Height="20" Margin="670 -220 -70 220" Background="Transparent" BorderBrush="Transparent" Click="SwipeRight">
                     <Image Source="/Images/arrow_right.png"/>
                 </Button>
             </Grid>
 
-            <Image Width="640" Height="320" Name="imageControl" Stretch="Uniform"/>
+            <Image Width="640" Height="320" Name="imageDisplay" Stretch="Uniform" Source="/Images/HTL-Logo.png"/>
         </DockPanel>
     </DockPanel>
 
