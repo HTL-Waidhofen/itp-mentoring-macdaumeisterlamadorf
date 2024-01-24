@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace MentoringUI
 {
     /// <summary>
-    /// Interaktionslogik für UserManagement.xaml
+    /// Interaktionslogik für Requested_Mentors.xaml
     /// </summary>
-    public partial class UserManagement_Mentors: Page
+    public partial class Requested_Mentors : Page
     {
-        public UserManagement_Mentors()
+        public Requested_Mentors()
         {
             InitializeComponent();
         }
