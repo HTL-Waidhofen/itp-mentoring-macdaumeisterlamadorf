@@ -113,7 +113,10 @@ namespace MentoringUI
                     if(user.Email == email_txb.Text)
                     {
                         if(user.Password == passwordBox.Password)
+                        {
+                            mainWindow.Content = new Settings(1, user);
                             mainWindow.Content = new Student(user);
+                        }
                     }
                 }
             }
