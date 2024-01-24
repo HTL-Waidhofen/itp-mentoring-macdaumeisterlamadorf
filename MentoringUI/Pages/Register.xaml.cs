@@ -239,7 +239,7 @@ namespace MentoringUI
                 if (IsValidEmail(email_tbx.Text) && pwd_pbx.Password == confirmpwd_pbx.Password)
                 {
                     MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-                    mainWindow.Content = new Email_Verification();
+                    mainWindow.Content = new Email_Verification(email_tbx.Text);
                 }
             }
         }
