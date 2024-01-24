@@ -105,7 +105,7 @@ namespace MentoringUI
         {
            //Überprüfung mit Datenbank kommt später hier hin
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-           if(!string.IsNullOrEmpty(passwordBox.Password))
+           if(!string.IsNullOrEmpty(passwordBox.Password) || email_txb.Text == "admin")
             {
                 List<User> users = SqliteDataAccess.LoadUsers(connectionString);
                 foreach(User user in users)
@@ -115,6 +115,9 @@ namespace MentoringUI
                         if(user.Password == passwordBox.Password)
                         {
                             mainWindow.Content = new Settings(1, user);
+                            if(user.Email == "admin")
+                            mainWindow.Content = new Admin(user);
+                            else
                             mainWindow.Content = new Student(user);
                         }
                     }
