@@ -60,7 +60,7 @@ namespace MentoringUI
 
                 if (result == true)
                 {
-                    MessageBoxResult mResult = MessageBox.Show("Sind Sie sicher, dass Sie diesen Mentor bearbeiten wollen?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                    MessageBoxResult mResult = MessageBox.Show("Sind Sie sicher, dass Sie diesen Schüler bearbeiten wollen?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                     if (mResult == MessageBoxResult.Yes)
                     {
                         students_lbx.SelectedItem = dialog.InputText;
@@ -73,23 +73,15 @@ namespace MentoringUI
             }
             else
             {
-                MessageBox.Show("Bitte wählen Sie einen Mentor aus, um ihn zu bearbeiten.");
+                MessageBox.Show("Bitte wählen Sie einen Schüler aus, um ihn zu bearbeiten.");
             }
         }
 
         private void delete_btn_Click(object sender, RoutedEventArgs e)
         {
-            if (students_lbx.SelectedItems.Count > 1)
+            if (students_lbx.SelectedItems.Count == 1)
             {
-                MessageBoxResult result = MessageBox.Show("Sind Sie sicher, dass Sie diese Mentoren löschen wollen?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-                if (result == MessageBoxResult.Yes)
-                {
-                    DeleteSelectedItems();
-                }
-            }
-            else if (students_lbx.SelectedItems.Count == 1)
-            {
-                MessageBoxResult result = MessageBox.Show("Sind Sie sicher, dass Sie diesen Mentor löschen wollen?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                MessageBoxResult result = MessageBox.Show("Sind Sie sicher, dass Sie diesen Schüler löschen wollen?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                 if (result == MessageBoxResult.Yes)
                 {
                     DeleteSelectedItems();
@@ -97,7 +89,7 @@ namespace MentoringUI
             }
             else
             {
-                MessageBox.Show("Wählen Sie Mentoren aus, um sie zu löschen", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Wählen Sie einen Schüler aus, um diesen zu löschen", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
 
@@ -108,6 +100,8 @@ namespace MentoringUI
             foreach (var item in selectedItems)
             {
                 students_lbx.Items.Remove(item);
+                List<User> allUser = SqliteDataAccess.LoadUsers(connectionString);
+                SqliteDataAccess.DeleteUser(connectionString, int.Parse(item.ToString().Split("-")[0]));
             }
         }
 
