@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLiteDataAccess;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,10 +22,14 @@ namespace MentoringUI
     public partial class UserManagement_Students : Page
     {
         SQLiteDataAccess.User user;
+        string connectionString = @"Data Source=..\..\..\..\Database\itpmentoring.db;Version=3;";
         public UserManagement_Students(SQLiteDataAccess.User user)
         {
             InitializeComponent();
             this.user = user;
+            List<User> users = SQLiteDataAccess.SqliteDataAccess.LoadUsers(connectionString);
+            students_lbx.Items.Clear();
+            for (int i = 0; i < users.Count; i++) students_lbx.Items.Add(users[i].ToString());
         }
 
         private void settings_btn_Click(object sender, RoutedEventArgs e)
@@ -47,11 +52,9 @@ namespace MentoringUI
 
         private void edit_btn_Click(object sender, RoutedEventArgs e)
         {
-            ListBoxItem selectedItem = (ListBoxItem)courseEdit_lbx.SelectedItem;
-
-            if (selectedItem != null)
+            if (!string.IsNullOrEmpty(students_lbx.SelectedItem.ToString()))
             {
-                var dialog = new InputDialog(selectedItem.Content.ToString());
+                var dialog = new InputDialog(students_lbx.SelectedItem.ToString());
 
                 bool? result = dialog.ShowDialog();
 
@@ -60,7 +63,11 @@ namespace MentoringUI
                     MessageBoxResult mResult = MessageBox.Show("Sind Sie sicher, dass Sie diesen Mentor bearbeiten wollen?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                     if (mResult == MessageBoxResult.Yes)
                     {
-                        selectedItem.Content = dialog.InputText;
+                        students_lbx.SelectedItem = dialog.InputText;
+                        SqliteDataAccess.UpdateUser(connectionString, new User(int.Parse(students_lbx.SelectedItem.ToString().Split('-')[0]), char.Parse(dialog.InputText.Split('-')[1]), dialog.InputText.Split('-')[2], dialog.InputText.Split('-')[3], dialog.InputText.Split('-')[4], dialog.InputText.Split('-')[5], dialog.InputText.Split('-')[6], int.Parse(dialog.InputText.Split('-')[7]), dialog.InputText.Split('-')[8]));
+                        List<User> mentors = SQLiteDataAccess.SqliteDataAccess.LoadUsers(connectionString);
+                        students_lbx.Items.Clear();
+                        for (int i = 0; i < mentors.Count; i++) students_lbx.Items.Add(mentors[i].ToString());
                     }
                 }
             }
@@ -72,7 +79,7 @@ namespace MentoringUI
 
         private void delete_btn_Click(object sender, RoutedEventArgs e)
         {
-            if (courseEdit_lbx.SelectedItems.Count > 1)
+            if (students_lbx.SelectedItems.Count > 1)
             {
                 MessageBoxResult result = MessageBox.Show("Sind Sie sicher, dass Sie diese Mentoren löschen wollen?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                 if (result == MessageBoxResult.Yes)
@@ -80,7 +87,7 @@ namespace MentoringUI
                     DeleteSelectedItems();
                 }
             }
-            else if (courseEdit_lbx.SelectedItems.Count == 1)
+            else if (students_lbx.SelectedItems.Count == 1)
             {
                 MessageBoxResult result = MessageBox.Show("Sind Sie sicher, dass Sie diesen Mentor löschen wollen?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                 if (result == MessageBoxResult.Yes)
@@ -96,18 +103,18 @@ namespace MentoringUI
 
         private void DeleteSelectedItems()
         {
-            var selectedItems = new List<object>(courseEdit_lbx.SelectedItems.Cast<object>());
+            var selectedItems = new List<object>(students_lbx.SelectedItems.Cast<object>());
 
             foreach (var item in selectedItems)
             {
-                courseEdit_lbx.Items.Remove(item);
+                students_lbx.Items.Remove(item);
             }
         }
 
         private void Page_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             double newHeight = e.NewSize.Height - 180;
-            courseEdit_lbx.Height = newHeight;
+            students_lbx.Height = newHeight;
         }
     }
 }
