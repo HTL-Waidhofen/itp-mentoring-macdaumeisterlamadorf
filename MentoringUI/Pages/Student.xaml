@@ -34,10 +34,11 @@
                 </DockPanel>
             </GroupBox>
         </DockPanel>
-        <DockPanel  DockPanel.Dock="Bottom">
+        <DockPanel DockPanel.Dock="Bottom" LastChildFill="False">
             <Button x:Name="setting_btn" Height="40" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left" Click="setting_btn_Click">
                 <Image  Source="/Images/setting.png"></Image>
             </Button>
+            <Button Width="100" DockPanel.Dock="Right" Name="sendRequestToMentor_btn" Click="sendRequestToMentor_btn_Click">Anfrage schicken</Button>
         </DockPanel>
     </DockPanel>
 </Page>

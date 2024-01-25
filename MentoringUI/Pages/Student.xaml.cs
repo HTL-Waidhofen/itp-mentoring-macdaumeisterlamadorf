@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -73,6 +75,27 @@ namespace MentoringUI
                                mentorSelection_lbx.Items.Add($"Name: {users[i].Firstname} {users[i].Lastname};Class: {users[i].Class};Email: {users[i].Email};Courses: {mentor.Courses}");
                     }
             }
+        }
+
+        private void sendRequestToMentor_btn_Click(object sender, RoutedEventArgs e)
+        {
+            SmtpClient smtpClient = new SmtpClient("smtp-mail.outlook.com")
+            {
+                Port = 587,
+                Credentials = new NetworkCredential("verify.htlwy.mentor@outlook.com", "HTL.2024.Mentoring!"),
+                EnableSsl = true,
+            };
+
+            MailMessage mailMessage = new MailMessage
+            {
+                From = new MailAddress("verify.htlwy.mentor@outlook.com"),
+                Subject = "Anfrage als Mentor",
+                Body = $"Sie haben eine Anfrage von {user.Firstname} {user.Lastname}, Email: {user.Email} für das Fach {allCourses_lbx.SelectedItem.ToString()} erhalten.",
+                IsBodyHtml = false,
+            };
+
+            mailMessage.To.Add(mentorSelection_lbx.SelectedItem.ToString().Split(';')[2].Substring(mentorSelection_lbx.SelectedItem.ToString().Split(';')[2].IndexOf(':') + 1).Trim());
+            smtpClient.Send(mailMessage);
         }
     }
 }
