@@ -82,13 +82,13 @@ namespace MentoringUI
             SmtpClient smtpClient = new SmtpClient("smtp-mail.outlook.com")
             {
                 Port = 587,
-                Credentials = new NetworkCredential("verify.htlwy.mentor@outlook.com", "HTL.2024.Mentoring!"),
+                Credentials = new NetworkCredential("mentor.htlwy.verify@outlook.com", "HTL.2024.Mentoring!"),
                 EnableSsl = true,
             };
 
             MailMessage mailMessage = new MailMessage
             {
-                From = new MailAddress("verify.htlwy.mentor@outlook.com"),
+                From = new MailAddress("mentor.htlwy.verify@outlook.com"),
                 Subject = "Anfrage als Mentor",
                 Body = $"Sie haben eine Anfrage von {user.Firstname} {user.Lastname}, Email: {user.Email} für das Fach {allCourses_lbx.SelectedItem.ToString()} erhalten.",
                 IsBodyHtml = false,

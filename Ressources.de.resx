@@ -144,9 +144,6 @@
   <data name="nc_switchToMentorpage_txtbl" xml:space="preserve">
     <value>Auf Mentorseite wechseln</value>
   </data>
-  <data name="register_tbl" xml:space="preserve">
-    <value>Noch kein Konto?</value>
-  </data>
   <data name="requestedMentors_btn" xml:space="preserve">
     <value>Bereits beantragte Mentoren</value>
   </data>
