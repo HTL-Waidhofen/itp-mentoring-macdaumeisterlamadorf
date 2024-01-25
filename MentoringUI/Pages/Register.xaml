@@ -10,6 +10,9 @@
 
     <DockPanel LastChildFill="False">
         <Grid DockPanel.Dock="Top">
+            <Button Width="40" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 0 0 0" BorderBrush="Transparent" Background="Transparent" IsHitTestVisible="True" Name="return_btn" Click="return_btn_Click">
+                <Image Name="return_btn_img" Source="/Images/return_button_black.png"></Image>
+            </Button>
             <Label FontWeight="Bold" FontSize="40" HorizontalAlignment="Center">Registrieren</Label>
             <Image x:Name="Logo_img" Source="/Images/HTL-Logo.png" Height="100" HorizontalAlignment="Right" ></Image>
         </Grid>

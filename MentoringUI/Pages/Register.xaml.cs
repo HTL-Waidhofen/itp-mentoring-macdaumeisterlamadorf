@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLiteDataAccess;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mail;
@@ -291,6 +292,11 @@ namespace MentoringUI
             }
 
             return valid;
+        }
+        private void return_btn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow.Content = new Login();
         }
     }
 }

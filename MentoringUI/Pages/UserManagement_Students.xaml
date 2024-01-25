@@ -11,6 +11,9 @@
     <DockPanel LastChildFill="False">
         <DockPanel DockPanel.Dock="Top">
             <Grid>
+                <Button Width="40" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 0 0 0" BorderBrush="Transparent" Background="Transparent" IsHitTestVisible="True" Name="return_btn" Click="return_btn_Click">
+                    <Image Name="return_btn_img" Source="/Images/return_button_black.png"></Image>
+                </Button>
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" FontSize="40" x:Name="usermanagementHeader_tbl">Nutzerverwaltung</TextBlock>
                 <Image HorizontalAlignment="Right" x:Name="htl_logo"  Source="/Images/HTL-Logo.png" Height="100"/>
             </Grid>

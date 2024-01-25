@@ -109,6 +109,11 @@ namespace MentoringUI
             double newHeight = e.NewSize.Height - 180;
             mentors_lbx.Height = newHeight;
         }
+        private void return_btn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow.Content = new Admin(user);
+        }
     }
     public partial class InputDialog : Window
     {
