@@ -9,6 +9,9 @@
       Title="Mentors">
     <DockPanel LastChildFill="False">
         <Grid DockPanel.Dock="Top" Height="100">
+            <Button Width="40" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 0 0 0" BorderBrush="Transparent" Background="Transparent" IsHitTestVisible="True" Name="return_btn" Click="return_btn_Click">
+                <Image Name="return_btn_img" Source="/Images/return_button_black.png"></Image>
+            </Button>
             <TextBlock FontWeight="Bold" FontSize="40" Margin="0,25,0,25" Width="200" Name="mentorHeader_tbx" FontFamily="Cambria" HorizontalAlignment="Center">Mentoren</TextBlock>
             <Image x:Name="htl_logo"  Source="/Images/HTL-Logo.png" Height="100" HorizontalAlignment="Right"/>
         </Grid>

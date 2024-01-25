@@ -55,5 +55,11 @@ namespace MentoringUI
             }
             SqliteDataAccess.UpdateMentor(connectionString, new Mentor(mentor.MentorID, courses));
         }
+
+        private void return_btn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow.Content = new Student(user);
+        }
     }
 }

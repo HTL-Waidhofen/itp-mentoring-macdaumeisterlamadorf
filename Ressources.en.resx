@@ -123,9 +123,6 @@
   <data name="course_management_btn" xml:space="preserve">
     <value>Coursemanagement</value>
   </data>
-  <data name="hyperlinkToRegisterPage" xml:space="preserve">
-    <value>Register here</value>
-  </data>
   <data name="loginHeader_tbl" xml:space="preserve">
     <value>Login</value>
   </data>
