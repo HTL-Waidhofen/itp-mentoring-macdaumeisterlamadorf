@@ -31,13 +31,13 @@ namespace MentoringUI
             SmtpClient smtpClient = new SmtpClient("smtp-mail.outlook.com")
             {
                 Port = 587,
-                Credentials = new NetworkCredential("mentor.htlwy.verify@outlook.com", "HTL.2024.Mentoring!"),
+                Credentials = new NetworkCredential("miniversum1@htlwy.at", "Mini123!"),
                 EnableSsl = true,
             };
 
             MailMessage mailMessage = new MailMessage
             {
-                From = new MailAddress("mentor.htlwy.verify@outlook.com"),
+                From = new MailAddress("miniversum1@htlwy.at"),
                 Subject = "Code zur Authentifizierung ihres Kontos",
                 Body = "Ihr 2FA-Code:" + randomNumber,
                 IsBodyHtml = false,
