@@ -19,7 +19,7 @@
         <Label DockPanel.Dock="Top" Height="45"/>
         <TextBlock Text="Sie müssen Ihre Email verifizieren" DockPanel.Dock="Top" Width="280" Height="35" FontSize="18" FontFamily="Cambria"/>
         <Label DockPanel.Dock="Top" Height="8"/>
-        <TextBlock Text="Bitte geben Sie den 8-stelligen Code an, welchen Sie per E-Mail erhalten haben" TextAlignment="Center" DockPanel.Dock="Top" Width="600" Height="35" FontSize="16" FontFamily="Cambria" />
+        <TextBlock Text="Bitte geben Sie den 5-stelligen Code an, welchen Sie per E-Mail erhalten haben" TextAlignment="Center" DockPanel.Dock="Top" Width="600" Height="35" FontSize="16" FontFamily="Cambria" />
         <Label DockPanel.Dock="Top" Height="8"/>
         <TextBox x:Name="TestNumbers" TextWrapping="Wrap" TextAlignment="Center" Text="Zahlen Eingeben" DockPanel.Dock="Top" Width="200" Height="35" FontSize="16" FontFamily="Cambria" />
         <Label DockPanel.Dock="Top" Height="10"/>
