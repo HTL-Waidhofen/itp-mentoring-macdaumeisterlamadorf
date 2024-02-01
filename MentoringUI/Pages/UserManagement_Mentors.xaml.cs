@@ -52,29 +52,37 @@ namespace MentoringUI
 
         private void edit_btn_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(mentors_lbx.SelectedItem.ToString()))
+            try //.IndexOutOfRangeException
             {
-                var dialog = new InputDialog(mentors_lbx.SelectedItem.ToString());
-
-                bool? result = dialog.ShowDialog();
-
-                if (result == true)
+                if (!string.IsNullOrEmpty(mentors_lbx.SelectedItem.ToString()))
                 {
-                    MessageBoxResult mResult = MessageBox.Show("Sind Sie sicher, dass Sie diesen Mentor bearbeiten wollen?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-                    if (mResult == MessageBoxResult.Yes)
+                    var dialog = new InputDialog(mentors_lbx.SelectedItem.ToString());
+
+                    bool? result = dialog.ShowDialog();
+
+                    if (result == true)
                     {
-                        mentors_lbx.SelectedItem = dialog.InputText;
-                        SqliteDataAccess.UpdateMentor(connectionString, new Mentor(int.Parse(mentors_lbx.SelectedItem.ToString().Split('-')[0]), dialog.InputText.Split('-')[1]));
-                        List<Mentor> mentors = SQLiteDataAccess.SqliteDataAccess.LoadMentors(connectionString);
-                        mentors_lbx.Items.Clear();
-                        for (int i = 0; i < mentors.Count; i++) mentors_lbx.Items.Add(mentors[i].ToString());
+                        MessageBoxResult mResult = MessageBox.Show("Sind Sie sicher, dass Sie diesen Mentor bearbeiten wollen?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                        if (mResult == MessageBoxResult.Yes)
+                        {
+                            mentors_lbx.SelectedItem = dialog.InputText;
+                            SqliteDataAccess.UpdateMentor(connectionString, new Mentor(int.Parse(mentors_lbx.SelectedItem.ToString().Split('-')[0]), dialog.InputText.Split('-')[1]));
+                            List<Mentor> mentors = SQLiteDataAccess.SqliteDataAccess.LoadMentors(connectionString);
+                            mentors_lbx.Items.Clear();
+                            for (int i = 0; i < mentors.Count; i++) mentors_lbx.Items.Add(mentors[i].ToString());
+                        }
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Bitte wählen Sie einen Mentor aus, um ihn zu bearbeiten.");
+                }
             }
-            else
+            catch (IndexOutOfRangeException ex)
             {
-                MessageBox.Show("Bitte wählen Sie einen Mentor aus, um ihn zu bearbeiten.");
+                MessageBox.Show(ex.Message, "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+            
         }
 
         private void delete_btn_Click(object sender, RoutedEventArgs e)

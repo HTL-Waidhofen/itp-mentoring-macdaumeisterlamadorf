@@ -52,28 +52,39 @@ namespace MentoringUI
 
         private void edit_btn_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(students_lbx.SelectedItem.ToString()))
+            try
             {
-                var dialog = new InputDialog(students_lbx.SelectedItem.ToString());
-
-                bool? result = dialog.ShowDialog();
-
-                if (result == true)
+                if (!string.IsNullOrEmpty(students_lbx.SelectedItem.ToString()))
                 {
-                    MessageBoxResult mResult = MessageBox.Show("Sind Sie sicher, dass Sie diesen Schüler bearbeiten wollen?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-                    if (mResult == MessageBoxResult.Yes)
+                    var dialog = new InputDialog(students_lbx.SelectedItem.ToString());
+
+                    bool? result = dialog.ShowDialog();
+
+                    if (result == true)
                     {
-                        students_lbx.SelectedItem = dialog.InputText;
-                        SqliteDataAccess.UpdateUser(connectionString, new User(int.Parse(students_lbx.SelectedItem.ToString().Split('-')[0]), char.Parse(dialog.InputText.Split('-')[1]), dialog.InputText.Split('-')[2], dialog.InputText.Split('-')[3], dialog.InputText.Split('-')[4], dialog.InputText.Split('-')[5], dialog.InputText.Split('-')[6], int.Parse(dialog.InputText.Split('-')[7]), dialog.InputText.Split('-')[8]));
-                        List<User> mentors = SQLiteDataAccess.SqliteDataAccess.LoadUsers(connectionString);
-                        students_lbx.Items.Clear();
-                        for (int i = 0; i < mentors.Count; i++) students_lbx.Items.Add(mentors[i].ToString());
+                        MessageBoxResult mResult = MessageBox.Show("Sind Sie sicher, dass Sie diesen Schüler bearbeiten wollen?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                        if (mResult == MessageBoxResult.Yes)
+                        {
+                            students_lbx.SelectedItem = dialog.InputText;
+                            SqliteDataAccess.UpdateUser(connectionString, new User(int.Parse(students_lbx.SelectedItem.ToString().Split('-')[0]), char.Parse(dialog.InputText.Split('-')[1]), dialog.InputText.Split('-')[2], dialog.InputText.Split('-')[3], dialog.InputText.Split('-')[4], dialog.InputText.Split('-')[5], dialog.InputText.Split('-')[6], int.Parse(dialog.InputText.Split('-')[7]), dialog.InputText.Split('-')[8]));
+                            List<User> mentors = SQLiteDataAccess.SqliteDataAccess.LoadUsers(connectionString);
+                            students_lbx.Items.Clear();
+                            for (int i = 0; i < mentors.Count; i++) students_lbx.Items.Add(mentors[i].ToString());
+                        }
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Bitte wählen Sie einen Schüler aus, um ihn zu bearbeiten.");
+                }
             }
-            else
+            catch(IndexOutOfRangeException ex) 
             {
-                MessageBox.Show("Bitte wählen Sie einen Schüler aus, um ihn zu bearbeiten.");
+                MessageBox.Show(ex.Message, "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show(ex.Message, "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
