@@ -103,25 +103,40 @@ namespace MentoringUI
         }
         private void login_btn_Click(object sender, RoutedEventArgs e)
         {
-           //Überprüfung mit Datenbank kommt später hier hin
-            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-           if(!string.IsNullOrEmpty(passwordBox.Password) || email_txb.Text == "admin")
+            try
             {
-                List<User> users = SqliteDataAccess.LoadUsers(connectionString);
-                foreach(User user in users)
+                MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+                if (!string.IsNullOrEmpty(passwordBox.Password) || email_txb.Text == "admin")
                 {
-                    if(user.Email == email_txb.Text)
+                    List<User> users = SqliteDataAccess.LoadUsers(connectionString);
+                    foreach (User user in users)
                     {
-                        if(user.Password == passwordBox.Password)
+                        if(!string.IsNullOrEmpty(email_txb.Text))
+                            if (user.Email == email_txb.Text)
+                            {
+                                if (user.Password == passwordBox.Password)
+                                {
+                                    mainWindow.Content = new Settings(1, user);
+                                    if (user.Email == "admin")
+                                        mainWindow.Content = new Admin(user);
+                                    else
+                                        mainWindow.Content = new Student(user);
+                                }
+                            }
+                        else 
                         {
-                            mainWindow.Content = new Settings(1, user);
-                            if(user.Email == "admin")
-                            mainWindow.Content = new Admin(user);
-                            else
-                            mainWindow.Content = new Student(user);
+                            throw new Exception("Bitte User angeben!");
                         }
                     }
                 }
+                else
+                {
+                    throw new Exception("Bitte Passwort eingeben!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
