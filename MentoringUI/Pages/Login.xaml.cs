@@ -111,7 +111,8 @@ namespace MentoringUI
                     List<User> users = SqliteDataAccess.LoadUsers(connectionString);
                     foreach (User user in users)
                     {
-                        if(!string.IsNullOrEmpty(email_txb.Text))
+                        if (!string.IsNullOrEmpty(email_txb.Text))
+                        {
                             if (user.Email == email_txb.Text)
                             {
                                 if (user.Password == passwordBox.Password)
@@ -123,6 +124,7 @@ namespace MentoringUI
                                         mainWindow.Content = new Student(user);
                                 }
                             }
+                        }
                         else 
                         {
                             throw new Exception("Bitte User angeben!");
