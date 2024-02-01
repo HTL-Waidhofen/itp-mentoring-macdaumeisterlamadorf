@@ -14,7 +14,7 @@
                 <Image x:Name="htl_logo"  Source="/Images/HTL-Logo.png" Height="100" HorizontalAlignment="Right"/>
             </Grid>
         </DockPanel>
-        <DockPanel DockPanel.Dock="Top">
+        <DockPanel DockPanel.Dock="Top" Height="245">
             <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" x:Name="Header_tbl" Margin="0,10,0,0" FontWeight="Bold"  FontSize="40">Anmelden</TextBlock>
             <TextBox DockPanel.Dock="Top" x:Name="email_txb" Margin="0,10,0,0" Width="200" GotFocus="email_txb_GotFocus" Text="Email" Foreground="Gray" LostFocus="email_txb_LostFocus" ></TextBox>
 
@@ -28,7 +28,9 @@
                 Noch kein Konto?
                 <Hyperlink x:Name="hyperlinkToRegisterPage" Click="hyperlinkToRegisterPage_Click">Hier registrieren</Hyperlink>
             </TextBlock>
-
+            <TextBlock DockPanel.Dock="Top" x:Name="password" Margin="0,5,0,0" HorizontalAlignment="Center">
+                <Hyperlink x:Name="hyperlinkToPassword" Click="hyperlinkToRegisterPage_Click">Passwort vergessen</Hyperlink>
+            </TextBlock>
         </DockPanel>
     </DockPanel>
     
