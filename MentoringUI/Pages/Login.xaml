@@ -6,8 +6,8 @@
       xmlns:local="clr-namespace:MentoringUI"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Login">
-    
+      Title="Login" FontFamily="Cambria">
+
     <DockPanel LastChildFill="False">
         <DockPanel DockPanel.Dock="Top">
             <Grid>
@@ -32,7 +32,9 @@
                 Noch kein Konto?
                 <Hyperlink x:Name="hyperlinkToRegisterPage" Click="hyperlinkToRegisterPage_Click">Hier registrieren</Hyperlink>
             </TextBlock>
-
+            <TextBlock DockPanel.Dock="Top" x:Name="password" Margin="0,5,0,0" HorizontalAlignment="Center">
+                <Hyperlink x:Name="hyperlinkToPassword" Click="hyperlinkToRegisterPage_Click">Passwort vergessen</Hyperlink>
+            </TextBlock>
         </DockPanel>
     </DockPanel>
     

@@ -7,7 +7,7 @@
       mc:Ignorable="d"
       SizeChanged="Page_SizeChanged"
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="UserManagement_Mentors">
+      Title="UserManagement_Mentors" FontFamily="Cambria">
     <DockPanel LastChildFill="False">
         <DockPanel DockPanel.Dock="Top">
             <Grid>
