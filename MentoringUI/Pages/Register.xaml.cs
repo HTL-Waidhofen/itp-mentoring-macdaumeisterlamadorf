@@ -34,6 +34,16 @@ namespace MentoringUI
             if (firstname_tbx.Foreground == Brushes.Gray)
                 firstname_tbx.Text = null;
             firstname_tbx.Foreground = Brushes.Black;
+            if(toggle_btn.IsChecked == true)
+            {
+                placeholderPwd_tbx.Visibility = Visibility.Visible;
+                pwd_pbx.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                pwd_pbx.Visibility = Visibility.Visible;
+                placeholderPwd_tbx.Visibility = Visibility.Collapsed;
+            }
         }
         private void firstname_txb_LostFocus(object sender, RoutedEventArgs e)
         {
@@ -48,6 +58,16 @@ namespace MentoringUI
             if (name_tbx.Foreground == Brushes.Gray)
                 name_tbx.Text = null;
             name_tbx.Foreground = Brushes.Black;
+            if (toggle_btn.IsChecked == true)
+            {
+                placeholderPwd_tbx.Visibility = Visibility.Visible;
+                pwd_pbx.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                pwd_pbx.Visibility = Visibility.Visible;
+                placeholderPwd_tbx.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void name_txb_LostFocus(object sender, RoutedEventArgs e)
@@ -63,6 +83,16 @@ namespace MentoringUI
             if (email_tbx.Foreground == Brushes.Gray)
                 email_tbx.Text = null;
             email_tbx.Foreground = Brushes.Black;
+            if (toggle_btn.IsChecked == true)
+            {
+                placeholderPwd_tbx.Visibility = Visibility.Visible;
+                pwd_pbx.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                pwd_pbx.Visibility = Visibility.Visible;
+                placeholderPwd_tbx.Visibility = Visibility.Collapsed;
+            }
         }
         private void email_txb_LostFocus(object sender, RoutedEventArgs e)
         {
@@ -133,6 +163,7 @@ namespace MentoringUI
         private void PasswordBox_LostFocus(object sender, RoutedEventArgs e)
         {
             placeholderPwd_tbx.Text = "Passwort";
+            toggle_btn.IsChecked = false;
         }
 
         private void InitializeConfirmPasswordBox()
@@ -191,6 +222,17 @@ namespace MentoringUI
         private void ConfirmPasswordBox_GotFocus(object sender, RoutedEventArgs e)
         {
             confirmplaceholderPwd_tbx.Text = null;
+            placeholderPwd_tbx.Visibility = Visibility.Visible;
+            if (toggle_btn.IsChecked == true)
+            {
+                placeholderPwd_tbx.Visibility = Visibility.Visible;
+                pwd_pbx.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                pwd_pbx.Visibility = Visibility.Visible;
+                placeholderPwd_tbx.Visibility = Visibility.Collapsed;
+            }
         }
         private void ConfirmPasswordBox_LostFocus(object sender, RoutedEventArgs e)
         {
@@ -223,6 +265,17 @@ namespace MentoringUI
                 confirmplaceholderPwd_tbx.Text = confirmpwd_pbx.Password.ToString();
                 confirmplaceholderPwd_tbx.Visibility = Visibility.Visible;
                 confirmpwd_pbx.Visibility = Visibility.Collapsed;
+
+                if (toggle_btn.IsChecked == true)
+                {
+                    placeholderPwd_tbx.Visibility = Visibility.Visible;
+                    pwd_pbx.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    pwd_pbx.Visibility = Visibility.Visible;
+                    placeholderPwd_tbx.Visibility = Visibility.Collapsed;
+                }
             }
         }
         private void ConfirmToggleButton_Unchecked(object sender, RoutedEventArgs e)
@@ -231,9 +284,20 @@ namespace MentoringUI
             {
                 confirmpwd_pbx.Visibility = Visibility.Visible;
                 confirmplaceholderPwd_tbx.Visibility = Visibility.Collapsed;
+
+                if (toggle_btn.IsChecked == true)
+                {
+                    placeholderPwd_tbx.Visibility = Visibility.Visible;
+                    pwd_pbx.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    pwd_pbx.Visibility = Visibility.Visible;
+                    placeholderPwd_tbx.Visibility = Visibility.Collapsed;
+                }
             }
         }
-
+        
         private void register_btn_Click(object sender, RoutedEventArgs e)
         {
             if(!string.IsNullOrEmpty(firstname_tbx.Text) && !string.IsNullOrEmpty(name_tbx.Text) && !string.IsNullOrEmpty(email_tbx.Text) && department_cbx.SelectedIndex != -1 && class_cbx.SelectedIndex != -1 && !string.IsNullOrEmpty(pwd_pbx.Password) && !string.IsNullOrEmpty(confirmpwd_pbx.Password))
