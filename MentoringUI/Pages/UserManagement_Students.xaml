@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:MentoringUI"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="UserManagement_Students">
+      Title="UserManagement_Students" FontFamily="Cambria">
 
     <DockPanel LastChildFill="False">
         <DockPanel DockPanel.Dock="Top">
