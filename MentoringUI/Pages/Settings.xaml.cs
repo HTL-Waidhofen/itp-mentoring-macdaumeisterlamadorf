@@ -71,38 +71,21 @@ namespace MentoringUI
             switch (int.Parse(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "AppsUseLightTheme", 1).ToString()))
             {
                 case 0:
-                    SQLiteDataAccess.SqliteDataAccess.UpdateUser(connectionString, new SQLiteDataAccess.User(user.ID, 's', user.Language, user.Firstname, user.Lastname, user.Email, user.Password, user.MentorID_FK, user.Class));
-                        user.Appearance = 's';
                     SetColor(light, dark, "/Images/return_button_white.png");
                     break;
                 case 1:
-                    SQLiteDataAccess.SqliteDataAccess.UpdateUser(connectionString, new SQLiteDataAccess.User(user.ID, 's', user.Language, user.Firstname, user.Lastname, user.Email, user.Password, user.MentorID_FK, user.Class));
-                        user.Appearance = 's';
                     SetColor(Brushes.Black, light, "/Images/return_button_black.png");
                     break;
             }
             else if(appearance_cbx.SelectedIndex == 1)
             {
-                SQLiteDataAccess.SqliteDataAccess.UpdateUser(connectionString, new SQLiteDataAccess.User(user.ID, 'd', user.Language, user.Firstname, user.Lastname, user.Email, user.Password, user.MentorID_FK, user.Class));
-                        user.Appearance = 'd';
                 SetColor(light, dark, "/Images/return_button_white.png");
             }
             else if(appearance_cbx.SelectedIndex == 2)
             {
-                SQLiteDataAccess.SqliteDataAccess.UpdateUser(connectionString, new SQLiteDataAccess.User(user.ID, 'l', user.Language, user.Firstname, user.Lastname, user.Email, user.Password, user.MentorID_FK, user.Class));
-                        user.Appearance = 'l';
                 SetColor(Brushes.Black, light, "/Images/return_button_black.png");
             }
-            if (lang == "en")
-            {
-                language_cbx.SelectedIndex = -1;
-                language_cbx.SelectedIndex = 0;
-            }
-            else if (lang == "de")
-            {
-                language_cbx.SelectedIndex = -1;
-                language_cbx.SelectedIndex = 1;
-            }
+            UpdateLanguage(user.Language);
         }
         private void appearance_cbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -210,28 +193,9 @@ namespace MentoringUI
                     lang = "de";
                     break;
             }
+            user.Language = lang;
             SQLiteDataAccess.SqliteDataAccess.UpdateUser(connectionString, new SQLiteDataAccess.User(user.ID, user.Appearance, lang, user.Firstname, user.Lastname, user.Email, user.Password, user.MentorID_FK, user.Class));
-            XElement file = XElement.Load(@$"..\..\..\..\Ressources.{lang}.resx");
-            var childrenD = GetAllChildren(mainWindow);
-            foreach (var f in file.Elements("data"))
-            {
-                for(int i = 0; i < childrenD.Count; i++)
-                {
-                       if (childrenD[i] is TextBlock textBlock)
-                        if(textBlock.Name == f.Attribute("name").Value)
-                             textBlock.Text = f.Value.Replace("\n", "").Trim();
-                       if (childrenD[i] is ComboBox comboBox)
-                        if(comboBox.Name == f.Attribute("name").Value)
-                                 comboBox.Text = f.Value.Replace("\n", "").Trim();
-                       if (childrenD[i] is Button button)
-                        if(button.Name == f.Attribute("name").Value)
-                                 button.Content = f.Value.Replace("\n", "").Trim();
-                       if (childrenD[i] is GroupBox groupBox)
-                        if(groupBox.Name == f.Attribute("name").Value)
-                                 groupBox.Header = f.Value.Replace("\n", "").Trim();
-                       
-                }
-            }
+            UpdateLanguage(lang);
         }
         private void return_btn_Click(object sender, RoutedEventArgs e)
         {
@@ -288,6 +252,30 @@ namespace MentoringUI
         private void gc_switchToMentorpage_btn_Click(object sender, RoutedEventArgs e)
         {
             mainWindow.Content = new Mentors(user);
+        }
+        private void UpdateLanguage(string lang)
+        {
+            XElement file = XElement.Load(@$"..\..\..\..\Ressources.{lang}.resx");
+            var childrenD = GetAllChildren(mainWindow);
+            foreach (var f in file.Elements("data"))
+            {
+                for (int i = 0; i < childrenD.Count; i++)
+                {
+                    if (childrenD[i] is TextBlock textBlock)
+                        if (textBlock.Name == f.Attribute("name").Value)
+                            textBlock.Text = f.Value.Replace("\n", "").Trim();
+                    if (childrenD[i] is ComboBox comboBox)
+                        if (comboBox.Name == f.Attribute("name").Value)
+                            comboBox.Text = f.Value.Replace("\n", "").Trim();
+                    if (childrenD[i] is Button button)
+                        if (button.Name == f.Attribute("name").Value)
+                            button.Content = f.Value.Replace("\n", "").Trim();
+                    if (childrenD[i] is GroupBox groupBox)
+                        if (groupBox.Name == f.Attribute("name").Value)
+                            groupBox.Header = f.Value.Replace("\n", "").Trim();
+
+                }
+            }
         }
     }
 }
