@@ -59,29 +59,40 @@ namespace MentoringUI
         }
             Brush? dark = (Brush?)new BrushConverter().ConvertFromString("#505050");
             Brush? light = (Brush?)new BrushConverter().ConvertFromString("#FFFFFF");
-
         private void ChangeColor(object sender, EventArgs e)
         {
-            if (appearance == "s")
+            if (user.Appearance == 's')
                 appearance_cbx.SelectedIndex = 0;
-            else if(appearance == "d")
+            else if(user.Appearance == 'd')
                 appearance_cbx.SelectedIndex = 1;
-            else if(appearance == "l")
+            else if(user.Appearance == 'l')
                 appearance_cbx.SelectedIndex = 2;
             if(appearance_cbx.SelectedIndex == 0)
             switch (int.Parse(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "AppsUseLightTheme", 1).ToString()))
             {
                 case 0:
+                    SQLiteDataAccess.SqliteDataAccess.UpdateUser(connectionString, new SQLiteDataAccess.User(user.ID, 's', user.Language, user.Firstname, user.Lastname, user.Email, user.Password, user.MentorID_FK, user.Class));
+                        user.Appearance = 's';
                     SetColor(light, dark, "/Images/return_button_white.png");
                     break;
                 case 1:
+                    SQLiteDataAccess.SqliteDataAccess.UpdateUser(connectionString, new SQLiteDataAccess.User(user.ID, 's', user.Language, user.Firstname, user.Lastname, user.Email, user.Password, user.MentorID_FK, user.Class));
+                        user.Appearance = 's';
                     SetColor(Brushes.Black, light, "/Images/return_button_black.png");
                     break;
             }
             else if(appearance_cbx.SelectedIndex == 1)
+            {
+                SQLiteDataAccess.SqliteDataAccess.UpdateUser(connectionString, new SQLiteDataAccess.User(user.ID, 'd', user.Language, user.Firstname, user.Lastname, user.Email, user.Password, user.MentorID_FK, user.Class));
+                        user.Appearance = 'd';
                 SetColor(light, dark, "/Images/return_button_white.png");
+            }
             else if(appearance_cbx.SelectedIndex == 2)
+            {
+                SQLiteDataAccess.SqliteDataAccess.UpdateUser(connectionString, new SQLiteDataAccess.User(user.ID, 'l', user.Language, user.Firstname, user.Lastname, user.Email, user.Password, user.MentorID_FK, user.Class));
+                        user.Appearance = 'l';
                 SetColor(Brushes.Black, light, "/Images/return_button_black.png");
+            }
             if (lang == "en")
             {
                 language_cbx.SelectedIndex = -1;
@@ -93,7 +104,6 @@ namespace MentoringUI
                 language_cbx.SelectedIndex = 1;
             }
         }
-
         private void appearance_cbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             switch(appearance_cbx.SelectedIndex)
@@ -102,21 +112,25 @@ namespace MentoringUI
                     switch (int.Parse(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "AppsUseLightTheme", 1).ToString()))
                     {
                         case 0:
-                            SetColor(light, dark, "/Images/return_button_black.png");
+                            SetColor(dark, light, "/Images/return_button_black.png");
+                            user.Appearance = 's';
                         break;
                         case 1:
-                            SetColor(dark, light, "/Images/return_button_white.png");
+                            SetColor(light, dark, "/Images/return_button_white.png");
+                            user.Appearance = 's';
                         break;
                     }
                     SQLiteDataAccess.SqliteDataAccess.UpdateUser(connectionString, new SQLiteDataAccess.User(user.ID, 's', user.Language, user.Firstname, user.Lastname, user.Email, user.Password, user.MentorID_FK, user.Class));
                     break;
                 case 1:
-                    SetColor(Brushes.Black, light, "/Images/return_button_black.png");
+                    SetColor(light, dark, "/Images/return_button_black.png");
+                            user.Appearance = 'd';
                     SQLiteDataAccess.SqliteDataAccess.UpdateUser(connectionString, new SQLiteDataAccess.User(user.ID, 'd', user.Language, user.Firstname, user.Lastname, user.Email, user.Password, user.MentorID_FK, user.Class));
                     break;
                 case 2:
-                    SetColor(light, dark, "/Images/return_button_white.png");
                     SQLiteDataAccess.SqliteDataAccess.UpdateUser(connectionString, new SQLiteDataAccess.User(user.ID, 'l', user.Language, user.Firstname, user.Lastname, user.Email, user.Password, user.MentorID_FK, user.Class));
+                            user.Appearance = 'l';
+                    SetColor(dark, light, "/Images/return_button_white.png");
                     break;
             }
         }
@@ -251,8 +265,6 @@ namespace MentoringUI
                 case 8:
                     mainWindow.Content = new UserManagement_Mentors(user);
                     break;
-
-
             }
         }
         private List<DependencyObject> GetAllChildren(DependencyObject parent)
@@ -273,7 +285,6 @@ namespace MentoringUI
         {
             mainWindow.Content = new Startpage();
         }
-
         private void gc_switchToMentorpage_btn_Click(object sender, RoutedEventArgs e)
         {
             mainWindow.Content = new Mentors(user);
