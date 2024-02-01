@@ -236,34 +236,46 @@ namespace MentoringUI
 
         private void register_btn_Click(object sender, RoutedEventArgs e)
         {
-            if(!string.IsNullOrEmpty(firstname_tbx.Text) && !string.IsNullOrEmpty(name_tbx.Text) && !string.IsNullOrEmpty(email_tbx.Text) && department_cbx.SelectedIndex != -1 && class_cbx.SelectedIndex != -1 && !string.IsNullOrEmpty(pwd_pbx.Password) && !string.IsNullOrEmpty(confirmpwd_pbx.Password))
+            try
             {
-                if(!CheckIfEmailExists(email_tbx.Text))
-                if (IsValidEmail(email_tbx.Text) && pwd_pbx.Password == confirmpwd_pbx.Password)
+                if (!string.IsNullOrEmpty(firstname_tbx.Text) && !string.IsNullOrEmpty(name_tbx.Text) && !string.IsNullOrEmpty(email_tbx.Text) && department_cbx.SelectedIndex != -1 && class_cbx.SelectedIndex != -1 && !string.IsNullOrEmpty(pwd_pbx.Password) && !string.IsNullOrEmpty(confirmpwd_pbx.Password))
                 {
-                    string department = department_cbx.SelectedItem.ToString().Substring(department_cbx.SelectedItem.ToString().IndexOf(":") +1).Trim();
-                    switch (department){
-                        case "Informationstechnologie":
-                            department = "IT";
-                        break;
-                        case "Wirtschaftsingeneure":
-                            department = "WIM";
-                        break;
-                        case "Maschinenbau":
-                            department = "MBA";
-                        break;
-                        case "Elektrotechnik":
-                            department = "ET";
-                        break;
-                        case "Mechatronik":
-                            department = "FME";
-                        break;
-                    }
-                    SQLiteDataAccess.User user = new SQLiteDataAccess.User('d', "de", firstname_tbx.Text, name_tbx.Text, email_tbx.Text, pwd_pbx.Password, -1, $"{class_cbx.SelectedItem.ToString().Substring(class_cbx.SelectedItem.ToString().IndexOf(":") + 1).Trim()}.{department}");
-                    SQLiteDataAccess.SqliteDataAccess.AddUser(connectionString, user);
-                    MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-                    mainWindow.Content = new Email_Verification(email_tbx.Text, user);
+                    if (!CheckIfEmailExists(email_tbx.Text))
+                        if (IsValidEmail(email_tbx.Text) && pwd_pbx.Password == confirmpwd_pbx.Password)
+                        {
+                            string department = department_cbx.SelectedItem.ToString().Substring(department_cbx.SelectedItem.ToString().IndexOf(":") + 1).Trim();
+                            switch (department)
+                            {
+                                case "Informationstechnologie":
+                                    department = "IT";
+                                    break;
+                                case "Wirtschaftsingeneure":
+                                    department = "WIM";
+                                    break;
+                                case "Maschinenbau":
+                                    department = "MBA";
+                                    break;
+                                case "Elektrotechnik":
+                                    department = "ET";
+                                    break;
+                                case "Mechatronik":
+                                    department = "FME";
+                                    break;
+                            }
+                            SQLiteDataAccess.User user = new SQLiteDataAccess.User('d', "de", firstname_tbx.Text, name_tbx.Text, email_tbx.Text, pwd_pbx.Password, -1, $"{class_cbx.SelectedItem.ToString().Substring(class_cbx.SelectedItem.ToString().IndexOf(":") + 1).Trim()}.{department}");
+                            SQLiteDataAccess.SqliteDataAccess.AddUser(connectionString, user);
+                            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+                            mainWindow.Content = new Email_Verification(email_tbx.Text, user);
+                        }
+                        else
+                        {
+                            throw new Exception("Passwörter stimmen nicht überein!");
+                        }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -289,6 +301,7 @@ namespace MentoringUI
             catch
             {
                 valid = false;
+                MessageBox.Show("Ungültige Email!", "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
             return valid;

@@ -27,25 +27,33 @@ namespace MentoringUI
         int randomNumber = random.Next(10000, 100000);
         public Email_Verification(string email, SQLiteDataAccess.User user)
         {
-            InitializeComponent();
-            SmtpClient smtpClient = new SmtpClient("smtp-mail.outlook.com")
+            try
             {
-                Port = 587,
-                Credentials = new NetworkCredential("mentor.htl.verify@outlook.com", "HTL.2024.Mentoring!"),
-                EnableSsl = true,
-            };
+                InitializeComponent();
+                SmtpClient smtpClient = new SmtpClient("smtp-mail.outlook.com")
+                {
+                    Port = 587,
+                    Credentials = new NetworkCredential("miniversum1@htlwy.at", "Mini123!"),
+                    EnableSsl = true,
+                };
 
-            MailMessage mailMessage = new MailMessage
+                MailMessage mailMessage = new MailMessage
+                {
+                    From = new MailAddress("miniversum1@htlwy.at"),
+                    Subject = "Code zur Authentifizierung ihres Kontos",
+                    Body = "Ihr 2FA-Code:" + randomNumber,
+                    IsBodyHtml = false,
+                };
+
+                mailMessage.To.Add(email);
+                smtpClient.Send(mailMessage);
+                this.user = user;
+            }
+            catch(SmtpException ex) 
             {
-                From = new MailAddress("mentor.htl.verify@outlook.com"),
-                Subject = "Code zur Authentifizierung ihres Kontos",
-                Body = "Ihr 2FA-Code:" + randomNumber,
-                IsBodyHtml = false,
-            };
-
-            mailMessage.To.Add(email);
-            smtpClient.Send(mailMessage);
-            this.user = user;
+                MessageBox.Show("Serveradresse ungültig", "Error!", MessageBoxButton.OK, MessageBoxImage.Error);            
+            }
+            
         }
         private void submit_btn_Click(object sender, RoutedEventArgs e)
         {
