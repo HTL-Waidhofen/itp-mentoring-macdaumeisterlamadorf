@@ -30,7 +30,7 @@ namespace MentoringUI
         string[] pictures =
         {
             @"..\..\..\Images/HTL-Logo.png",
-            @"..\..\..\Images/Beachtime.png",
+            @"..\..\..\Images/Schule.jpg",
             @"..\..\..\Images/Strand.jpg"
         };
 
